@@ -1,0 +1,7 @@
+D:\Hillel - Introduction C#\HomeWork\04_HW\HomeWork_04\bin\Debug\HomeWork_04.exe.config
+D:\Hillel - Introduction C#\HomeWork\04_HW\HomeWork_04\bin\Debug\HomeWork_04.exe
+D:\Hillel - Introduction C#\HomeWork\04_HW\HomeWork_04\bin\Debug\HomeWork_04.pdb
+D:\Hillel - Introduction C#\HomeWork\04_HW\HomeWork_04\obj\Debug\HomeWork_04.csprojAssemblyReference.cache
+D:\Hillel - Introduction C#\HomeWork\04_HW\HomeWork_04\obj\Debug\HomeWork_04.csproj.CoreCompileInputs.cache
+D:\Hillel - Introduction C#\HomeWork\04_HW\HomeWork_04\obj\Debug\HomeWork_04.exe
+D:\Hillel - Introduction C#\HomeWork\04_HW\HomeWork_04\obj\Debug\HomeWork_04.pdb

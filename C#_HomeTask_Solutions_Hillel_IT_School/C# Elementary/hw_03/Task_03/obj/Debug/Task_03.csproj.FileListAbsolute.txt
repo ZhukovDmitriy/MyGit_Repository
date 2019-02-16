@@ -1,0 +1,14 @@
+D:\HW_Norm\hw_03\Task_03\bin\Debug\Task_03.exe.config
+D:\HW_Norm\hw_03\Task_03\bin\Debug\Task_03.exe
+D:\HW_Norm\hw_03\Task_03\bin\Debug\Task_03.pdb
+D:\HW_Norm\hw_03\Task_03\obj\Debug\Task_03.csprojAssemblyReference.cache
+D:\HW_Norm\hw_03\Task_03\obj\Debug\Task_03.csproj.CoreCompileInputs.cache
+D:\HW_Norm\hw_03\Task_03\obj\Debug\Task_03.exe
+D:\HW_Norm\hw_03\Task_03\obj\Debug\Task_03.pdb
+G:\HW_Norm\hw_03\Task_03\bin\Debug\Task_03.exe.config
+G:\HW_Norm\hw_03\Task_03\bin\Debug\Task_03.exe
+G:\HW_Norm\hw_03\Task_03\bin\Debug\Task_03.pdb
+G:\HW_Norm\hw_03\Task_03\obj\Debug\Task_03.csprojAssemblyReference.cache
+G:\HW_Norm\hw_03\Task_03\obj\Debug\Task_03.csproj.CoreCompileInputs.cache
+G:\HW_Norm\hw_03\Task_03\obj\Debug\Task_03.exe
+G:\HW_Norm\hw_03\Task_03\obj\Debug\Task_03.pdb

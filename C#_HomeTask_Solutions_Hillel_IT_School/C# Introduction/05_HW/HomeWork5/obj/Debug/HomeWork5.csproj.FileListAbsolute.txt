@@ -1,0 +1,7 @@
+D:\Hillel - Introduction C#\HomeWork\05_HW\HomeWork5\bin\Debug\HomeWork5.exe.config
+D:\Hillel - Introduction C#\HomeWork\05_HW\HomeWork5\bin\Debug\HomeWork5.exe
+D:\Hillel - Introduction C#\HomeWork\05_HW\HomeWork5\bin\Debug\HomeWork5.pdb
+D:\Hillel - Introduction C#\HomeWork\05_HW\HomeWork5\obj\Debug\HomeWork5.csprojAssemblyReference.cache
+D:\Hillel - Introduction C#\HomeWork\05_HW\HomeWork5\obj\Debug\HomeWork5.csproj.CoreCompileInputs.cache
+D:\Hillel - Introduction C#\HomeWork\05_HW\HomeWork5\obj\Debug\HomeWork5.exe
+D:\Hillel - Introduction C#\HomeWork\05_HW\HomeWork5\obj\Debug\HomeWork5.pdb

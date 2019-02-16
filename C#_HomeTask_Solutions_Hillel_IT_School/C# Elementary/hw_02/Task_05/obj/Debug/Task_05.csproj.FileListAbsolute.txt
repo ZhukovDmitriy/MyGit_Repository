@@ -1,0 +1,7 @@
+D:\HW_Norm\hw_02\Task_05\obj\Debug\Task_05.csprojAssemblyReference.cache
+D:\HW_Norm\hw_02\Task_05\obj\Debug\Task_05.csproj.CoreCompileInputs.cache
+D:\HW_Norm\hw_02\Task_05\bin\Debug\Task_05.exe.config
+D:\HW_Norm\hw_02\Task_05\bin\Debug\Task_05.exe
+D:\HW_Norm\hw_02\Task_05\bin\Debug\Task_05.pdb
+D:\HW_Norm\hw_02\Task_05\obj\Debug\Task_05.exe
+D:\HW_Norm\hw_02\Task_05\obj\Debug\Task_05.pdb
