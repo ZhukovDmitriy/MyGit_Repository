@@ -1,0 +1,21 @@
+G:\MyProject\Persons_Data\Mydb\bin\Debug\Mydb.exe.config
+G:\MyProject\Persons_Data\Mydb\bin\Debug\Mydb.exe
+G:\MyProject\Persons_Data\Mydb\bin\Debug\Mydb.pdb
+G:\MyProject\Persons_Data\Mydb\bin\Debug\MySql.Data.dll
+G:\MyProject\Persons_Data\Mydb\bin\Debug\Google.Protobuf.dll
+G:\MyProject\Persons_Data\Mydb\bin\Debug\MySql.Data.xml
+G:\MyProject\Persons_Data\Mydb\obj\Debug\Mydb.csprojAssemblyReference.cache
+G:\MyProject\Persons_Data\Mydb\obj\Debug\Mydb.csproj.CoreCompileInputs.cache
+G:\MyProject\Persons_Data\Mydb\obj\Debug\Mydb.csproj.CopyComplete
+G:\MyProject\Persons_Data\Mydb\obj\Debug\Mydb.exe
+G:\MyProject\Persons_Data\Mydb\obj\Debug\Mydb.pdb
+G:\Hillel - Elementary C#\HW_Norm\hw_11_MySQL_Database\Persons_Data\Mydb\bin\Debug\Mydb.exe.config
+G:\Hillel - Elementary C#\HW_Norm\hw_11_MySQL_Database\Persons_Data\Mydb\bin\Debug\Mydb.exe
+G:\Hillel - Elementary C#\HW_Norm\hw_11_MySQL_Database\Persons_Data\Mydb\bin\Debug\Mydb.pdb
+G:\Hillel - Elementary C#\HW_Norm\hw_11_MySQL_Database\Persons_Data\Mydb\bin\Debug\Google.Protobuf.dll
+G:\Hillel - Elementary C#\HW_Norm\hw_11_MySQL_Database\Persons_Data\Mydb\bin\Debug\MySql.Data.xml
+G:\Hillel - Elementary C#\HW_Norm\hw_11_MySQL_Database\Persons_Data\Mydb\obj\Debug\Mydb.csprojAssemblyReference.cache
+G:\Hillel - Elementary C#\HW_Norm\hw_11_MySQL_Database\Persons_Data\Mydb\obj\Debug\Mydb.csproj.CoreCompileInputs.cache
+G:\Hillel - Elementary C#\HW_Norm\hw_11_MySQL_Database\Persons_Data\Mydb\obj\Debug\Mydb.csproj.CopyComplete
+G:\Hillel - Elementary C#\HW_Norm\hw_11_MySQL_Database\Persons_Data\Mydb\obj\Debug\Mydb.exe
+G:\Hillel - Elementary C#\HW_Norm\hw_11_MySQL_Database\Persons_Data\Mydb\obj\Debug\Mydb.pdb
