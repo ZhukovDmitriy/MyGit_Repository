@@ -1,0 +1,196 @@
+﻿body { /* Селектор body - применяет указынные стили для элементов входящих в тег <body> (html) */
+    font-family: Cambria, Georgia, "Times New Roman"; /* Семейство шрифтов: проверяется наличие на компьютере пользователя (выбирается первый один) */
+    margin: 0; /* Велечина отступа от каждого края элемента */
+}
+
+/* Идентификатор # (называемый также «ID селектор») определяет уникальное имя элемента, которое используется для изменения его стиля */
+/* Селекторы класса . позволяют задавать различные стилевые описания для одного и того же HTML-элемента */
+div#header div.title, div.item h3, div.item h4, div.pager a { /* pager a - "якорь" (см. подробнее List.cshtml) */
+    /* Свойство задающее несколько характеристик шрифта, указывается размер шрифта и его семейство */
+    font: bold 1em "Arial Narrow", "Franklin Gothic Medium", Arial; /* bold - полужирное. em - относительный размер, пропорциональный от текущего шрифта */
+}
+
+div#header {
+    background-color: cadetblue;
+    border-bottom: 2px solid #111; /* Свойство позволяет одновременно установить толщину, стиль и цвет границы внизу (bottom) элемента */
+    color: white;
+}
+
+    div#header div.title {
+        font-size: 2em; /* Размер шрифта элемента */
+        padding: .6em; /* Значение полей вокруг содержимого элемента. .6em сокращение от 0.6 */
+    }
+
+div#content {
+    border-left: 2px solid gray; /* Левая граница элемента */
+    margin-left: 12em; /* Величина отступа блока от левого края элемента */
+    padding: 1em;
+}
+
+div#categories {
+    float: left; /* По какой стороне будет выравниваться элемент, при этом остальные элементы будут обтекать его с других сторон */
+    width: 8em; /* Устанавливает ширину элемента */
+    padding: .3em;
+}
+
+div.item {
+    border-top: 1px dotted gray; /* top Вверх элемента. dotted пунктир */
+    padding-top: .7em; /* top Вверх элемента */
+    margin-bottom: 5em; /* bottom низ элемента */
+}
+
+    div.item:first-child { /* :first-child находит любой элемент, являющийся первым в своём родителе */
+        border-top: none; /* Линия не отображается и значение ее толщины обнуляется */
+        padding-top: 0;
+    }
+
+    div.item h3 {
+        font-size: 1.3em; /* size определяет размер шрифта элемента */
+        margin: 0 0 .25em 0;
+    }
+
+    div.item h4 {
+        font-size: 1.1em;
+        margin: .4em 0 0 0;
+    }
+
+div.pager {
+    text-align: right; /* Горизонтальное выравнивание текста в пределах элемента */
+    border-top: 2px solid silver;
+    padding: .5em 0 0 0;
+    margin-top: 1em;
+}
+
+    div.pager a {
+        font-size: 1.1em;
+        color: darkslategray;
+        text-decoration: none; /* Оформление текста в виде его подчеркивания, перечеркивания, линии над текстом и мигания. none отменяет всё */
+        padding: 0 .4em 0 .4em
+    }
+
+        div.pager a:hover { /* :hover стиль элемента при наведении на него курсора мыши, но при этом элемент еще не активирован */
+            background-color: cadetblue;
+        }
+
+        div.pager a.selected { /* .selected - селектор класса создающегося в PageHelpers.cs */
+            background-color: darkslategray;
+            color: white;
+        }
+
+div#categories a {
+    font: bold 1.1em "Arial Narrow", "Franklin Gothic Medium", Arial; /* Позволяет одновременно задать несколько характеристик шрифта и текста */
+    display: block; /* Определяет, как элемент должен быть показан в документе. block - заставляет элемент вести себя подобно блокам */
+    text-decoration: none; /* Оформление текста в виде его подчеркивания, перечеркивания, линии над текстом и мигания */
+    padding: .6em;
+    color: black;
+    border-bottom: 1px solid silver;
+}
+
+    div#categories a.selected {
+        background-color: darkslategray;
+        color: white;
+    }
+
+    div#categories a:hover {
+        background-color: cadetblue;
+    }
+
+    div#categories a.selected:hover {
+        background-color: darkslategray;
+    }
+
+/* тег <form></form> создает метод Html.BeginForm (Views/Shared/AccessorySummary.cshtml) */
+form {
+    margin: 0;
+    padding: 0;
+}
+
+div.item form {
+    /* Определяет, по какой стороне будет выравниваться элемент, при этом остальные элементы будут обтекать его с других сторон. */
+    float: right;
+}
+
+div.item input {
+    color: white;
+    background-color: crimson;
+    border: 2px solid black;
+    /* Устанавливает форму курсора, когда он находится в пределах элемента. Вид курсора зависит от операционной системы и установленных параметров. */
+    cursor: pointer;
+}
+
+h2 {
+    /* Устанавливает величину отступа от верхнего края элемента */
+    margin-top: 0.3em;
+}
+
+tfoot td {
+    /* Свойство border-top позволяет одновременно установить толщину, стиль и цвет границы сверху элемента */
+    border-top: 1px dotted gray;
+    /* Устанавливает насыщенность шрифта */
+    font-weight: bold;
+}
+
+.actionButtons a, input.actionButtons {
+    font: .8em Arial;
+    color: white;
+    margin: .5em;
+    /* Добавляет оформление текста в виде его подчеркивания, перечеркивания, линии над текстом и мигания */
+    text-decoration: none;
+    padding: .15em 1.5em .2em 1.5em;
+    background-color: crimson;
+    /* Универсальное свойство border позволяет одновременно установить толщину, стиль и цвет границы вокруг элемента */
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+div#cart {
+    float: right;
+    margin: .8em;
+    color: white;
+    background-color: teal;
+    padding: .5em .5em .5em 1em;
+    border: 1px solid black
+}
+
+    div#cart a {
+        text-decoration: none;
+        padding: .4em 1em .4em 1em;
+        /* line-height устанавливает интерлиньяж (межстрочный интервал) текста, отсчет ведется от базовой линии шрифта */
+        line-height: 2.1em;
+        margin-left: .5em;
+        background-color: darkslategray;
+        color: white;
+        border: 1px solid black;
+    }
+
+div.field label {
+    width: 150px;
+    float: left;
+    text-align: left;
+}
+
+div.field div {
+    padding: .3em;
+}
+
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid {
+    display: none;
+}

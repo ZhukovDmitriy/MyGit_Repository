@@ -1,0 +1,27 @@
+﻿<!-- При создании представления List.cshtml было отмеченно (Use a layout or master page) -->
+<!-- и оставленно пустое поле в котором указана компоновка - это обеспечивает использование стандартной компоновки _Layout.cshtml -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Site.css" type="text/css" rel="stylesheet" />     <!-- добавляем ссылку на файл .css -->
+</head>
+<body>
+    <div id="header">
+        @{ Html.RenderAction("Summary", "Cart"); }
+        <div class="title">КОМПЬЮТЕРНЫЕ АКСЕССУАРЫ</div>
+    </div>
+    <div id="categories">
+        <!-- Вспомогательный метод HTML RenderAction() для дочернего действия, -->
+        <!-- позволяющий включать в текущее представление вывод из произвольного метода действия -->
+        @{ Html.RenderAction("Menu", "Navigation"); }   <!-- Параметры: метод действия Menu, контроллер Navigation -->
+    </div>
+    <div id="content">
+        <!-- вызов RenderBody() является "плейсхолдером", на место которого другие представления, -->
+        <!-- которые используют эту мастер-страницу, будут подставлять свое содержимое -->
+        @RenderBody()
+    </div>
+</body>
+</html>

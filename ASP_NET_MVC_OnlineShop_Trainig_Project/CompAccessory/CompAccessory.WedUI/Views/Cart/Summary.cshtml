@@ -1,0 +1,18 @@
+﻿@model CompAccessory.Domain.Entites.Cart
+
+<div id="cart">
+    @* Тег <span> предназначен для определения строчных элементов документа. *@
+    @* С помощью тега <span> можно выделить часть информации внутри других тегов и установить для нее свой стиль. *@
+    <span class="caption">
+        <b>Ваша Корзина:</b>
+        @Model.Lines.Sum(x => x.Quantity) товар(ов),
+        @Model.ComputeTotalValue().ToString("c")
+    </span>
+    @* Хелпер ActionLink создает гиперссылку на действие контроллера. *@
+    @* Возвращает элемент привязки (элемент a)*@
+    @* Принимает три аргумента: текст ссылки, имя действия, название контроллера, *@
+    @* значение маршрута и атрибутов HTML *@
+    @Html.ActionLink("Перейти", "Index", "Cart",
+    new { returnUrl = Request.Url.PathAndQuery }, null)
+</div>
+

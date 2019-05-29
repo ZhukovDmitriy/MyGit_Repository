@@ -1,0 +1,63 @@
+﻿@* Операция @model указывает тип модели предметной области, *@
+@* для которого строготипизированно представление. *@
+@model CompAccessory.WedUI.Models.CartIndexViewModel
+
+@{
+    ViewBag.Title = "Computer Accessory: Your Cart";        // Имя вкладки в браузере
+}
+
+<h2>Ваша корзина</h2>
+@* Элемент <table> служит контейнером для элементов, определяющих содержимое таблицы *@
+@* Любая таблица состоит из строк и ячеек, которые задаются с помощью тегов <tr> и <td> *@
+@* Атрибут width устанавливает ширину блочных или заменяемых элементов *@
+@* Атрибут align задает выравнивание содержимого ячейки по горизонтали *@
+<table width="90%" alight="center">
+    @* Элемент <thead> предназначен для хранения одной или нескольких строк, которые представлены вверху таблицы *@
+    <thead>
+        @* Тег <tr> служит контейнером для создания строки таблицы. *@
+        @* Каждая ячейка в пределах такой строки может задаваться с помощью тега <th> или <td>. *@
+        <tr>
+            <th align="center">Количество</th>
+            <th align="left">Товар</th>
+            <th align="right">Цена</th>
+            <th align="right">Сумма</th>
+        </tr>
+    </thead>
+    @* Элемент <tbody> предназначен для хранения одной или нескольких строк таблицы *@
+    <tbody>
+        @foreach (var line in Model.Cart.Lines)
+        {
+            <tr>
+                <td align="center">@line.Quantity</td>
+                <td align="left">@line.Accessory.Name</td>
+                <td align="right">@line.Accessory.Price.ToString("c")</td>
+                <td align="right">@((line.Quantity * line.Accessory.Price).ToString("c"))</td>
+                <td>
+                    @using (Html.BeginForm("RemoveFromCart", "Cart"))
+                    {
+                        @Html.Hidden("AccessoryId", line.Accessory.AccessoryID)
+                        @Html.HiddenFor(x => x.ReturnUrl)
+                        <input class="actionButtons" type="submit" value="Удалить" />
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+    @* Элемент <tfoot> предназначен для хранения одной или нескольких строк, которые представлены внизу таблицы *@
+    <tfoot>
+        <tr>
+            @* Атрибут colspan устанавливает число ячеек, которые должны быть объединены по горизонтали. *@
+            @* Этот атрибут имеет смысл для таблиц, состоящих из нескольких строк *@
+            <td colspan="3" align="right">Общая сумма:</td>
+            <td align="right">
+                @Model.Cart.ComputeTotalValue().ToString("c")
+            </td>
+        </tr>
+    </tfoot>
+</table>
+<p align="center" class="actionButtons">
+    <a href="@Model.ReturnUrl">Продолжить покупку</a>
+    @Html.ActionLink("Оформить заказ", "Checkout")
+</p>
+
+
