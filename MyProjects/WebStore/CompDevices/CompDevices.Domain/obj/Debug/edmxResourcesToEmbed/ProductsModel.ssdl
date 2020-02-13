@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище ProductsModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="KeyboardsProducts">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="CountryMaker" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ConnectionInterface" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Backlight" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="WireLength" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Sizes" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Weight" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Color" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Brand" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Model" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="TotalDescription" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Price" Type="decimal" Precision="16" Scale="2" Nullable="false" />
+    <Property Name="Category" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SpeakersProducts">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="CountryMaker" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AcousticsFormat" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SourcePower" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="BodyMaterial" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="OutputPower" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FrequencyRrange" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MobilityType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Sizes" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Weight" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Color" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Keyboards__Produ__4BAC3F29">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="KeyboardsProducts" Type="Self.KeyboardsProducts" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="KeyboardsProducts">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SpeakersP__Produ__4E88ABD4">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="SpeakersProducts" Type="Self.SpeakersProducts" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="SpeakersProducts">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище ProductsModelContainer">
+    <EntitySet Name="KeyboardsProducts" EntityType="Self.KeyboardsProducts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SpeakersProducts" EntityType="Self.SpeakersProducts" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Keyboards__Produ__4BAC3F29" Association="Self.FK__Keyboards__Produ__4BAC3F29">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="KeyboardsProducts" EntitySet="KeyboardsProducts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SpeakersP__Produ__4E88ABD4" Association="Self.FK__SpeakersP__Produ__4E88ABD4">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="SpeakersProducts" EntitySet="SpeakersProducts" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

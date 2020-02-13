@@ -1,0 +1,24 @@
+﻿@model CompDevices.Domain.Entities.ShippingDetails
+
+@{
+    ViewBag.Title = "CompDevices: Checkout";
+}
+
+<div class="checkout">
+    <h2>Оформление заказа</h2>
+
+    <p>Пожалуйста введите свои контактные данные!</p>
+
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary()
+
+        <div>Ф.И.О: @Html.EditorFor(x => x.FullName)</div>
+        <div>Номер телефона: @Html.EditorFor(x => x.Phone)</div>
+
+        <p align="center">
+            <input class="actionButtons" type="submit" value="Подтвердить заказ" />
+        </p>
+    }
+</div>
+

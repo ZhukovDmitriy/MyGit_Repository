@@ -1,0 +1,46 @@
+﻿@model CompDevices.WebUI.Models.ProductsListViewModel
+
+@{
+    ViewBag.Title = "Products";
+}
+
+<div class="currentCategory">@Model.CurrentCategory</div>
+
+<div class="sortOption">
+    <select id="option" onchange="location = this.value;">
+        <option value="">Сортировать...</option>
+        <option value="@Url.Action("List", "Product", new { category = Model.CurrentCategory, sortType = 1 })">Цены: по возрастанию</option>
+        <option value="@Url.Action("List", "Product", new { category = Model.CurrentCategory, sortType = 2 })">Цены: по убыванию</option>
+        <option value="@Url.Action("List", "Product", new { category = Model.CurrentCategory })">Исходная сортировка</option>
+    </select>
+</div>
+
+<div class="container">
+    <div class="catalog">
+        @foreach (var p in Model.Products)
+        {
+            <div class="item">
+                @{Html.RenderPartial("ProductSummary", p);}
+
+                <div class="selectiveProp">
+
+                    <p class="titleDescr">Краткие характеристики:</p>
+
+                    <div class="descrBlock">
+                        @foreach (var c in Model.AttributesViewModels)
+                        {
+                            if (p.ProductID == c.ProductID && c.SelectiveAttribute == true)
+                            {
+                                Html.RenderPartial("SelectiveProductAttributes", c);
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="pager">
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x, category = Model.CurrentCategory }))
+</div>

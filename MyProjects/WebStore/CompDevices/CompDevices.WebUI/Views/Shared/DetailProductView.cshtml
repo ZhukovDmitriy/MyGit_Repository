@@ -1,0 +1,61 @@
+﻿@model CompDevices.WebUI.Models.DetailProductListViewModel
+
+<div class="detailProdBlock">
+    <div class="detailProdName">
+        @foreach (var p in Model.Products)
+        {
+            <p>@p.Description @p.Brand @p.Model</p>
+            <p class="detailProdPrice">@p.Price грн</p>
+        }
+    </div>
+
+    <img class="detailProdImage" width="400" height="400" src="@Url.Action("GetImage", "Product", new { Model.ProductID })" />
+
+    <div class="detailProdBuyButton">
+        @using (Html.BeginForm("AddToCart", "Cart"))
+        {
+            @Html.HiddenFor(x => x.ProductID)
+
+            @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+            <input type="submit" value="Купить" />
+        }
+
+        <a href="@Url.Action("AddToCart", "Cart", new { @Model.ProductID, returnUrl = Request.Url.PathAndQuery })">
+            <img src="~/Content/Images/Cart.png" alt="Корзина" />
+        </a>
+    </div>
+
+    <div class="detailProdDescrBlock">
+        @foreach (var p in Model.AttributesViewModels)
+        {
+            if (p.ProductID == p.ProductID && p.SelectiveAttribute == true)
+            {
+                Html.RenderPartial("SelectiveProductAttributes", p);
+            }
+        }
+    </div>
+
+    <div class="tabs">
+        <input type="radio" name="inset" value="" id="tab_1" checked>
+        <label for="tab_1">Полное описание:</label>
+
+        <input type="radio" name="inset" value="" id="tab_2">
+        <label for="tab_2">Характеристики:</label>
+
+        <div id="txt_1">
+
+            @foreach (var p in Model.Products)
+            {
+                <p>@p.TotalDescription</p>
+            }
+        </div>
+
+        <div id="txt_2">
+
+            @foreach (var c in Model.AttributesViewModels)
+            {
+                <p>@c.AttributeName @c.Value</p>
+            }
+        </div>
+    </div>
+</div>

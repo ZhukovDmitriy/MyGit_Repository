@@ -1,0 +1,51 @@
+﻿@model CompDevices.WebUI.Models.CartIndexViewModel
+
+@{
+    ViewBag.Title = "CompDevices: Your Cart";
+}
+
+<div class="cartIndexBlock">
+    <h2>Ваша карта</h2>
+    <table width="90%" aligh="center">
+        <thead>
+            <tr>
+                <th align="center">Количество</th>
+                <th align="center">Товар</th>
+                <th align="right">Цена</th>
+                <th align="right">Сумма</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var line in Model.Cart.Lines)
+            {
+                <tr>
+                    <td align="center">@line.Quantity</td>
+                    <td align="left">@line.Product.Description @line.Product.Brand @line.Product.Model</td>
+                    <td align="right">@line.Product.Price грн</td>
+                    <td align="right">@(line.Quantity * line.Product.Price) грн</td>
+                    <td>
+                        @using (Html.BeginForm("RemoveFromCart", "Cart"))
+                        {
+                            @Html.Hidden("ProductId", line.Product.ProductID)
+                            @Html.HiddenFor(x => x.ReturnUrl)
+                            <input class="actionButtons" type="submit" value="Удалить">
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" align="right">Общая сумма:</td>
+                <td align="right">
+                    @Model.Cart.ComputeTotalValue() грн
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+    <p align="center" class="actionButtons">
+        <a href="@Model.ReturnUrl">Продолжить покупки</a>
+        @Html.ActionLink("Оформить заказ", "Checkout")
+    </p>
+</div>
+

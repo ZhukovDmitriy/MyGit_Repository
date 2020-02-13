@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище ProductsModelContainer" CdmEntityContainer="ProductsContext">
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="IsTypeOf(ProductsModel.Product)">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="TotalDescription" ColumnName="TotalDescription" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(ProductsModel.KeyboardsProduct)">
+        <MappingFragment StoreEntitySet="KeyboardsProducts">
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Sizes" ColumnName="Sizes" />
+          <ScalarProperty Name="WireLength" ColumnName="WireLength" />
+          <ScalarProperty Name="Backlight" ColumnName="Backlight" />
+          <ScalarProperty Name="ConnectionInterface" ColumnName="ConnectionInterface" />
+          <ScalarProperty Name="CountryMaker" ColumnName="CountryMaker" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(ProductsModel.SpeakersProduct)">
+        <MappingFragment StoreEntitySet="SpeakersProducts">
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Sizes" ColumnName="Sizes" />
+          <ScalarProperty Name="MobilityType" ColumnName="MobilityType" />
+          <ScalarProperty Name="FrequencyRrange" ColumnName="FrequencyRrange" />
+          <ScalarProperty Name="OutputPower" ColumnName="OutputPower" />
+          <ScalarProperty Name="BodyMaterial" ColumnName="BodyMaterial" />
+          <ScalarProperty Name="SourcePower" ColumnName="SourcePower" />
+          <ScalarProperty Name="AcousticsFormat" ColumnName="AcousticsFormat" />
+          <ScalarProperty Name="CountryMaker" ColumnName="CountryMaker" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
