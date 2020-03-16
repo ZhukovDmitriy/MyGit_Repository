@@ -19,3 +19,13 @@ G:\Hillel - Elementary C#\HW_Norm\hw_11_MySQL_Database\Persons_Data\Mydb\obj\Deb
 G:\Hillel - Elementary C#\HW_Norm\hw_11_MySQL_Database\Persons_Data\Mydb\obj\Debug\Mydb.csproj.CopyComplete
 G:\Hillel - Elementary C#\HW_Norm\hw_11_MySQL_Database\Persons_Data\Mydb\obj\Debug\Mydb.exe
 G:\Hillel - Elementary C#\HW_Norm\hw_11_MySQL_Database\Persons_Data\Mydb\obj\Debug\Mydb.pdb
+F:\MyProjects\C#_HomeTasks_Solutions_Hillel_IT_School\C# Elementary\hw_11_MySQL_Database\Persons_Data\Mydb\bin\Debug\Mydb.exe.config
+F:\MyProjects\C#_HomeTasks_Solutions_Hillel_IT_School\C# Elementary\hw_11_MySQL_Database\Persons_Data\Mydb\bin\Debug\Mydb.exe
+F:\MyProjects\C#_HomeTasks_Solutions_Hillel_IT_School\C# Elementary\hw_11_MySQL_Database\Persons_Data\Mydb\bin\Debug\Mydb.pdb
+F:\MyProjects\C#_HomeTasks_Solutions_Hillel_IT_School\C# Elementary\hw_11_MySQL_Database\Persons_Data\Mydb\bin\Debug\Google.Protobuf.dll
+F:\MyProjects\C#_HomeTasks_Solutions_Hillel_IT_School\C# Elementary\hw_11_MySQL_Database\Persons_Data\Mydb\bin\Debug\MySql.Data.xml
+F:\MyProjects\C#_HomeTasks_Solutions_Hillel_IT_School\C# Elementary\hw_11_MySQL_Database\Persons_Data\Mydb\obj\Debug\Mydb.csprojAssemblyReference.cache
+F:\MyProjects\C#_HomeTasks_Solutions_Hillel_IT_School\C# Elementary\hw_11_MySQL_Database\Persons_Data\Mydb\obj\Debug\Mydb.csproj.CoreCompileInputs.cache
+F:\MyProjects\C#_HomeTasks_Solutions_Hillel_IT_School\C# Elementary\hw_11_MySQL_Database\Persons_Data\Mydb\obj\Debug\Mydb.csproj.CopyComplete
+F:\MyProjects\C#_HomeTasks_Solutions_Hillel_IT_School\C# Elementary\hw_11_MySQL_Database\Persons_Data\Mydb\obj\Debug\Mydb.exe
+F:\MyProjects\C#_HomeTasks_Solutions_Hillel_IT_School\C# Elementary\hw_11_MySQL_Database\Persons_Data\Mydb\obj\Debug\Mydb.pdb
