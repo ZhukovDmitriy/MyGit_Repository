@@ -82,7 +82,8 @@ namespace CompDevices.WebUI.Controllers
                    repository.Products.Where(e => e.Category == category).Count()
                 },
 
-                CurrentCategory = category
+                CurrentCategory = category,
+                CurrentSortType = sortType
             };
 
             return View(model);

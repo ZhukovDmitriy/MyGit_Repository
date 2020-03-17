@@ -42,5 +42,5 @@
 </div>
 
 <div class="pager">
-    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x, category = Model.CurrentCategory }))
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x, category = Model.CurrentCategory, sortType = Model.CurrentSortType }))
 </div>
