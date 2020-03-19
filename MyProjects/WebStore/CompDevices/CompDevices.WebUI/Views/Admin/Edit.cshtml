@@ -44,7 +44,8 @@
             <p class="hiddenProp">@Html.EditorFor(m => Model.AttributeValues[i].SelectiveAttribute)</p>
             <p class="hiddenProp">@Html.EditorFor(m => Model.AttributeValues[i].AttributeID)</p>
             <p>
-                <label>@{Html.RenderPartial("AttributeNameView", Model.ProductAttributes[i]);}</label>
+                @*<label>@{Html.RenderPartial("AttributeNameView", Model.ProductAttributes[i]);}</label>*@
+                <label>@Html.DisplayFor(p => p.ProductAttributes[i].AttributeName)</label>                  <!-- Произвел рефакторинг строки 47 -->
                 @Html.EditorFor(m => Model.AttributeValues[i].Value)
             </p>
         }

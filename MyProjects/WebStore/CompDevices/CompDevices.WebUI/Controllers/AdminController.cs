@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using CompDevices.Domain.Abstract;
 using CompDevices.Domain.Entities;
 using CompDevices.WebUI.Models;
+using System.IO;
 
 namespace CompDevices.WebUI.Controllers
 {
@@ -58,6 +59,21 @@ namespace CompDevices.WebUI.Controllers
                     editModel.Products.ImageMimeType = image.ContentType;
                     editModel.Products.ImageData = new byte[image.ContentLength];
                     image.InputStream.Read(editModel.Products.ImageData, 0, image.ContentLength);
+                    //BinaryReader reader = new BinaryReader(image.InputStream);                    // Заменить строку 61 на две нижние (альтернативный метод)
+                    //editModel.Products.ImageData = reader.ReadBytes(image.ContentLength);
+                }
+                else
+                {
+                    if (editModel.Products.ProductID != 0 & editModel.Products.ImageData == null)
+                    {
+                        Product prod = repository.Products.FirstOrDefault(p => p.ProductID == editModel.Products.ProductID);
+
+                        if (prod != null & prod.ImageData != null)
+                        {
+                            editModel.Products.ImageMimeType = prod.ImageMimeType;
+                            editModel.Products.ImageData = prod.ImageData;
+                        }
+                    }
                 }
 
                 repository.SaveProduct(editModel);
