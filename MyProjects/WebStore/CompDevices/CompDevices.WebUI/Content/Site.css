@@ -575,6 +575,56 @@ div.pager {
     margin-left: 10px;
 }
 
+/* =================== */
+
+#detailImg:hover {
+    cursor: pointer;
+}
+
+.modalBackground {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+.modal {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    display: block;
+    width: 600px;
+    height: 600px;
+}
+
+.close {
+    padding-left: 570px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+    .close:hover {
+        font-weight: bold;
+        cursor: pointer;
+        color: white;
+    }
+
+/* ==================  */
+
 .detailProdBlock {
     width: 780px;
     height: 900px;

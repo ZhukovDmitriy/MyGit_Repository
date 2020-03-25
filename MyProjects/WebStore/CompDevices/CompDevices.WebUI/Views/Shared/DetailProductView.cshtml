@@ -9,7 +9,37 @@
         }
     </div>
 
-    <img class="detailProdImage" width="400" height="400" src="@Url.Action("GetImage", "Product", new { Model.ProductID })" />
+    <img class="detailProdImage" id="detailImg" width="400" height="400" src="@Url.Action("GetImage", "Product", new { Model.ProductID })" />
+
+    <div class="modalBackground" id="mBack">
+        <div class="modal" id="myModal">
+            <span class="close" onclick="document.getElementById('myModal').style.display='none'">
+            @*<span class="spanProdName">
+                @foreach (var p in Model.Products)
+                {
+                    @p.Brand @p.Model
+                }
+            </span>*@
+            &times;</span>
+            <img class="modal-content" id="img01" />
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        let img = document.getElementById('detailImg');
+        let modalBack = document.getElementById('mBack');
+        let modalImg = document.getElementById('img01');
+
+        img.onclick = function () {
+            modalBack.style.display = "block";
+            modalImg.src = this.src;
+        }
+
+        let span = document.getElementsByClassName('close')[0];
+        span.onclick = function () {
+            modalBack.style.display = "none";
+        }
+    </script>
 
     <div class="detailProdBuyButton">
         @using (Html.BeginForm("AddToCart", "Cart"))
