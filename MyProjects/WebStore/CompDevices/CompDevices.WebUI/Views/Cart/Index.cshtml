@@ -19,7 +19,14 @@
             @foreach (var line in Model.Cart.Lines)
             {
                 <tr>
-                    <td align="center">@line.Quantity</td>
+                    @*<td align="center">@line.Quantity</td>*@
+                    <td>
+                        <input class="cartNumber" type="number" min="1" value="@line.Quantity" readonly />
+                        <input class="btnCart" id="btnUp" type="button" title="Next" value="&and;"
+                               onclick="location.href='@Url.Action("AddToCart", "Cart", new { productID = line.Product.ProductID, returnUrl = Model.ReturnUrl })'" />
+                        <input class="btnCart" id="btnDown" type="button" title="Next" value="&or;"
+                               onclick="location.href='@Url.Action("RemoveElementFromCart", "Cart", new { productID = line.Product.ProductID, returnUrl = Model.ReturnUrl })'" />
+                    </td>
                     <td align="left">@line.Product.Description @line.Product.Brand @line.Product.Model</td>
                     <td align="right">@line.Product.Price грн</td>
                     <td align="right">@(line.Quantity * line.Product.Price) грн</td>

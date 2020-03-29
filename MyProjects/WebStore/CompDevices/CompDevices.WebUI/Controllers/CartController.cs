@@ -42,6 +42,19 @@ namespace CompDevices.WebUI.Controllers
             return RedirectToAction("Index", new { returnUrl });
         }
 
+        public RedirectToRouteResult RemoveElementFromCart(Cart cart, int productId, string returnUrl)
+        {
+            Product product = repository.Products
+                .FirstOrDefault(p => p.ProductID == productId);
+
+            if (product != null)
+            {
+                cart.RemoveOneItem(product, 1);
+            }
+
+            return RedirectToAction("Index", new { returnUrl });
+        }
+
         public RedirectToRouteResult RemoveFromCart(Cart cart, int productId, string returnUrl)
         {
             Product product = repository.Products

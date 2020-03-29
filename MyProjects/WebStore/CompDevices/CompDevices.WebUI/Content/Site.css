@@ -98,9 +98,8 @@ div#cart {
     div#cart p {
         text-align: center;
         float: right;
-        padding-right: 30px;
         margin: 0;
-        padding-right: 20px;
+        padding-right: 10px;
     }
 
 .hMenu > li:first-child {
@@ -746,6 +745,7 @@ div.pager {
         border-radius: 4px;
         width: 80px;
         height: 40px;
+        margin-top: 15px;
         color: white;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-size: 12pt;
@@ -775,6 +775,39 @@ div.pager {
         float: right;
         margin-right: 5px;
     }
+
+    /* ========================== */
+
+    .cartIndexBlock input.cartNumber {
+        float: left;
+        margin-top: 10px;
+        margin-left: 10px;
+        width: 35px;
+        height: 35px;
+        text-align: center;
+        font-size: 12pt;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .cartIndexBlock input.btnCart {
+        float: left;
+        width: 25px;
+        height: 25px;
+        margin-left: 55px;
+        cursor: pointer;
+    }
+
+    #btnUp {
+    }
+
+    #btnDown {
+        margin-top: 30px;
+    }
+
+input::-webkit-outer-spin-button,    
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
 
 /* ========================== */
 

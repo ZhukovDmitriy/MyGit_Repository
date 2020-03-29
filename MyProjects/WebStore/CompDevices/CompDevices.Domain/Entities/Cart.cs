@@ -36,6 +36,30 @@ namespace CompDevices.Domain.Entities
             }
         }
 
+        public void RemoveOneItem(Product product, int quantity)
+        {
+            CartLine line = lineCollection
+               .Where(p => p.Product.ProductID == product.ProductID)
+               .FirstOrDefault();
+
+            if (line != null)
+            {
+                if(line.Quantity == 1)
+                {
+                    lineCollection.RemoveAll(l => l.Product.ProductID == product.ProductID);
+                }
+
+                line.Quantity -= quantity;
+            }
+        }
+
+        public void RemoveItem(Product product, int quantity)
+        {
+            CartLine line = lineCollection
+                .Where(p => p.Product.ProductID == product.ProductID)
+                .FirstOrDefault();
+        }
+
         public void RemoveLine(Product product)
         {
             lineCollection.RemoveAll(l => l.Product.ProductID == product.ProductID);
