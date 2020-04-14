@@ -9,11 +9,53 @@
 <div class="sortOption">
     <select id="option" onchange="location = this.value;">
         <option value="">Сортировать...</option>
-        <option value="@Url.Action("List", "Product", new { category = Model.CurrentCategory, sortType = 1 })">Цены: по возрастанию</option>
-        <option value="@Url.Action("List", "Product", new { category = Model.CurrentCategory, sortType = 2 })">Цены: по убыванию</option>
-        <option value="@Url.Action("List", "Product", new { category = Model.CurrentCategory })">Исходная сортировка</option>
+        <option value="@Url.Action("List", "Product", new { category = Model.CurrentCategory, sortType = 1, filterPosition = Model.ActiveFilter, filterValue = Model.CurrentFilterValue })">Цены: по возрастанию</option>
+        <option value="@Url.Action("List", "Product", new { category = Model.CurrentCategory, sortType = 2, filterPosition = Model.ActiveFilter, filterValue = Model.CurrentFilterValue })">Цены: по убыванию</option>
+        <option value="@Url.Action("List", "Product", new { category = Model.CurrentCategory, filterPosition = Model.ActiveFilter })">Исходная сортировка</option>
     </select>
 </div>
+
+<div class="filter" id="myFilter">
+    @if (Model.ActiveFilter == false)
+    {
+        <a href="@Url.Action("List", "Product", new { category = Model.CurrentCategory, filterPosition = true})" style="color: white">
+            <p><img src="~/Content/Images/Filter.png" alt="Фильтр" /><span>Фильтры</span></p>
+        </a>
+    }
+    else
+    {
+        <a href="@Url.Action("List", "Product", new { category = Model.CurrentCategory, filterPosition = false})" style="color: white">
+            <p><img src="~/Content/Images/Filter.png" alt="Фильтр" /><span>Фильтры</span></p>
+        </a>
+    }
+</div>
+
+<script type="text/javascript">
+    let filter = document.getElementById('myFilter'),
+        categories = document.getElementById('categories'),
+        content = document.getElementById('content'),
+        cart = document.getElementById('cart');
+
+    var filterPos = @Html.Raw(Json.Encode(@Model.ActiveFilter));
+
+    if (filterPos == false) {
+        categories.style.display = "block";
+        content.style.marginTop = "0";
+        cart.style.marginBottom = "0";
+    } else {
+        categories.style.display = "none";
+        content.style.marginTop = "49px";
+        cart.style.marginBottom = "-49px";
+    }
+</script>
+
+
+@if (Model.ActiveFilter == true)
+{
+    <div class="filterBlock">
+        @{Html.RenderPartial("Filter");}
+    </div>
+}
 
 <div class="container">
     <div class="catalog">
@@ -42,5 +84,6 @@
 </div>
 
 <div class="pager">
-    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x, category = Model.CurrentCategory, sortType = Model.CurrentSortType }))
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List",
+    new { page = x, category = Model.CurrentCategory, sortType = Model.CurrentSortType, filterPosition = Model.ActiveFilter }))
 </div>

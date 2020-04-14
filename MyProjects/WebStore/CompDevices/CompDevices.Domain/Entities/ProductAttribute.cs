@@ -12,6 +12,7 @@ namespace CompDevices.Domain.Entities
         [Key]
         public int AttributeID { get; set; }
         public bool SelectiveAttribute { get; set; }
+        public bool FilterAttribute { get; set; }
         public string Category { get; set; }
         public string AttributeName { get; set; }
     }

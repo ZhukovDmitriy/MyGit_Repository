@@ -20,7 +20,7 @@ namespace CompDevices.WebUI.Controllers
 
         public int PageSize = 6;
 
-        public ViewResult List(string category, int sortType = default(int), int page = 1)
+        public ViewResult List(string category, int sortType = default(int), int page = 1, bool filterPosition = false, string filterValue = null)
         {
             ProductsListViewModel model = new ProductsListViewModel();
 
@@ -83,8 +83,41 @@ namespace CompDevices.WebUI.Controllers
                 },
 
                 CurrentCategory = category,
-                CurrentSortType = sortType
+                CurrentSortType = sortType,
+                ActiveFilter = filterPosition,
+                CurrentFilterValue = filterValue,
+
+                ProductAttributes = repository.ProductAttributes.Where(p => p.FilterAttribute == true && p.Category == category),
+                SelectedFilterValues = repository.AttributeValues.Where(p => p.FilterAttribute == true && p.Category == category).OrderBy(p => p.Value).ToList()
             };
+
+            if (filterValue != null)
+            {
+                model.FilteredValues = repository.AttributeValues
+                     .Where(p => p.Value == filterValue && p.Category == category && p.FilterAttribute == true)
+                     .OrderBy(p => p.ProductID);
+
+                model.Products = repository.Products.Where(b => model.FilteredValues.Any(a => a.ProductID == b.ProductID))
+                    .OrderBy(p => p.ProductID)
+                    .Skip((page - 1) * PageSize)
+                    .Take(PageSize);
+
+                if (sortType == 1)
+                {
+                    model.Products = model.Products.OrderBy(p => p.Price).Skip((page - 1) * PageSize).Take(PageSize);
+                }
+                else if (sortType == 2)
+                {
+                    model.Products = model.Products.OrderByDescending(p => p.Price).Skip((page - 1) * PageSize).Take(PageSize);
+                }
+
+                model.PagingInfo = new PagingInfo
+                {
+                    CurrentPage = page,
+                    ItemsPerPage = PageSize,
+                    TotalItems = model.Products.Count()
+                };
+            }
 
             return View(model);
         }

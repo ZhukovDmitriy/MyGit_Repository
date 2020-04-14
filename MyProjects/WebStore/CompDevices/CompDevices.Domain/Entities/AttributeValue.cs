@@ -13,6 +13,8 @@ namespace CompDevices.Domain.Entities
         public int ID { get; set; }
         public int ProductID { get; set; }
         public bool SelectiveAttribute { get; set; }
+        public bool FilterAttribute { get; set; }
+        public string Category { get; set; }
         public int AttributeID { get; set; }
         public string Value { get; set; }
     }

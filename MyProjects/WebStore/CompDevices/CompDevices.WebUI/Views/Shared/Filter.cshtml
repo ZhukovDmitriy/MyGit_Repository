@@ -1,0 +1,28 @@
+﻿@model CompDevices.WebUI.Models.ProductsListViewModel
+
+<div class="categoryReturnBtn" id="categoryBtn">
+    <a href="@Url.Action("List", "Product", new { category = Model.CurrentCategory, filterPosition = false})" style="color: white">
+        <p><img src="~/Content/Images/MenuIcon.png" alt="Фильтр" /><span>Категории</span></p>
+    </a>
+</div>
+
+@foreach (var p in Model.ProductAttributes)
+{
+    <p class="filterProp">@p.AttributeName</p>
+
+    string temp = string.Empty;
+
+    foreach (var c in Model.SelectedFilterValues)
+    {
+        if (p.AttributeID == c.AttributeID && temp != c.Value)
+        {
+            <div class="filterLine">
+                <p class="filterValue">@c.Value</p>
+                <input type="radio" class="radioFilterBtn" value="@Url.Action("List", "Product",
+                new { category = Model.CurrentCategory, sortType = Model.CurrentSortType, filterPosition = Model.ActiveFilter, filterValue = c.Value })" onchange="location = this.value;" />
+            </div>
+            temp = c.Value;
+        }
+    }
+}
+
