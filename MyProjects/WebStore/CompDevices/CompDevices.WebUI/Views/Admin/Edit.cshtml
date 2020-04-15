@@ -42,10 +42,12 @@
             <p class="hiddenProp">@Html.EditorFor(m => Model.AttributeValues[i].ID)</p>
             <p class="hiddenProp">@Html.EditorFor(m => Model.AttributeValues[i].ProductID)</p>
             <p class="hiddenProp">@Html.EditorFor(m => Model.AttributeValues[i].SelectiveAttribute)</p>
+            <p class="hiddenProp">@Html.EditorFor(m => Model.AttributeValues[i].FilterAttribute)</p>
+            <p class="hiddenProp">@Html.EditorFor(m => Model.AttributeValues[i].Category)</p>
             <p class="hiddenProp">@Html.EditorFor(m => Model.AttributeValues[i].AttributeID)</p>
             <p>
                 @*<label>@{Html.RenderPartial("AttributeNameView", Model.ProductAttributes[i]);}</label>*@
-                <label>@Html.DisplayFor(p => p.ProductAttributes[i].AttributeName)</label>                  <!-- Произвел рефакторинг строки 47 -->
+                <label>@Html.DisplayFor(p => p.ProductAttributes[i].AttributeName)</label>                  <!-- Произвел рефакторинг строки 49 -->
                 @Html.EditorFor(m => Model.AttributeValues[i].Value)
             </p>
         }

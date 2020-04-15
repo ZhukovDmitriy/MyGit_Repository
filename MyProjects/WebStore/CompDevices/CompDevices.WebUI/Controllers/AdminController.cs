@@ -101,6 +101,8 @@ namespace CompDevices.WebUI.Controllers
                      select new
                      {
                          p.SelectiveAttribute,
+                         p.FilterAttribute,
+                         p.Category,
                          p.AttributeID
                      }).ToList()
                  .Select(p => new AttributeValue
@@ -108,6 +110,8 @@ namespace CompDevices.WebUI.Controllers
                      ID = 0,
                      ProductID = 0,
                      SelectiveAttribute = p.SelectiveAttribute,
+                     FilterAttribute = p.FilterAttribute,
+                     Category = p.Category,
                      AttributeID = p.AttributeID,
                      Value = null
                  }).ToList();
