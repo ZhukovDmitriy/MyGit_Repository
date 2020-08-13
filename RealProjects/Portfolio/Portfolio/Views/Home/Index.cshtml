@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/Site.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="header">@{Html.RenderPartial("Header");}</div>
+        <div class="about-me">@{Html.RenderPartial("AboutMe");}</div>
+        <div class="advantages">@{Html.RenderPartial("Advantages");}</div>
+        <div class="skills">@{Html.RenderPartial("Skills");}</div>
+        <div class="my-projects">@{Html.RenderAction("ProjectsList", "Project");}</div>
+        <div class="services">@{Html.RenderPartial("Services");}</div>
+        <div class="contacts">@{Html.RenderAction("Checkout", "Form");}</div>
+    </div>
+</body>
+</html>

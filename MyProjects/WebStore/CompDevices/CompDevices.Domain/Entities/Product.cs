@@ -30,7 +30,7 @@ namespace CompDevices.Domain.Entities
         [Range(0.01, double.MaxValue, ErrorMessage = "Пожалуйста введите положительну цену на товар!")]
         public decimal Price { get; set; }
 
-        [Required(ErrorMessage = "Пожалйста введите категорию товара!")]
+        [Required(ErrorMessage = "Пожалуйста введите категорию товара!")]
         public string Category { get; set; }
 
         public byte[] ImageData { get; set; }

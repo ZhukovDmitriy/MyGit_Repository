@@ -1,0 +1,72 @@
+﻿@model Portfolio.Domain.Entities.ShippingDetails
+
+<div class="title-contacts" id="cont-link">
+    <span>Контакты</span>
+
+    @if (TempData["Message"] != null)
+    {
+        <div class="order-report" id="report">
+            <p>Сообщение успешно отправленно!</p>
+            <p>
+                <br>@TempData["Message"], спасибо за оставленную заявку!
+                <br>Я свяжусь с вами в ближайшее время...
+            </p>
+        </div>
+    }
+
+    @if (TempData["MessageError"] != null)
+    {
+        <div class="order-report" id="report">
+            <p>@TempData["MessageError"]</p>
+            <p>
+                <br>Проверьте корректность вводимых данных и повторите попытку!
+                <br>Заполните все поля!
+            </p>
+        </div>
+    }
+
+</div>
+
+<div class="form-block">
+    <div class="contact-form">
+        @using (Html.BeginForm("Checkout", "Form"))
+        {
+            @Html.ValidationSummary()
+
+            <p class="request"><span>Оставить заявку</span></p>
+            <hr noshade />
+            <p class="request-text">
+                Оставте заявку и я перезвоню вам
+                <span class="contacts-break-line"></span> в ближайшее время
+            </p>
+            <div>
+                <p class="field">Ваше имя:</p>
+                @Html.EditorFor(x => x.Name)
+            </div>
+            <div>
+                <p class="field">Ваш номер телефона:</p>
+                @Html.EditorFor(x => x.Phone)
+            </div>
+            <div>
+                <p class="field">Сообщение:</p>
+                @Html.EditorFor(x => x.Message,
+               additionalViewData: new { htmlAttributes = new { @placeholder = " Пожалуйста опишите необходимую услугу..." } })
+            </div>
+            <input class="submit-button" type="submit" value="Отправить" />
+        }
+    </div>
+</div>
+<div class="break-line"></div>
+<div class="contacts-data">
+    <div class="datas">
+        <div><img src="~/Content/Images/logo-cell-phone.png" width="40" />+380 (50) 534-34-30</div>
+        <div><img src="~/Content/Images/logo-Email.png" width="50" />MyEmail@gmail.com</div>
+        <div><img src="~/Content/Images/logo-viber.png" width="50" /> Viber</div>
+        <div><img src="~/Content/Images/logo-telegram.png" width="50" /> Telegram</div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var element = document.getElementById('report');
+    element.scrollIntoView({ block: "center" });
+</script>
