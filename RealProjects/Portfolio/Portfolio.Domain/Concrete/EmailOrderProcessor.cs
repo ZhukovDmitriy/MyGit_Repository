@@ -12,13 +12,13 @@ namespace Portfolio.Domain.Concrete
     public class EmailSettings
     {
         public string MailToAddress = "zhukov160288@gmail.com";
-        public string MailFromAddress = "code4net@gmail.com";
+        public string MailFromAddress = "code4net@user11007.realhost-free.net";
         public bool UseSsl = true;
-        public string UserName = "MySmtpUsername";
-        public string Password = "MySmtpPassword";
-        public string ServerName = "smtp.example.com";
+        public string UserName = "Dmitriy";
+        public string Password = "Dima32167_";
+        public string ServerName = "scp.realhost.pro";
         public int ServerPort = 587;
-        public bool WriteAsFile = true;
+        public bool WriteAsFile = false;
         public string FileLocation = @"d:\portfolio-message";
     }
 
