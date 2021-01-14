@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Portfolio.Domain.Entities;
 using Portfolio.Domain.Models;
+using Portfolio.Domain.Abstract;
 
 namespace Portfolio.Domain.Concrete
 {
-    public class EFProjectRepository
+    public class EFProjectRepository : IProjectRepository
     {
         private EFDbContext context = new EFDbContext();
 

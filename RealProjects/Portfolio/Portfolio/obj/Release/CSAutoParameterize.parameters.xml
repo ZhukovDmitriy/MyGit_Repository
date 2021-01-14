@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Строка подключения в web.config, используемая приложением для доступа к базе данных." defaultValue="Data Source=scp.realhost.com.ua;Initial catalog=db88;User ID=db88user;Password=Dima32167_;" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="F:\\MyProjects\\RealProjects\\Portfolio\\Portfolio\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
-  </parameter>
-  <parameter name="Portfolio.Domain.Concrete.EFDbContext-Web.config Connection String" description="Portfolio.Domain.Concrete.EFDbContext Строка подключения в web.config, используемая приложением для доступа к базе данных." defaultValue="Portfolio.Domain.Concrete.EFDbContext_ConnectionString" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="F:\\MyProjects\\RealProjects\\Portfolio\\Portfolio\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Portfolio.Domain.Concrete.EFDbContext']/@connectionString" />
-  </parameter>
-</parameters>

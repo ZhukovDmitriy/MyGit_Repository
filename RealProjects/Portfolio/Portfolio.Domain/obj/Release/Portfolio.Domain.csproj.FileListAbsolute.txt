@@ -28,3 +28,4 @@ F:\MyProjects\RealProjects\Portfolio\Portfolio.Domain\obj\Release\Portfolio.Doma
 F:\MyProjects\RealProjects\Portfolio\Portfolio.Domain\obj\Release\Portfolio.Domain.csproj.CopyComplete
 F:\MyProjects\RealProjects\Portfolio\Portfolio.Domain\obj\Release\Portfolio.Domain.dll
 F:\MyProjects\RealProjects\Portfolio\Portfolio.Domain\obj\Release\Portfolio.Domain.pdb
+F:\MyProjects\RealProjects\Portfolio\Portfolio.Domain\obj\Release\Portfolio.Domain.csprojAssemblyReference.cache

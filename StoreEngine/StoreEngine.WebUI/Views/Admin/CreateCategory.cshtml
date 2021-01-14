@@ -1,0 +1,117 @@
+﻿@model StoreEngine.Domain.Entities.Category
+@{
+    ViewBag.Title = "Admin: Create Category";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Creating a new category</h2>
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "creatingForm" }))
+{
+    @Html.EditorForModel()
+
+    <input type="button" id="add-attribute" value="Add Attribute" onclick="addAttribute(); " />
+}
+<br /><input class="submit-btn" type="submit" form="creatingForm" value="Create" onclick="return ValidateForm();" />
+
+<script type="text/javascript">
+
+    // Функция добавляет элемент div на страницу, путем копирования скрытого элемента div ( класса reserveAttribute )
+    // При добавлении элемента на страницу, задает ему новый класс и делает видимым для пользователя
+    // Также задает тегу input новый класс для дальнейшего сбора данных и отправки этих данных формой.
+    function addAttribute() {
+
+        var attribute = document.getElementsByClassName('reserveAttribute')[0].cloneNode(true);
+        attribute.style.display = 'block';
+        attribute.className = "newAttribute";
+
+        var attributeChild = attribute.getElementsByTagName('input')[2];
+        attributeChild.className = "inputField";
+
+        var form = document.getElementsByTagName("form")[0];
+        form.appendChild(attribute);
+    }
+
+    // Функция принимает родительский элемент div, класса newAttribute
+    // Далее со страницы получает массив всех элементов этого-же класса div.newAttribute
+    // В цикле for сравнивает полученный параметр (элемент div) с каждым элементом в массиве на равенство,
+    // тем самым находя позицию необходимого элемента в массиве (переменная [i])
+    // На основании известной переменной, ищет в блоках div соответсвующий input[i]
+    // Далее осуществляет перестановку значний input в соотвествии со вторым параметром этой функции
+    function Reverse(el, param) {
+
+        var all = document.getElementsByClassName('newAttribute');
+
+        for (var i = 0; i < all.length; i++) {
+
+            if (all[i] == el) {
+
+                //alert("index " + i);
+                //break;
+
+                var currentField = document.getElementsByClassName('inputField')[i];
+
+                if (param == 1) {
+                    if (i == 0) {
+                        break;
+                    }
+                    var moveTo = document.getElementsByClassName('inputField')[i - 1];
+                }
+                if (param == 2) {
+                    if (i == all.length - 1) {
+                        break;
+                    }
+                    var moveTo = document.getElementsByClassName('inputField')[i + 1];
+                }
+
+                var temp = currentField.value;
+                currentField.value = moveTo.value;
+                moveTo.value = temp;
+            }
+        }
+    }
+
+    function ValidateForm() {
+
+        var categoryCheckedElm = document.getElementsByClassName('text-box')[0];
+        var allCheckedElm = document.getElementsByClassName('inputField');
+
+        if (categoryCheckedElm.value == '') {
+
+            alert('Enter the category name!');
+
+            var invalidForm = true;
+        }
+
+        for (var i = 0; i < allCheckedElm.length; i++) {
+
+            if (allCheckedElm[i].value == '') {
+
+                alert('Enter all empties attributes!');
+
+                var invalidForm = true;
+
+                break;
+            }
+        }
+
+        if (invalidForm) {
+            return false;
+        }
+    }
+
+</script>
+
+@*Скрытый блок, для создания полей ввода для новых атрибутов*@
+<div class="reserveAttribute" style="display: none;">
+    <br />
+    <input type="button" value="&and;" onclick="Reverse(this.parentNode, 1);" />
+    <input type="button" value="&or;" onclick="Reverse(this.parentNode, 2);" />
+    <input name="attribute" />
+    <button class ="delete-btn" onclick="this.parentNode.parentNode.removeChild(this.parentNode);">x</button>
+</div>
+
+
+
+
+

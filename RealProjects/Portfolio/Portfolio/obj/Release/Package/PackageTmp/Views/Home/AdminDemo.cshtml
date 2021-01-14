@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/AdminDemo.css" type="text/css" rel="stylesheet" />
+    <title>AdminDemo</title>
+</head>
+<body>
+    <div>
+        <img class="myScreens" src="~/Content/Images/screen_1.png" />
+        <img class="myScreens" src="~/Content/Images/screen_2.png" />
+        <img class="myScreens" src="~/Content/Images/screen_3.png" />
+        <img class="myScreens" src="~/Content/Images/screen_4.png" />
+
+        <a class="prev" onclick="plusScreen(-1)">&#10094</a>
+        <a class="next" onclick="plusScreen(1)">&#10095</a>
+
+        <div class="dots-container">
+            @for (int i = 1; i <= 4; i++)
+            {
+                <span class="dot" onclick="currentScreen(@i)"></span>
+            }
+        </div>
+    </div>
+
+    <script type="text/javascript">
+
+        document.body.style.overflow = 'hidden';
+
+        var screenIndex = 1;
+        ShowScreens(screenIndex);
+
+        function plusScreen(n) {
+            ShowScreens(screenIndex += n);
+        }
+
+        function currentScreen(n) {
+            ShowScreens(screenIndex = n);
+        }
+
+        function ShowScreens(n) {
+
+            var screens = document.getElementsByClassName('myScreens');
+            var dots = document.getElementsByClassName('dot');
+
+            if (n > screens.length) {
+                screenIndex = 1
+            }
+
+            if (n < 1) {
+                screenIndex = screens.length
+            }
+
+            for (var i = 0; i < screens.length; i++) {
+                screens[i].style.display = "none";
+            }
+
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace("active", "");
+            }
+
+            screens[screenIndex - 1].style.display = "block";
+            dots[screenIndex - 1].className += " active";
+        }
+
+    </script>
+
+</body>
+</html>

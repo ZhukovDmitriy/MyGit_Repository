@@ -19,5 +19,10 @@ namespace Portfolio.Controllers
         {
             View(actionName).ExecuteResult(ControllerContext);
         }
+
+        public ViewResult AdminDemo()
+        {
+            return View();
+        }
     }
 }

@@ -103,3 +103,7 @@ F:\MyProjects\RealProjects\Portfolio\Portfolio\obj\Debug\Portfolio.WebUI.csproj.
 F:\MyProjects\RealProjects\Portfolio\Portfolio\obj\Debug\Portfolio.WebUI.csproj.CopyComplete
 F:\MyProjects\RealProjects\Portfolio\Portfolio\obj\Debug\Portfolio.dll
 F:\MyProjects\RealProjects\Portfolio\Portfolio\obj\Debug\Portfolio.pdb
+F:\MyProjects\RealProjects\Portfolio\Portfolio\bin\Ninject.dll
+F:\MyProjects\RealProjects\Portfolio\Portfolio\bin\Ninject.xml
+F:\MyProjects\RealProjects\Portfolio\Portfolio\bin\System.Net.Http.Formatting.dll
+F:\MyProjects\RealProjects\Portfolio\Portfolio\bin\System.Net.Http.Formatting.xml

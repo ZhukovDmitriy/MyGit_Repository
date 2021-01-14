@@ -7,17 +7,24 @@ using Portfolio.Domain.Concrete;
 using Portfolio.Domain.Entities;
 using Portfolio.Models;
 using Portfolio.Domain.Models;
+using Portfolio.Domain.Abstract;
 
 namespace Portfolio.Controllers
 {
     [Authorize]
     public class AdminController : Controller
     {
-        EFProjectRepository repository;
+        //EFProjectRepository repository;
+        private IProjectRepository repository;
+
+        public AdminController(IProjectRepository projectRepository)
+        {
+            repository = projectRepository;
+        }
 
         public ViewResult Index()
         {
-            repository = new EFProjectRepository();
+            //repository = new EFProjectRepository();
 
             ProjectViewModel projectModel = new ProjectViewModel
             {
@@ -30,7 +37,7 @@ namespace Portfolio.Controllers
 
         public ViewResult Edit(int projectID)
         {
-            repository = new EFProjectRepository();
+            //repository = new EFProjectRepository();
 
             ProjectEditModel editModel = new ProjectEditModel
             {
@@ -55,7 +62,7 @@ namespace Portfolio.Controllers
 
         public ActionResult Delete(int projectID)
         {
-            repository = new EFProjectRepository();
+            //repository = new EFProjectRepository();
 
             Project deleteProject = repository.DeleteProject(projectID);
             if (deleteProject != null)
@@ -68,7 +75,7 @@ namespace Portfolio.Controllers
 
         public ActionResult DeleteImg(int imageId)
         {
-            repository = new EFProjectRepository();
+            //repository = new EFProjectRepository();
 
             Image deleteImg = repository.DeleteImage(imageId);
             if (deleteImg != null)
@@ -82,7 +89,7 @@ namespace Portfolio.Controllers
         [HttpPost]
         public ActionResult Edit(ProjectEditModel editModel, HttpPostedFileBase img)
         {
-            repository = new EFProjectRepository();
+            //repository = new EFProjectRepository();
 
             if (ModelState.IsValid)
             {

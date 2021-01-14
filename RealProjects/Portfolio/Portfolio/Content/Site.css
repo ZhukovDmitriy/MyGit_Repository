@@ -37,7 +37,8 @@ div.logo-text {
     div.logo-text div {
         display: inline-block;
         margin-left: 5%;
-        margin-top: 3%;
+        /*margin-top: 3%;*/
+        margin-top: 4%;
     }
 
     div.logo-text p {
@@ -57,31 +58,26 @@ div.logo-text {
         }
 
 div.menu-block {
-    flex: 30%;
+    flex: 40%;
     flex-grow: 3;
     height: 40%;
 }
 
-div.links {
-    width: 100%;
-    height: 20%;
+div.links p {
+    display: inline;
+    float: right;
+    font-size: 150%;
+    padding-right: 5%;
 }
 
-    div.links p {
-        display: inline;
-        float: right;
-        padding-right: 5%;
-        font-size: 150%;
+    div.links p a {
+        text-decoration: none;
+        color: white;
     }
 
-        div.links p a {
-            text-decoration: none;
-            color: white;
+        div.links p a:hover {
+            border-bottom: 1px solid white;
         }
-
-            div.links p a:hover {
-                border-bottom: 1px solid white;
-            }
 
 div.break-line {
     width: 100%;
@@ -167,14 +163,20 @@ span.header-break-line {
     }
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1080px) {
     div.contact-me-button {
         width: 34%;
         margin-left: 33%;
     }
 
     div.links p {
-        font-size: 130%;
+        font-size: 140%;
+    }
+}
+
+@media (max-width: 720px) {
+    div.links p {
+        font-size: 120%;
     }
 }
 
@@ -403,10 +405,11 @@ div.title-front-end, div.title-back-end {
 
     div.title-front-end p, div.title-back-end p {
         border: 3px dashed black;
-        width: 25%;
+        width: 30%;
         margin-left: auto;
         margin-right: auto;
-        margin-bottom: 25px;
+        padding-left: 5%;
+        padding-right: 5%;
     }
 
 div.back-end {
@@ -474,33 +477,18 @@ div.floor-skills {
     div.title-front-end, div.title-back-end {
         font-size: 160%;
     }
-
-        div.title-front-end p, div.title-back-end p {
-            padding-left: 2%;
-            padding-right: 2%;
-        }
 }
 
 @media (max-width: 1400px) {
     div.title-front-end, div.title-back-end {
         font-size: 140%;
     }
-
-        div.title-front-end p, div.title-back-end p {
-            padding-left: 2%;
-            padding-right: 2%;
-        }
 }
 
 @media (max-width: 1300px) {
     div.title-front-end, div.title-back-end {
         font-size: 120%;
     }
-
-        div.title-front-end p, div.title-back-end p {
-            padding-left: 2%;
-            padding-right: 2%;
-        }
 
     div.html-logo img, div.css-logo img, div.js-logo img, div.adaptive-logo img {
         width: 80%;
@@ -523,11 +511,12 @@ div.floor-skills {
     div.title-front-end, div.title-back-end {
         font-size: 100%;
     }
+}
 
-        div.title-front-end p, div.title-back-end p {
-            padding-left: 2%;
-            padding-right: 2%;
-        }
+@media (max-width: 1080px) {
+    div.asp-logo img {
+        margin-top: 0;
+    }
 }
 
 /* ProjectsList view styles */
@@ -735,19 +724,13 @@ span.active {
     }
 }
 
-@media (max-height: 900px) {
-    div.mySlides img {
-        width: 80%;
-    }
-}
-
 @media (max-width: 1024px) {
     div.mySlides img {
         width: 100%;
     }
 }
 
-@media (min-height: 1280px) {
+@media (max-width: 1080px) {
     div.mySlides img {
         width: 80%;
         position: absolute;
@@ -761,18 +744,34 @@ span.active {
     }
 
     div.modal-description span {
-        left: 92%;
+        left: 90%;
+        font-size: 700%;
+    }
+
+    div.modal-description p {
+        font-size: 200%;
+    }
+
+    a.prev {
+        left: 3%;
+        font-size: 500%
+    }
+
+    a.next {
+        left: 93%;
+        font-size: 500%
+    }
+
+    span.dot {
+        width: 40px;
+        height: 40px;
+        margin: 0 8px;
     }
 }
 
-@media (min-width: 2000px) {
+@media (max-height: 900px) {
     div.mySlides img {
-        width: 40%;
-        position: absolute;
-        top: 50%;
-        left: 30%;
-        right: 30%;
-        transform: translate(0, -50%);
+        width: 80%;
     }
 }
 
@@ -792,6 +791,17 @@ span.active {
 
     div.modal-description p {
         display: block;
+    }
+}
+
+@media (min-width: 2000px) {
+    div.mySlides img {
+        width: 40%;
+        position: absolute;
+        top: 50%;
+        left: 30%;
+        right: 30%;
+        transform: translate(0, -50%);
     }
 }
 
@@ -1022,6 +1032,7 @@ div.form-block {
 div.contact-form {
     color: white;
     margin-left: 10%;
+    margin-right: 5%;
 }
 
     div.contact-form p.request {
@@ -1106,17 +1117,6 @@ div.datas {
         vertical-align: middle;
     }
 
-span.contacts-break-line {
-    display: none;
-}
-
-@media (max-width: 1600px) {
-    span.contacts-break-line {
-        display: block;
-        width: 100%;
-    }
-}
-
 /* Additionals Tegs */
 
 div.header div.lift-up {
@@ -1143,6 +1143,20 @@ div.header div.lift-up {
         background-color: crimson;
         opacity: 0.75;
     }
+
+@media (max-width: 1080px) {
+    div.header div.lift-up {
+        right: 3%;
+        bottom: 1.5%;
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
+    }
+
+        div.header div.lift-up p {
+            margin: 35%;
+        }
+}
 
 /* Adaptive @media */
 

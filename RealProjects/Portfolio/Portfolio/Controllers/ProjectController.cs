@@ -6,16 +6,23 @@ using System.Web.Mvc;
 using Portfolio.Domain.Entities;
 using Portfolio.Domain.Concrete;
 using Portfolio.Models;
+using Portfolio.Domain.Abstract;
 
 namespace Portfolio.Controllers
 {
     public class ProjectController : Controller
     {
-        EFProjectRepository repository;
+        //EFProjectRepository repository;
+        private IProjectRepository repository;
+
+        public ProjectController(IProjectRepository projectRepository)
+        {
+            repository = projectRepository;
+        }
 
         public ViewResult ProjectsList()
         {
-            repository = new EFProjectRepository();
+            //repository = new EFProjectRepository();
 
             ProjectViewModel projectModel = new ProjectViewModel()
             {
@@ -28,7 +35,7 @@ namespace Portfolio.Controllers
 
         public FileContentResult GetImage(int imageId)
         {
-            repository = new EFProjectRepository();
+            //repository = new EFProjectRepository();
 
             Image image = repository.Images.FirstOrDefault(c => c.ImageID == imageId);
             if (image != null)

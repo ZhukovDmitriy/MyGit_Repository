@@ -1,0 +1,70 @@
+﻿@model StoreEngine.WebUI.Models.AdminIndexViewModel
+
+@{
+    ViewBag.Title = "CategoriesList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Categories List</h2>
+
+<button>@Html.ActionLink("Create a new category", "CreateCategory")</button>
+
+@if (Model.Categories.Count() != 0)
+{
+    <table class="grid">
+        <tr>
+            <th>Number</th>
+            <th>Category name</th>
+            <th>Actions</th>
+        </tr>
+
+        @{
+            int i = 0;
+
+            foreach (var item in Model.Categories)
+            {
+                i++;
+
+                <tr>
+                    <td>@i</td>
+                    <td>@Html.ActionLink(item.Name, "EditCategory", new { item.CategoryID })</td>
+                    <td>
+                        @using (Html.BeginForm("RemoveCategory", "Admin", FormMethod.Post, new { onsubmit = "return AttentionDelete()" }))
+                        {
+                            @Html.Hidden("CategoryID", item.CategoryID)
+
+                            <input type="submit" value="Delete" />
+                        }
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+}
+else
+{
+    <p>At the moment you don't have any categories! You may create them rigth now!</p>
+}
+
+<script type="text/javascript">
+
+    function AttentionDelete() {
+
+        var attention = 'Attention, this category and all its attributes will be deleted. '
+            + 'All existing products in this category will also be completely removed from the database!';
+        var areYouSure = 'The selected category and all its products will be deleted permanently!'
+            + ' Are you sure you want to delete this category?';
+
+        alert(attention);
+
+        const result = confirm(areYouSure);
+
+        if (result) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+</script>

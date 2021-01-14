@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Portfolio.Infrastructure;
+using Portfolio.Infrastructure.Concrete;
 
 namespace Portfolio
 {
@@ -16,6 +18,8 @@ namespace Portfolio
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            //DependencyResolver.SetResolver(new NinjectDependencyResolver());
+            ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory());
         }
     }
 }

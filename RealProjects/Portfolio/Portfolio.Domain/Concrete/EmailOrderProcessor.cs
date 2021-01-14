@@ -11,12 +11,12 @@ namespace Portfolio.Domain.Concrete
 {
     public class EmailSettings
     {
-        public string MailToAddress = "zhukov160288@gmail.com";
-        public string MailFromAddress = "code4net@user11007.realhost-free.net";
-        public bool UseSsl = true;
-        public string UserName = "Dmitriy";
+        public string MailToAddress = "webdev1602@gmail.com";
+        public string MailFromAddress = "zhukov-dmitriy@code4net.com.ua";
+        public bool UseSsl = false;
+        public string UserName = "zhukov-dmitriy@code4net.com.ua";
         public string Password = "Dima32167_";
-        public string ServerName = "scp.realhost.pro";
+        public string ServerName = "mail.code4net.com.ua";
         public int ServerPort = 587;
         public bool WriteAsFile = false;
         public string FileLocation = @"d:\portfolio-message";
@@ -50,13 +50,8 @@ namespace Portfolio.Domain.Concrete
 
                 StringBuilder body = new StringBuilder()
 
-                    .AppendLine("A new order has been submited")
+                    .AppendLine("Получен новый заказ!")
                     .AppendLine("---")
-                    .AppendLine("Items:");
-
-                body.AppendFormat("Total order value: ")
-                    .AppendLine("---")
-                    .AppendLine("Ship to: ")
                     .AppendLine(shippingInfo.Name)
                     .AppendLine(shippingInfo.Phone)
                     .AppendLine(shippingInfo.Message)
@@ -65,7 +60,7 @@ namespace Portfolio.Domain.Concrete
                 MailMessage mailMessage = new MailMessage(
                     emailSettings.MailFromAddress,
                     emailSettings.MailToAddress,
-                    "New order submited!",
+                    "Получен новый заказ!",
                     body.ToString());
 
                 if (emailSettings.WriteAsFile)
