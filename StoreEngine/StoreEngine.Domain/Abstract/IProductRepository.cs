@@ -12,8 +12,12 @@ namespace StoreEngine.Domain.Abstract
         IQueryable<Product> Products { get; }
         IQueryable<Category> Categories { get; }
         IQueryable<Entities.Attribute> Attributes { get; }
+        IQueryable<AttributeValue> AttributeValues { get; }
+        IQueryable<Image> Images { get; }
 
-        void SaveProduct(Product product);
+        void SaveProduct(Product product, Category category);
+        void CreateAttributesValues(List<string> attributeValue);
+        void SaveAttributesValues(int productID, List<string> attrbuteValue);
         Product DeleteProduct(int productID);
         Category DeleteCategory(int categoryID);
         void SaveCategory(Category category);
@@ -21,5 +25,6 @@ namespace StoreEngine.Domain.Abstract
         void SaveAttributes(IEnumerable<Entities.Attribute> attributes, Category category);
         void SaveAttributes(List<string> attribute, Category category);
         void SaveAttributesPosition(IEnumerable<Entities.Attribute> attributes, Category category);
+        void SaveImages(Product product, List<Image> images);
     }
 }

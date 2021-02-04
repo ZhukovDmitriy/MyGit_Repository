@@ -19,12 +19,37 @@ namespace StoreEngine.WebUI.Controllers
             repository = productRepository;
         }
 
+        //public ViewResult List(string category, int page = 1)
+        //{
+        //    ProductsListViewModel model = new ProductsListViewModel
+        //    {
+        //        Products = repository.Products
+        //        .Where(p => category == null || p.Category == category)
+        //        .OrderBy(p => p.ProductID)
+        //        .Skip((page - 1) * PageSize)
+        //        .Take(PageSize),
+
+        //        PagingInfo = new PagingInfo
+        //        {
+        //            CurrentPage = page,
+        //            ItemsPerPage = PageSize,
+        //            TotalItems = category == null ?
+        //            repository.Products.Count() :
+        //            repository.Products.Where(e => e.Category == category).Count()
+        //        },
+
+        //        CurrentCategory = category
+        //    };
+
+        //    return View(model);
+        //}
+
         public ViewResult List(string category, int page = 1)
         {
             ProductsListViewModel model = new ProductsListViewModel
             {
                 Products = repository.Products
-                .Where(p => category == null || p.Category == category)
+                .Where(p => category == null)
                 .OrderBy(p => p.ProductID)
                 .Skip((page - 1) * PageSize)
                 .Take(PageSize),
@@ -33,9 +58,7 @@ namespace StoreEngine.WebUI.Controllers
                 {
                     CurrentPage = page,
                     ItemsPerPage = PageSize,
-                    TotalItems = category == null ?
-                    repository.Products.Count() :
-                    repository.Products.Where(e => e.Category == category).Count()
+                    TotalItems = repository.Products.Count()
                 },
 
                 CurrentCategory = category
@@ -44,13 +67,13 @@ namespace StoreEngine.WebUI.Controllers
             return View(model);
         }
 
-        public FileContentResult GetImage(int productId)
+        public FileContentResult GetImage(int imageID)
         {
-            Product prod = repository.Products.FirstOrDefault(p => p.ProductID == productId);
+            Image image = repository.Images.FirstOrDefault(p => p.ImageID == imageID);
 
-            if (prod != null)
+            if (image != null)
             {
-                return File(prod.ImageData, prod.ImageMimeType);
+                return File(image.ImageData, image.ImageMimeType);
             }
             else
             {

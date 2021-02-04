@@ -8,16 +8,21 @@
 </head>
 <body>
     <div>
-        <img class="myScreens" src="~/Content/Images/screen_1.png" />
-        <img class="myScreens" src="~/Content/Images/screen_2.png" />
-        <img class="myScreens" src="~/Content/Images/screen_3.png" />
-        <img class="myScreens" src="~/Content/Images/screen_4.png" />
+        <img class="myScreens" src="~/Content/Images/1.png" />
+        <img class="myScreens" src="~/Content/Images/2.png" />
+        <img class="myScreens" src="~/Content/Images/3.png" />
+        <img class="myScreens" src="~/Content/Images/4.png" />
+        <img class="myScreens" src="~/Content/Images/5.png" />
+        <img class="myScreens" src="~/Content/Images/6.png" />
+        <img class="myScreens" src="~/Content/Images/7.png" />
+        <img class="myScreens" src="~/Content/Images/8.png" />
+        <img class="myScreens" src="~/Content/Images/9.png" />
 
         <a class="prev" onclick="plusScreen(-1)">&#10094</a>
         <a class="next" onclick="plusScreen(1)">&#10095</a>
 
         <div class="dots-container">
-            @for (int i = 1; i <= 4; i++)
+            @for (int i = 1; i <= 9; i++)
             {
                 <span class="dot" onclick="currentScreen(@i)"></span>
             }

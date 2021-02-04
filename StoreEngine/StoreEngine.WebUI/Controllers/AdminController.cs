@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -9,7 +10,7 @@ using StoreEngine.WebUI.Models;
 
 namespace StoreEngine.WebUI.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class AdminController : Controller
     {
         private IProductRepository repository;
@@ -24,17 +25,29 @@ namespace StoreEngine.WebUI.Controllers
             return View();
         }
 
+        // Метод инициализирует модель объединяющию данные из двух таблиц при помощи навигационного свойства Category
         public ViewResult ProductsList()
+        {
+            AdminIndexViewModel model = new AdminIndexViewModel()
+            {
+                Products = repository.Products.Include(p => p.Category)
+            };
+
+            return View(model);
+        }
+
+        // Предоставляет представлению список категорий (на основании которых будут создаваться продукты соответствующей категории)
+        public ViewResult ProductCreateList()
         {
             AdminIndexViewModel model = new AdminIndexViewModel
             {
-                Products = repository.Products,
                 Categories = repository.Categories
             };
 
             return View(model);
         }
 
+        // Инициализирует модель предоставляющую список категорий
         public ViewResult CategoriesList()
         {
             AdminIndexViewModel model = new AdminIndexViewModel
@@ -46,42 +59,77 @@ namespace StoreEngine.WebUI.Controllers
             return View(model);
         }
 
-        // Метод Edit для класса Product
-        public ViewResult Edit(int productId)
+        // Инициализирует все необходимые данные для редактирования конкретного продукта
+        public ViewResult EditProduct(int productId, int categoryID)
         {
-            Product product = repository.Products.FirstOrDefault(p => p.ProductID == productId);
+            CreateProductViewModel model = new CreateProductViewModel()
+            {
+                Product = repository.Products.FirstOrDefault(p => p.ProductID == productId),
+                Category = repository.Categories.FirstOrDefault(p => p.CategoryID == categoryID),
+                Images = repository.Images.Where(p => p.ProductID == productId).ToList(),
+                AttributeValues = repository.AttributeValues.Include(p => p.Attribute)
+                .Where(p => p.ProductID == productId).OrderBy(p => p.Attribute.SortPosition)
+            };
 
-            return View(product);
+            return View("EditProduct", model);
         }
 
+        // Метод отвечает за обработку данных при создании или редактировани продукта
         [HttpPost]
-        public ActionResult Edit(Product product, HttpPostedFileBase image)
+        public ActionResult EditProduct(CreateProductViewModel model, HttpPostedFileBase[] imageUploads, List<string> attributeValue)
         {
-            if (ModelState.IsValid)
+            bool existInDB = model.Product.ProductID == 0; 
+
+            repository.SaveProduct(model.Product, model.Category);
+
+            if (imageUploads[0] != null)
             {
-                if (image != null)
+                model.Images = new List<Image>();
+
+                foreach (var img in imageUploads)
                 {
-                    product.ImageMimeType = image.ContentType;
-                    product.ImageData = new byte[image.ContentLength];
-                    image.InputStream.Read(product.ImageData, 0, image.ContentLength);
+                    Image newImage = new Image()
+                    {
+                        Name = img.FileName,
+                        ImageData = new byte[img.ContentLength],
+                        ImageMimeType = img.ContentType
+                    };
+
+                    img.InputStream.Read(newImage.ImageData, 0, img.ContentLength);
+
+                    model.Images.Add(newImage);
                 }
 
-                repository.SaveProduct(product);
-                TempData["message"] = string.Format("{0} has been saved", product.Name);
+                repository.SaveImages(model.Product, model.Images);
+            }
 
-                return RedirectToAction("CategoriesList");
+            if (existInDB)
+            {
+                repository.CreateAttributesValues(attributeValue);
             }
             else
             {
-                // Что-то не так со значениями данных.
-                return View(product);
+                repository.SaveAttributesValues(model.Product.ProductID, attributeValue);
             }
+
+            TempData["message"] = string.Format("Product {0} has been saved", model.Product.Name);
+
+            return RedirectToAction("ProductsList");
+
         }
 
-        // Создание нового товара Product
-        public ViewResult Create()
+        // На основании переданного ID категории метод инициализирует модель, создавая новый продукт 
+        // и собирает все аттрибуты соответствующие ID категории
+        public ViewResult CreateProduct(int categoryId)
         {
-            return View("Edit", new Product());
+            CreateProductViewModel model = new CreateProductViewModel
+            {
+                Product = new Product(),
+                Category = repository.Categories.FirstOrDefault(p => p.CategoryID == categoryId),
+                Attributes = repository.Attributes.Where(p => p.CategoryID == categoryId).OrderBy(p => p.SortPosition)
+            };
+
+            return View("EditProduct", model);
         }
 
         // Создание новой категории Category
@@ -161,7 +209,7 @@ namespace StoreEngine.WebUI.Controllers
 
         // Передает определенный товар Product для удаления, соответствующему методу из предметной области
         [HttpPost]
-        public ActionResult Delete(int productId)
+        public ActionResult RemoveProduct(int productId)
         {
             Product deletedProduct = repository.DeleteProduct(productId);
 
@@ -170,7 +218,7 @@ namespace StoreEngine.WebUI.Controllers
                 TempData["message"] = string.Format("{0} was deleted", deletedProduct.Name);
             }
 
-            return RedirectToAction("CategoriesList");
+            return RedirectToAction("ProductsList");
         }
 
         // Передает определенную категорию Category для удаления, соответствующему методу из предметной области

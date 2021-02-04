@@ -1,0 +1,40 @@
+﻿@model StoreEngine.WebUI.Models.AdminIndexViewModel
+
+@{
+    ViewBag.Title = "ProductCreateList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Select a product category to create</h2>
+<br />
+@if (Model.Categories.Count() != 0)
+{
+    <table class="grid">
+        <tr>
+            <th>Number</th>
+            <th>Category name</th>
+        </tr>
+
+        @{
+            int i = 0;
+
+            foreach (var item in Model.Categories)
+            {
+                i++;
+
+                <tr>
+                    <td>@i</td>
+                    <td>@Html.ActionLink(item.Name, "CreateProduct", new { item.CategoryID })</td>
+                </tr>
+            }
+        }
+    </table>
+}
+else
+{
+    <p>You have not created any product categories at this time! You can create a category right now!</p>
+
+    <button>@Html.ActionLink("Create a new category", "CreateCategory")</button>
+}
+
+

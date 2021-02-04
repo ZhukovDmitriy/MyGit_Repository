@@ -78,8 +78,10 @@
     <Compile Include="Concrete\EFProductRepository.cs" />
     <Compile Include="Concrete\EmailOrderProcessor.cs" />
     <Compile Include="Entities\Attribute.cs" />
+    <Compile Include="Entities\AttributeValue.cs" />
     <Compile Include="Entities\Cart.cs" />
     <Compile Include="Entities\Category.cs" />
+    <Compile Include="Entities\Image.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\ShippingDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

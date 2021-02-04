@@ -13,5 +13,7 @@ namespace StoreEngine.Domain.Concrete
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Entities.Attribute> Attributes { get; set; }
+        public DbSet<AttributeValue> AttributeValues { get; set; }
+        public DbSet<Image> Images { get; set; }
     }
 }

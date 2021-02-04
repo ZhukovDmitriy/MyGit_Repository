@@ -16,12 +16,22 @@ namespace StoreEngine.WebUI.Controllers
             repository = repo;
         }
 
-        public PartialViewResult Menu(string category = null)
-        {
-            ViewBag.SelectedCategory = category;
+        //public PartialViewResult Menu(string category = null)
+        //{
+        //    ViewBag.SelectedCategory = category;
 
-            IEnumerable<string> categories = repository.Products
-                .Select(x => x.Category)
+        //    IEnumerable<string> categories = repository.Products
+        //        .Select(x => x.Category)
+        //        .Distinct()
+        //        .OrderBy(x => x);
+
+        //    return PartialView(categories);
+        //}
+
+        public PartialViewResult Menu()
+        {
+            IEnumerable<string> categories = repository.Categories
+                .Select(x => x.Name)
                 .Distinct()
                 .OrderBy(x => x);
 

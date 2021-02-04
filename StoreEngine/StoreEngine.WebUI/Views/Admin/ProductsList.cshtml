@@ -5,12 +5,15 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
+<button>@Html.ActionLink("Create a new product", "ProductCreateList")</button>
+
 @if (Model.Products.Count() != 0)
 {
     <table class="grid">
         <tr>
             <th>ID</th>
-            <th>Name</th>
+            <th>Categoty Name</th>
+            <th>Product Name</th>
             <th class="NumericCol">Price</th>
             <th>Actions</th>
         </tr>
@@ -18,10 +21,11 @@
         {
             <tr>
                 <td>@item.ProductID</td>
-                <td>@Html.ActionLink(item.Name, "Edit", new { item.ProductID })</td>
+                <td>@item.Category.Name</td>
+                <td>@Html.ActionLink(item.Name, "EditProduct", new { item.ProductID, item.CategoryID })</td>
                 <td class="NumericCol">@item.Price.ToString("c")</td>
                 <td>
-                    @using (Html.BeginForm("Delete", "Admin"))
+                    @using (Html.BeginForm("RemoveProduct", "Admin"))
                     {
                         @Html.Hidden("ProductID", item.ProductID)
                         <input type="submit" value="Delete" />
@@ -35,6 +39,8 @@ else
 {
     <p>At the moment you don't have any products! You may create them rigth now!</p>
 }
+
+
 
 
 
