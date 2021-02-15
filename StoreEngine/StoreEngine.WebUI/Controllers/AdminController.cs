@@ -66,7 +66,7 @@ namespace StoreEngine.WebUI.Controllers
             {
                 Product = repository.Products.FirstOrDefault(p => p.ProductID == productId),
                 Category = repository.Categories.FirstOrDefault(p => p.CategoryID == categoryID),
-                Images = repository.Images.Where(p => p.ProductID == productId).ToList(),
+                Images = repository.Images.Where(p => p.ProductID == productId).OrderBy(p => p.SortPosition).ToList(),
                 AttributeValues = repository.AttributeValues.Include(p => p.Attribute)
                 .Where(p => p.ProductID == productId).OrderBy(p => p.Attribute.SortPosition)
             };
@@ -76,9 +76,25 @@ namespace StoreEngine.WebUI.Controllers
 
         // Метод отвечает за обработку данных при создании или редактировани продукта
         [HttpPost]
-        public ActionResult EditProduct(CreateProductViewModel model, HttpPostedFileBase[] imageUploads, List<string> attributeValue)
+        public ActionResult EditProduct(CreateProductViewModel model, HttpPostedFileBase[] imageUploads, List<string> attributeValue, List<int> imgID, List<int> newImgPos)
         {
-            bool existInDB = model.Product.ProductID == 0; 
+            bool existInDB = model.Product.ProductID == 0;
+            bool existImgInDB = newImgPos != null; 
+
+            List<Image> images = repository.Images.Where(p => p.ProductID == model.Product.ProductID)
+                .OrderBy(p => p.SortPosition).ToList();
+
+            List<int> currentImgPos = images.Select(p => p.SortPosition).ToList();
+
+            if (newImgPos != null)
+            {
+                bool changeExistImg = currentImgPos.SequenceEqual(newImgPos);
+
+                if (!changeExistImg)
+                {
+                    repository.SaveImagePosition(model.Product.ProductID, imgID);
+                }
+            }
 
             repository.SaveProduct(model.Product, model.Category);
 
@@ -100,7 +116,7 @@ namespace StoreEngine.WebUI.Controllers
                     model.Images.Add(newImage);
                 }
 
-                repository.SaveImages(model.Product, model.Images);
+                repository.SaveImages(model.Product, model.Images, existImgInDB);
             }
 
             if (existInDB)

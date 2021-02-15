@@ -14,6 +14,7 @@ namespace StoreEngine.Domain.Entities
         public int ProductID { get; set; }
         public string Name { get; set; }
         public byte[] ImageData { get; set; }
+        public int SortPosition { get; set; }
 
         [HiddenInput(DisplayValue = false)]
         public string ImageMimeType { get; set; }

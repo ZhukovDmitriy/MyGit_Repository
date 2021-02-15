@@ -62,12 +62,18 @@ else
                 foreach (var img in Model.Images)
                 {
                     <div class="existing-img">
+                        <p>@Html.HiddenFor(p => img.ImageID, new { Name = "imgID" })</p>
+                        <p>@Html.HiddenFor(p => img.SortPosition, new { Name = "newImgPos" })</p>
                         <img width="125" src="@Url.Action("GetImage", "Product", new { img.ImageID })" />
                         <p>
                             <script>
                                 document.write('file size: ' + returnFileSize(@img.ImageData.Length));
                             </script>
                         </p>
+                        <div class="rev-btn">
+                            <input type="button" value="&lt;" onclick="Reverse(this.parentNode.parentNode, 1);" />
+                            <input type="button" value="&gt;" onclick="Reverse(this.parentNode.parentNode, 2);" />
+                        </div>
                     </div>
                 }
             }
@@ -138,6 +144,45 @@ else
 
     inputImg.style.display = 'none';
     inputImg.addEventListener('change', updateImageDisplay);
+
+    function Reverse(elm, param) {
+
+        var existAllImg = document.getElementsByClassName('existing-img');
+
+        for (var i = 0; i < existAllImg.length; i++) {
+
+            if (existAllImg[i] == elm) {
+
+                var currentExistImg = document.getElementsByClassName('existing-img')[i];
+
+                if (param == 1) {
+                    if (i == 1) {
+                        existingImage.removeChild(mainExistImg);
+                    }
+                    if (i == 0) {
+                        break;
+                    }
+                    var moveTo = document.getElementsByClassName('existing-img')[i - 1];
+                }
+                if (param == 2) {
+                    if (i == 0) {
+                        existingImage.removeChild(mainExistImg);
+                    }
+                    if (i == existAllImg.length - 1) {
+                        break;
+                    }
+                    var moveTo = document.getElementsByClassName('existing-img')[i + 1];
+                }
+
+                var tempContent = currentExistImg.innerHTML;
+                currentExistImg.innerHTML = moveTo.innerHTML;
+                moveTo.innerHTML = tempContent;
+
+                existingImage.insertBefore(mainExistImg, existingImage.firstChild);
+            }
+        }
+    }
+
 
     function removeImage() {
 
@@ -234,8 +279,6 @@ else
 
         return false;
     }
-
-
 
     function validateForm() {
 

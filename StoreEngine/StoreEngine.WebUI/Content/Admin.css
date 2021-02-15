@@ -223,6 +223,10 @@ div.existing-img {
             margin: 0;
         }
 
+        div.existing-img div.rev-btn {
+            text-align: center;
+        }
+
 div.editor-img-field label {
     border: 2px outset grey;
     background-color: orange;

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,20 +44,33 @@ namespace StoreEngine.Domain.Concrete
         }
 
         // Создает изображения в БД
-        public void SaveImages(Product product, List<Image> images)
+        public void SaveImages(Product product, List<Image> images, bool existImgInDB)
         {
-            Product savedProduct = context.Products.FirstOrDefault(p => p.ProductID == product.ProductID); 
+            Product savedProduct = context.Products.FirstOrDefault(p => p.ProductID == product.ProductID);
 
             if (images != null)
             {
+                int i = 0;
+
+                if (existImgInDB)
+                {
+                    List<Image> existingImages = context.Images.Where(p => p.ProductID == product.ProductID).ToList();
+                    Image lastImage = existingImages.OrderByDescending(p => p.SortPosition).FirstOrDefault();
+
+                    i = lastImage.SortPosition;
+                }
+
                 foreach (var img in images)
                 {
+                    i++;
+
                     Image newImage = new Image()
                     {
                         ProductID = savedProduct.ProductID,
                         Name = img.Name,
                         ImageData = img.ImageData,
-                        ImageMimeType = img.ImageMimeType
+                        ImageMimeType = img.ImageMimeType,
+                        SortPosition = i
                     };
 
                     context.Images.Add(newImage);
@@ -64,6 +78,26 @@ namespace StoreEngine.Domain.Concrete
 
                 context.SaveChanges();
             }
+        }
+
+        public void SaveImagePosition(int productID, List<int> imgID)
+        {
+            List<Image> images = context.Images.Where(p => p.ProductID == productID).OrderBy(p => p.ImageID).ToList();
+
+            for (int i = 0; i < imgID.Count(); i++)
+            {
+                for (int j = 0; j < images.Count(); j++)
+                {
+                    if (imgID[i] == images[j].ImageID)
+                    {
+                        images[j].SortPosition = i + 1;
+
+                        break;
+                    }
+                }
+            }
+
+            context.SaveChanges();
         }
 
         // Создает атрибуты и записывает все необходимые значения в таблице AttributeValues 
@@ -91,7 +125,8 @@ namespace StoreEngine.Domain.Concrete
         // Редактирует значения в таблице AttributeValues
         public void SaveAttributesValues(int productID, List<string> attributeValue)
         {
-            List<AttributeValue> attributes = context.AttributeValues.Where(p => p.ProductID == productID).ToList();
+            List<AttributeValue> attributes = context.AttributeValues.Include(p => p.Attribute)
+                .Where(p => p.ProductID == productID).OrderBy(p => p.Attribute.SortPosition).ToList();
 
             for (int i = 0; i < attributes.Count(); i++)
             {

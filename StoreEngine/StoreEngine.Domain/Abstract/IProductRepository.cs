@@ -25,6 +25,7 @@ namespace StoreEngine.Domain.Abstract
         void SaveAttributes(IEnumerable<Entities.Attribute> attributes, Category category);
         void SaveAttributes(List<string> attribute, Category category);
         void SaveAttributesPosition(IEnumerable<Entities.Attribute> attributes, Category category);
-        void SaveImages(Product product, List<Image> images);
+        void SaveImages(Product product, List<Image> images, bool existImgInDB);
+        void SaveImagePosition(int productID, List<int> imageID);
     }
 }
