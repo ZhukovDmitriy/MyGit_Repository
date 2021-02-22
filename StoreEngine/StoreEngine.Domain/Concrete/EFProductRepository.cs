@@ -100,6 +100,34 @@ namespace StoreEngine.Domain.Concrete
             context.SaveChanges();
         }
 
+        public void DeleteImage(List<int> imageID, int productID)
+        {
+            List<Image> images = context.Images.Where(p => p.ProductID == productID).ToList();
+
+            if (imageID != null)
+            {
+                for (int i = 0; i < imageID.Count(); i++)
+                {
+                    for (int j = 0; j < images.Count(); j++)
+                    {
+                        if (imageID[i] == images[j].ImageID)
+                        {
+                            images.Remove(images[j]);
+
+                            break;
+                        }
+                    }
+                }
+            }
+
+            foreach (var img in images)
+            {
+                context.Images.Remove(img);
+            }
+
+            context.SaveChanges();
+        }
+
         // Создает атрибуты и записывает все необходимые значения в таблице AttributeValues 
         public void CreateAttributesValues(List<string> attributeValue)
         {

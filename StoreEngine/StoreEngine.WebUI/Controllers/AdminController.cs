@@ -76,23 +76,32 @@ namespace StoreEngine.WebUI.Controllers
 
         // Метод отвечает за обработку данных при создании или редактировани продукта
         [HttpPost]
-        public ActionResult EditProduct(CreateProductViewModel model, HttpPostedFileBase[] imageUploads, List<string> attributeValue, List<int> imgID, List<int> newImgPos)
+        public ActionResult EditProduct(CreateProductViewModel model, HttpPostedFileBase[] imageUploads, List<string> attributeValue, List<int> imgID, List<int> newImgPos, List<int> onDelete)
         {
             bool existInDB = model.Product.ProductID == 0;
-            bool existImgInDB = newImgPos != null; 
+            bool existImgInDB = newImgPos != null;
+            bool deleteImg = onDelete != null;
+
+            if (deleteImg)
+            {
+                repository.DeleteImage(imgID, model.Product.ProductID);
+            }
 
             List<Image> images = repository.Images.Where(p => p.ProductID == model.Product.ProductID)
                 .OrderBy(p => p.SortPosition).ToList();
 
-            List<int> currentImgPos = images.Select(p => p.SortPosition).ToList();
-
-            if (newImgPos != null)
+            if (images != null)
             {
-                bool changeExistImg = currentImgPos.SequenceEqual(newImgPos);
+                List<int> currentImgPos = images.Select(p => p.SortPosition).ToList();
 
-                if (!changeExistImg)
+                if (newImgPos != null)
                 {
-                    repository.SaveImagePosition(model.Product.ProductID, imgID);
+                    bool changeExistImg = currentImgPos.SequenceEqual(newImgPos);
+
+                    if (!changeExistImg)
+                    {
+                        repository.SaveImagePosition(model.Product.ProductID, imgID);
+                    }
                 }
             }
 

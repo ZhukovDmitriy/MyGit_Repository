@@ -223,9 +223,13 @@ div.existing-img {
             margin: 0;
         }
 
-        div.existing-img div.rev-btn {
-            text-align: center;
-        }
+    div.existing-img div.rev-btn {
+        text-align: center;
+    }
+
+input.delete-img {
+    background-color: grey;
+}
 
 div.editor-img-field label {
     border: 2px outset grey;

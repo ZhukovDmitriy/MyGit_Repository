@@ -62,8 +62,8 @@ else
                 foreach (var img in Model.Images)
                 {
                     <div class="existing-img">
-                        <p>@Html.HiddenFor(p => img.ImageID, new { Name = "imgID" })</p>
-                        <p>@Html.HiddenFor(p => img.SortPosition, new { Name = "newImgPos" })</p>
+                        <p class="hidden-ImgID">@Html.HiddenFor(p => img.ImageID, new { Name = "imgID" })</p>
+                        <p class="hidden-ImgPos">@Html.HiddenFor(p => img.SortPosition, new { Name = "newImgPos" })</p>
                         <img width="125" src="@Url.Action("GetImage", "Product", new { img.ImageID })" />
                         <p>
                             <script>
@@ -73,6 +73,7 @@ else
                         <div class="rev-btn">
                             <input type="button" value="&lt;" onclick="Reverse(this.parentNode.parentNode, 1);" />
                             <input type="button" value="&gt;" onclick="Reverse(this.parentNode.parentNode, 2);" />
+                            <input class="delete-img" type="button" value="x" onclick="DeleteImage(this.parentNode.parentNode);" />
                         </div>
                     </div>
                 }
@@ -123,6 +124,31 @@ else
     if (existingImage != null) {
 
         existingImage.insertBefore(mainExistImg, existingImage.firstChild);
+    }
+
+    function DeleteImage(elm) {
+
+        var deleteBtn = elm.getElementsByClassName('delete-img')[0];
+        var imgElm = elm.getElementsByTagName('img')[0];
+        var onDeleteImgID = elm.getElementsByClassName('hidden-ImgID')[0];
+        var onDeleteImgPos = elm.getElementsByClassName('hidden-ImgPos')[0];
+
+        if (deleteBtn.value == 'cancel') {
+
+            deleteBtn.value = 'x';
+            imgElm.style.opacity = 1;
+
+            onDeleteImgID.firstChild.setAttribute('name', 'ImgID');
+            onDeleteImgPos.firstChild.setAttribute('name', 'newImgPos');
+        }
+        else {
+
+            deleteBtn.value = 'cancel';
+            imgElm.style.opacity = 0.4;
+
+            onDeleteImgID.firstChild.setAttribute('name', 'onDelete');
+            onDeleteImgPos.firstChild.setAttribute('name', 'notSent');
+        }
     }
 
     // Блок - получает input загрузки изображений, регистрирует на нём обработчик события change
