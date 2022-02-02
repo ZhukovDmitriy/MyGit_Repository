@@ -1,0 +1,103 @@
+﻿/* _Layout View */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    /*overflow-y: hidden;*/
+}
+
+div.header {
+    vertical-align: middle;
+    text-align: center;
+    height: 15%;
+    background-color: green;
+    border-bottom: 4px double black;
+}
+
+    div.header h1 {
+        display: inline-block;
+        vertical-align: middle;
+        color: white;
+        text-shadow: black 0 0 5px;
+    }
+
+div.main-content {
+    min-height: 70vh;
+    text-align: center;
+}
+
+/* Common Views styles */
+
+h1.page-theme {
+    font-size: 140%;
+    margin-bottom: 0;
+}
+
+p.page-description {
+    margin-top: 1%;
+    font-size: 110%;
+}
+
+div.validation-summary-errors {
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    color: red;
+    text-align: left;
+}
+
+/* Login/Index View */
+
+div.form {
+    border: 1px solid black;
+    display: inline-block;
+    padding: 2%;
+    padding-bottom: 1.5%;
+    padding-top: 1.5%;
+    border-radius: 2px;
+    box-shadow: black 0 0 3px;
+}
+
+    div.form label {
+        font-size: 110%;
+        float: left;
+    }
+
+    div.form p {
+        margin-top: 2%;
+        width: max-content;
+    }
+
+        div.form p:last-child {
+            margin: 0;
+        }
+
+input.submit-btn {
+    background-color: lightgrey;
+    width: max-content;
+    margin: 0;
+    padding: 2%;
+}
+
+input#status-input {
+    margin-bottom: 6%;
+    width: 80%;
+}
+
+div#request-status {
+    border: 1px solid black;
+    display: inline-block;
+    padding: 2%;
+    margin-bottom: 2%;
+}
+
+div#request-status p:first-child {
+    font-weight: bold;
+    margin-bottom: 4%;
+}
+
+div#request-status p {
+    margin: 0;
+}

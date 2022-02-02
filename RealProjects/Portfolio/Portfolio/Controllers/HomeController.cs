@@ -1,0 +1,33 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace Portfolio.Controllers
+{
+    public class HomeController : Controller
+    {
+        public ActionResult Index()
+        {
+            var mes = TempData["Message"];
+
+            return View();
+        }
+
+        protected override void HandleUnknownAction(string actionName)
+        {
+            View(actionName).ExecuteResult(ControllerContext);
+        }
+
+        public ViewResult AdminDemo()
+        {
+            return View();
+        }
+
+        public ViewResult EmployeeTesting()
+        {
+            return View();
+        }
+    }
+}

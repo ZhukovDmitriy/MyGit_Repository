@@ -1,0 +1,81 @@
+﻿@model ApplicationForCash.Models.ViewModels.CashRequestViewModel
+
+<h1 class="page-theme">Заявка</h1>
+<p class="page-description">Приветствуем вас: <span style="font-weight:bold;">@Model.User.FirstName</span></p>
+
+@Html.ValidationSummary(true)
+@using (Html.BeginForm())
+{
+    <div class="form">
+
+        <label>Адрес департамента: </label>
+        <p>
+            @Html.DropDownListFor(m => m.SelectedDepartmentID,
+new SelectList(Model.Departments, "DepartmentID", "Address"))
+        </p>
+
+        <label>Сумма к выдаче: </label>
+        <p>@Html.EditorFor(m => m.Amount, new { htmlAttributes = new { min = 1, max = 99999 } })</p>
+
+        <label>Валюта: </label>
+        <p>
+            @Html.DropDownListFor(m => m.SelectedCurrency,
+       new SelectList(Model.Currency))
+        </p>
+
+        <input class="submit-btn" type="submit" value="Отправить" />
+    </div>
+}
+
+<p class="page-description">Проверка статуса заявки</p>
+
+@if (Model.CashRequest != null)
+{
+    <div id="request-status">
+        @if (Model.CashRequest.RequestStatus == true)
+        {
+            <p style="color:green;">@Model.CashRequest.StatusComment</p>
+        }
+        else
+        {
+            <p style="color:red;">@Model.CashRequest.StatusComment</p>
+        }
+
+        <p>Сумма: @Model.CashRequest.Amount</p>
+        <p>Валюта: @Model.CashRequest.Currency</p>
+    </div>
+}
+
+@if (TempData["Message"] != null)
+{ 
+    <p id="temp-data" style="margin: 2%; color: red; font-weight:bold;">@TempData["Message"]</p>
+}
+
+
+@Html.ValidationSummary(true)
+@using (Html.BeginForm("StatusCheck", "RequestCash", FormMethod.Post))
+{
+    <div class="form">
+        <input id="status-input" type="number" name="orderNum" min="1" max="99999" />
+        <input class="submit-btn" type="submit" value="Проверить" onclick="return ValidateStatusInput();" />
+    </div>
+}
+
+<script type="text/javascript">
+
+    function ValidateStatusInput() {
+
+        var input = document.getElementById('status-input');
+
+        if (input.value == "") {
+
+            alert("Введите значение!")
+
+            return false;
+        }
+
+        return true;
+    }
+
+</script>
+

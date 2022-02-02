@@ -1,0 +1,25 @@
+﻿@model CompAccessory.Domain.Entites.ShippingDetails
+
+@{
+    ViewBag.Title = "Computer Accessory: Checkout";
+}
+
+<h2>Оформление заказа</h2>
+<h4>Пожалуйста введите ваши контактные данные!</h4>
+
+@using (Html.BeginForm())
+{
+    @* Хелпер Html.ValidationSummary: отображает сообщения об ошибках при валидации модели *@
+    @Html.ValidationSummary()
+    <div class="field">
+        @* Метод EditorFor возвращает HTML-элемент ввода (input) для каждого свойства объекта, *@
+        @* представленного выражением *@
+        <div><label>Ф.И.О:</label> @Html.EditorFor(x => x.Name)</div>
+        <div><label>Email адрес:</label> @Html.EditorFor(x => x.Email)</div>
+        <div><label>Номер телефона:</label> @Html.EditorFor(x => x.Line)</div>
+        <div><label>Город:</label> @Html.EditorFor(x => x.City)</div>
+    </div>
+    <p align="center">
+        <input class="actionButtons" type="submit" value="Подтвердить заказ" />
+    </p>
+}

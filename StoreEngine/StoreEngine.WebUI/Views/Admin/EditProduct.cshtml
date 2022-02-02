@@ -1,0 +1,339 @@
+﻿@model StoreEngine.WebUI.Models.CreateProductViewModel
+
+@{
+    ViewBag.Title = "Admin: Create/Edit Product ";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<script type="text/javascript">
+
+    function returnFileSize(number) {
+
+        if (number < 1024) {
+            return number + 'bytes';
+
+        } else if (number > 1024 && number < 1048576) {
+            return (number / 1024).toFixed(1) + 'KB';
+
+        } else if (number > 1048576) {
+            return (number / 1048576).toFixed(1) + 'MB';
+        }
+    }
+
+</script>
+
+@if (Model.Product.ProductID == 0)
+{
+    <h2>Create new product</h2>
+}
+else
+{
+    <h2>Edit product</h2>
+}
+
+@using (Html.BeginForm("EditProduct", "Admin", FormMethod.Post, new { enctype = "multipart/form-data", id = "editForm" }))
+{
+    <div class="editContainer">
+        @Html.HiddenFor(p => Model.Category.CategoryID)
+        @Html.HiddenFor(p => Model.Category.Name)
+        <p id="prodCategory">Category<br /><label>@Html.DisplayFor(p => Model.Category.Name)</label></p>
+
+        <p>@Html.EditorFor(p => p.Product.ProductID)</p>
+        <p>Name: @Html.EditorFor(p => p.Product.Name)</p>
+
+        <div id="desc-prop">
+            <p>Property supports HTML syntax</p>
+            <p>Description: @Html.EditorFor(p => p.Product.Description)</p>
+        </div>
+
+        <p>Price: @Html.EditorFor(p => p.Product.Price)</p>
+    </div>
+
+    <div class="editor-img-field">
+        <div class="exist-db-img">
+            @if (Model.Images == null || Model.Images.Count() == 0)
+            {
+                <p>There are no saved images for this product in the database</p>
+            }
+            else
+            {
+                <p id="exist-img-text">Existing images in the database</p>
+
+                foreach (var img in Model.Images)
+                {
+                    <div class="existing-img">
+                        <p class="hidden-ImgID">@Html.HiddenFor(p => img.ImageID, new { Name = "imgID" })</p>
+                        <p class="hidden-ImgPos">@Html.HiddenFor(p => img.SortPosition, new { Name = "newImgPos" })</p>
+                        <img width="125" src="@Url.Action("GetImage", "Product", new { img.ImageID })" />
+                        <p>
+                            <script>
+                                document.write('file size: ' + returnFileSize(@img.ImageData.Length));
+                            </script>
+                        </p>
+                        <div class="rev-btn">
+                            <input type="button" value="&lt;" onclick="Reverse(this.parentNode.parentNode, 1);" />
+                            <input type="button" value="&gt;" onclick="Reverse(this.parentNode.parentNode, 2);" />
+                            <input class="delete-img" type="button" value="x" onclick="DeleteImage(this.parentNode.parentNode);" />
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+        <div class="upload-btn">
+            <label for="image-uploads">Choose images to upload (PNG, JPG)</label>
+            <input type="file" id="image-uploads" name="imageUploads" accept=".jpg, .jpeg, .png" multiple>
+        </div>
+        <div class="preview">
+            <p>No files currently selected for upload</p>
+        </div>
+        <input type="button" id="remove-btn" value="Remove all images" onclick="removeImage();" />
+    </div>
+
+    <div class="editContainer">
+        @if (Model.Product.ProductID == 0)
+        {
+            foreach (var item in Model.Attributes)
+            {
+                <p>@item.Name: <input class="text-box" name="attributeValue" /></p>
+            }
+        }
+        else
+        {
+            foreach (var item in Model.AttributeValues)
+            {
+                <p>@item.Attribute.Name: @Html.EditorFor(p => item.Value, new { htmlAttributes = new { @Name = "attributeValue" } })</p>
+            }
+        }
+    </div>
+
+    <input type="submit" class="saveProd" value="Save" onclick="return validateForm();" />
+}
+
+<script type="text/javascript">
+
+    // Блок кода (скрипт) - проверяет существуют ли в представлении изображения загруженные из БД
+    // (если существуют - означает, что представления визуализирует готовый продукт для редактирования данных)
+    // В таком случае помечает первое изображение как Main Image
+
+    var mainExistImg = document.createElement('p');
+    mainExistImg.textContent = 'Main Image';
+    mainExistImg.style.fontWeight = 'bold';
+
+    var existingImage = document.getElementsByClassName('existing-img')[0];
+
+    if (existingImage != null) {
+
+        existingImage.insertBefore(mainExistImg, existingImage.firstChild);
+    }
+
+    function DeleteImage(elm) {
+
+        var deleteBtn = elm.getElementsByClassName('delete-img')[0];
+        var imgElm = elm.getElementsByTagName('img')[0];
+        var onDeleteImgID = elm.getElementsByClassName('hidden-ImgID')[0];
+        var onDeleteImgPos = elm.getElementsByClassName('hidden-ImgPos')[0];
+
+        if (deleteBtn.value == 'cancel') {
+
+            deleteBtn.value = 'x';
+            imgElm.style.opacity = 1;
+
+            onDeleteImgID.firstChild.setAttribute('name', 'ImgID');
+            onDeleteImgPos.firstChild.setAttribute('name', 'newImgPos');
+        }
+        else {
+
+            deleteBtn.value = 'cancel';
+            imgElm.style.opacity = 0.4;
+
+            onDeleteImgID.firstChild.setAttribute('name', 'onDelete');
+            onDeleteImgPos.firstChild.setAttribute('name', 'notSent');
+        }
+    }
+
+    // Блок - получает input загрузки изображений, регистрирует на нём обработчик события change
+    // отслеживающий изменения (загрузку изображений), в случае наличия таковых файлов
+    // очищает блок от всех елементов и добавляет загружаемые изображения в этот блок.
+    // Если в представлении присутствуют изображения из БД, то первое загружаемое изображение из input
+    // не помечается как Main Image, в обратном случае помечает первый файл как Main Image.
+    // Также скрипт содержит функции:
+    // - проверки файлов на загружаемый тип файла
+    // - функцию возвращающую преобразованный размер файла
+    // - проверку валидации формы
+    // - функцию очищающую поле для загрузки изображений
+
+    var inputImg = document.getElementById('image-uploads');
+    var preview = document.querySelector('.preview');
+
+    var removeBtn = document.getElementById('remove-btn');
+    removeBtn.style.display = 'none';
+
+    inputImg.style.display = 'none';
+    inputImg.addEventListener('change', updateImageDisplay);
+
+    function Reverse(elm, param) {
+
+        var existAllImg = document.getElementsByClassName('existing-img');
+
+        for (var i = 0; i < existAllImg.length; i++) {
+
+            if (existAllImg[i] == elm) {
+
+                var currentExistImg = document.getElementsByClassName('existing-img')[i];
+
+                if (param == 1) {
+                    if (i == 1) {
+                        existingImage.removeChild(mainExistImg);
+                    }
+                    if (i == 0) {
+                        break;
+                    }
+                    var moveTo = document.getElementsByClassName('existing-img')[i - 1];
+                }
+                if (param == 2) {
+                    if (i == 0) {
+                        existingImage.removeChild(mainExistImg);
+                    }
+                    if (i == existAllImg.length - 1) {
+                        break;
+                    }
+                    var moveTo = document.getElementsByClassName('existing-img')[i + 1];
+                }
+
+                var tempContent = currentExistImg.innerHTML;
+                currentExistImg.innerHTML = moveTo.innerHTML;
+                moveTo.innerHTML = tempContent;
+
+                existingImage.insertBefore(mainExistImg, existingImage.firstChild);
+            }
+        }
+    }
+
+
+    function removeImage() {
+
+        const file = document.getElementById('image-uploads');
+        file.value = '';
+
+        while (preview.firstChild) {
+            preview.removeChild(preview.firstChild);
+        }
+
+        removeBtn.style.display = 'none';
+
+        var para = document.createElement('p');
+        para.textContent = 'No files currently selected for upload';
+
+        preview.appendChild(para);
+    }
+
+    function updateImageDisplay() {
+
+        while (preview.firstChild) {
+            preview.removeChild(preview.firstChild);
+        }
+
+        var curFiles = inputImg.files;
+
+        if (curFiles.length === 0) {
+
+            var para = document.createElement('p');
+            para.textContent = 'No files currently selected for upload';
+
+            preview.appendChild(para);
+
+            removeBtn.style.display = 'none';
+
+        } else {
+
+            for (var i = 0; i < curFiles.length; i++) {
+
+                var imgBlock = document.createElement('div');
+                var para = document.createElement('p');
+                var mainImg = document.createElement('p');
+
+                if (validFileType(curFiles[i])) {
+
+                    if (i == 0) {
+
+                        if (existingImage == null) {
+
+                            mainImg.textContent = 'Main Image';
+                            mainImg.style.fontWeight = 'bold';
+
+                            imgBlock.appendChild(mainImg);
+                        }
+                    }
+
+                    para.textContent = 'file size: ' + returnFileSize(curFiles[i].size);
+
+                    var image = document.createElement('img');
+                    image.style.width = '150px';
+                    image.src = window.URL.createObjectURL(curFiles[i]);
+
+                    imgBlock.appendChild(image);
+                    imgBlock.appendChild(para);
+
+                    preview.appendChild(imgBlock);
+
+                    removeBtn.style.display = 'block';
+
+                } else {
+
+                    para.textContent = 'Not a valid file type. Update your selection.';
+
+                    preview.appendChild(para);
+                }
+            }
+        }
+    }
+
+    var fileTypes = [
+        'image/jpeg',
+        'image/pjpeg',
+        'image/png'
+    ]
+
+    function validFileType(file) {
+
+        for (var i = 0; i < fileTypes.length; i++) {
+
+            if (file.type === fileTypes[i]) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    function validateForm() {
+
+        var allCheckedInput = document.getElementsByClassName('text-box');
+        var priceCheckedInput = document.getElementById('Product_Price');
+        var num = priceCheckedInput.value.replace(/,/, '.');
+
+        for (var i = 0; i < allCheckedInput.length; i++) {
+
+            if (allCheckedInput[i].value == '') {
+
+                alert('Enter all empties attributes!');
+
+                var invalidForm = true;
+
+                break;
+            }
+        }
+
+        if (num <= 0) {
+
+            alert('Enter a positive price')
+
+            var invalidForm = true;
+        }
+
+        if (invalidForm) {
+            return false;
+        }
+    }
+
+</script>

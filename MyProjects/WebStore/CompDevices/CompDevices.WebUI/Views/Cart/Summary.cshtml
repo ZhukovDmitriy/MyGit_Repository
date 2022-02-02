@@ -1,0 +1,12 @@
+﻿@model CompDevices.Domain.Entities.Cart
+
+<div id="cart">
+    <a href="@Url.Action("Index", "Cart", new { returnUrl = Request.Url.PathAndQuery }, null)">
+        <img src="~/Content/Images/Cart.png" alt="Корзина" />
+        <p>
+            @Model.Lines.Sum(x => x.Quantity) товар(ов)<br>
+        @Model.ComputeTotalValue() грн
+    </p>
+</a>
+</div>
+

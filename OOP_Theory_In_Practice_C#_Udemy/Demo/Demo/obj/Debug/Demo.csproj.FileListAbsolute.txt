@@ -1,0 +1,14 @@
+F:\MyProjects\OOP_Theory_In_Practice_C#\Demo\Demo\bin\Debug\Demo.exe.config
+F:\MyProjects\OOP_Theory_In_Practice_C#\Demo\Demo\bin\Debug\Demo.exe
+F:\MyProjects\OOP_Theory_In_Practice_C#\Demo\Demo\bin\Debug\Demo.pdb
+F:\MyProjects\OOP_Theory_In_Practice_C#\Demo\Demo\obj\Debug\Demo.csprojAssemblyReference.cache
+F:\MyProjects\OOP_Theory_In_Practice_C#\Demo\Demo\obj\Debug\Demo.csproj.CoreCompileInputs.cache
+F:\MyProjects\OOP_Theory_In_Practice_C#\Demo\Demo\obj\Debug\Demo.exe
+F:\MyProjects\OOP_Theory_In_Practice_C#\Demo\Demo\obj\Debug\Demo.pdb
+F:\MyProjects\OOP_Theory_In_Practice_C#_Udemy\Demo\Demo\bin\Debug\Demo.exe.config
+F:\MyProjects\OOP_Theory_In_Practice_C#_Udemy\Demo\Demo\bin\Debug\Demo.exe
+F:\MyProjects\OOP_Theory_In_Practice_C#_Udemy\Demo\Demo\bin\Debug\Demo.pdb
+F:\MyProjects\OOP_Theory_In_Practice_C#_Udemy\Demo\Demo\obj\Debug\Demo.csprojAssemblyReference.cache
+F:\MyProjects\OOP_Theory_In_Practice_C#_Udemy\Demo\Demo\obj\Debug\Demo.csproj.CoreCompileInputs.cache
+F:\MyProjects\OOP_Theory_In_Practice_C#_Udemy\Demo\Demo\obj\Debug\Demo.exe
+F:\MyProjects\OOP_Theory_In_Practice_C#_Udemy\Demo\Demo\obj\Debug\Demo.pdb

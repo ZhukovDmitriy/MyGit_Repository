@@ -1,0 +1,11 @@
+2022-02-02 10:42:15.0299||DEBUG|ApplicationForCash.Program|Запуск приложения |url: |action: 
+2022-02-02 17:35:28.5443||DEBUG|ApplicationForCash.Program|Запуск приложения |url: |action: 
+2022-02-02 17:35:38.6720||INFO|ApplicationForCash.Program|Получение запроса на статус заявки |url: https://localhost/api/RequestHandler/GetStatus|action: GetStatus
+2022-02-02 17:35:38.6720||DEBUG|ApplicationForCash.Program|Извлекаем данные из базы |url: https://localhost/api/RequestHandler/GetStatus|action: GetStatus
+2022-02-02 17:35:38.7128||INFO|ApplicationForCash.Program|Объект не найден в базе |url: https://localhost/api/RequestHandler/GetStatus|action: GetStatus
+2022-02-02 17:35:48.7896||INFO|ApplicationForCash.Program|Получение запроса на статус заявки |url: https://localhost/api/RequestHandler/GetStatus|action: GetStatus
+2022-02-02 17:35:48.7896||DEBUG|ApplicationForCash.Program|Извлекаем данные из базы |url: https://localhost/api/RequestHandler/GetStatus|action: GetStatus
+2022-02-02 17:35:49.0807||DEBUG|ApplicationForCash.Program|Отправка ответа клиенту |url: https://localhost/api/RequestHandler/GetStatus|action: GetStatus
+2022-02-02 17:35:55.5419||INFO|ApplicationForCash.Program|Получение запроса на статус заявки |url: https://localhost/api/RequestHandler/GetStatus|action: GetStatus
+2022-02-02 17:35:55.5419||DEBUG|ApplicationForCash.Program|Извлекаем данные из базы |url: https://localhost/api/RequestHandler/GetStatus|action: GetStatus
+2022-02-02 17:35:55.5499||DEBUG|ApplicationForCash.Program|Отправка ответа клиенту |url: https://localhost/api/RequestHandler/GetStatus|action: GetStatus

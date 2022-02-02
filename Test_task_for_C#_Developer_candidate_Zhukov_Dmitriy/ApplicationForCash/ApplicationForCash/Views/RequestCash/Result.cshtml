@@ -1,0 +1,7 @@
+﻿@model int
+
+<h1 class="page-theme">Номер запроса</h1>
+<p class="page-description">Номер вашего запроса для проверки статуса: <span style="font-weight:bold;">@Model</span></p>
+
+<input type="button" value="Вернуться назад"
+       onclick="location.href='@Url.Action("Index", "RequestCash")'" />

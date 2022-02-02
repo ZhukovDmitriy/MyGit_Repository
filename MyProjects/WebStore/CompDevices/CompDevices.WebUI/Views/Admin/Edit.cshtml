@@ -1,0 +1,65 @@
+﻿@model CompDevices.Domain.Entities.ProductEditModel
+
+@{
+    ViewBag.Title = "Admin: Edit " + Model.Products.Brand + " " + Model.Products.Model;
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1> Создание/Редактирование: @Model.Products.Brand @Model.Products.Model</h1>
+
+<div class="editProd">
+    @using (Html.BeginForm("Edit", "Admin",
+        FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <p class="hiddenProp"><label>ID товара:</label> @Html.EditorFor(x => x.Products.ProductID)</p>
+        <p><label>Описание:</label> @Html.EditorFor(x => x.Products.Description)</p>
+        <p><label>Производитель:</label> @Html.EditorFor(x => x.Products.Brand)</p>
+        <p><label>Модель:</label> @Html.EditorFor(x => x.Products.Model)</p>
+        <p><label>Полное описание:</label> @Html.EditorFor(x => x.Products.TotalDescription)</p>
+        <p><label>Цена:</label> @Html.EditorFor(x => x.Products.Price)</p>
+        <p class="prodCategory">
+            Категория: @Html.HiddenFor(x => x.Products.Category)
+            @Html.DisplayFor(x => x.Products.Category)
+        </p>
+
+        <div class="editor-label">Изображение</div>
+        <div class="editor-field">
+            @if (Model.Products.ImageData == null)
+            {
+                @:None
+            }
+            else
+            {
+                <img width="150" height="150"
+                     src="@Url.Action("GetImage", "Product", new { Model.Products.ProductID})" />
+            }
+
+            <div>Загрузить изображение: <input type="file" name="Image" /></div>
+        </div>
+
+        for (int i = 0; i < Model.AttributeValues.Count(); i++)
+        {
+            <p class="hiddenProp">@Html.EditorFor(m => Model.AttributeValues[i].ID)</p>
+            <p class="hiddenProp">@Html.EditorFor(m => Model.AttributeValues[i].ProductID)</p>
+            <p class="hiddenProp">@Html.EditorFor(m => Model.AttributeValues[i].SelectiveAttribute)</p>
+            <p class="hiddenProp">@Html.EditorFor(m => Model.AttributeValues[i].FilterAttribute)</p>
+            <p class="hiddenProp">@Html.EditorFor(m => Model.AttributeValues[i].Category)</p>
+            <p class="hiddenProp">@Html.EditorFor(m => Model.AttributeValues[i].AttributeID)</p>
+            <p>
+                @*<label>@{Html.RenderPartial("AttributeNameView", Model.ProductAttributes[i]);}</label>*@
+                <label>@Html.DisplayFor(p => p.ProductAttributes[i].AttributeName)</label>                  <!-- Произвел рефакторинг строки 49 -->
+                @Html.EditorFor(m => Model.AttributeValues[i].Value)
+            </p>
+        }
+
+        <input type="submit" value="Сохранить" />
+        @Html.ActionLink("Отменить и вернуться к списку товаров", "Index")
+    }
+</div>
+
+
+
+
+
+
+

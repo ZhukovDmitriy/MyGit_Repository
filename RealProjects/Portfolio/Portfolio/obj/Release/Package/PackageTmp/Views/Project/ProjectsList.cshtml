@@ -1,0 +1,146 @@
+﻿@model Portfolio.Models.ProjectViewModel
+
+<div class="title-projects" id="proj-link">
+    <span>Проекты</span>
+</div>
+
+@foreach (var p in Model.Projects.ToList())
+{
+    foreach (var c in Model.Images.Take(1))
+    {
+        if (c.ImageData != null)
+        {
+            <div class="projects-block">
+                <img class="project-img" id="my-img" width="450"
+                     src="@Url.Action("GetImage", "Project", new { c.ImageID })" />
+                <div class="cover">
+                    <p>@p.Name</p>
+                    <p>@p.Description</p>
+                    <div class="detail-view" id="view">Просмотреть</div>
+                </div>
+            </div>
+        }
+    }
+}
+
+<div class="modal" id="myModal">
+    @foreach (var p in Model.Projects)
+    {
+        <div class="modal-description">
+            <p>@p.Description</p>
+            <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+        </div>
+    }
+
+    <div class="break-line"></div>
+
+    <div class="modal-content">
+        @foreach (var c in Model.Images)
+        {
+            <div class="mySlides">
+                <img width="80%" src="@Url.Action("GetImage", "Project", new { c.ImageID })" />
+            </div>
+        }
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094</a>
+        <a class="next" onclick="plusSlides(1)">&#10095</a>
+    </div>
+
+    <div class="dots">
+        <div class="dots-container">
+            @for (int i = 1; i <= Model.Images.LongCount(); i++)
+            {
+                <span class="dot" onclick="currentSlide(@i)"></span>
+            }
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    let detailView = document.getElementById('view');
+    let modal = document.getElementById('myModal');
+    let span = document.getElementsByClassName('close')[0];
+
+    detailView.onclick = function () {
+        modal.style.display = "block";
+        document.body.style.overflow = 'hidden';
+        slideIndex = 1;
+        //currentSlide(slideIndex);
+        showSlides(slideIndex);
+    }
+
+    span.onclick = function () {
+        modal.style.display = "none";
+        document.body.style.overflow = 'scroll';
+    }
+
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+
+        if (n > slides.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = slides.length
+        }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace("active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+</script>
+
+@*<div class="modal" id="myModal">
+        <div class="modal-content">
+            @foreach (var p in Model.Projects)
+            {
+                <div class="modal-description">
+                    <p>@p.Description</p>
+                    <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+                </div>
+            }
+            <div class="break-line"></div>
+            <img class="modal-image" id="img" />
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        let img = document.getElementById('my-img');
+        let detailView = document.getElementById('view');
+        let modal = document.getElementById('myModal');
+        let modalImg = document.getElementById('img');
+
+        detailView.onclick = function () {
+            modal.style.display = "block";
+            document.body.style.overflow = 'hidden';
+            modalImg.src = img.src;
+        }
+
+        let span = document.getElementsByClassName('close')[0];
+
+        span.onclick = function () {
+            modal.style.display = "none";
+            document.body.style.overflow = 'scroll';
+        }
+    </script>*@
+
+
+
+

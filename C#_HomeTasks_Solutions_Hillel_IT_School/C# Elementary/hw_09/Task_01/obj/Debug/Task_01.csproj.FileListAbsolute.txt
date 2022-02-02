@@ -1,0 +1,7 @@
+G:\HW_Norm\hw_09\Task_01\bin\Debug\Task_01.exe.config
+G:\HW_Norm\hw_09\Task_01\bin\Debug\Task_01.exe
+G:\HW_Norm\hw_09\Task_01\bin\Debug\Task_01.pdb
+G:\HW_Norm\hw_09\Task_01\obj\Debug\Task_01.csprojAssemblyReference.cache
+G:\HW_Norm\hw_09\Task_01\obj\Debug\Task_01.csproj.CoreCompileInputs.cache
+G:\HW_Norm\hw_09\Task_01\obj\Debug\Task_01.exe
+G:\HW_Norm\hw_09\Task_01\obj\Debug\Task_01.pdb

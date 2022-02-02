@@ -1,0 +1,7 @@
+G:\HW_Norm\hw_13\Task_01_Mutex_is_used\bin\Debug\Task_01_Mutex_is_used.exe.config
+G:\HW_Norm\hw_13\Task_01_Mutex_is_used\bin\Debug\Task_01_Mutex_is_used.exe
+G:\HW_Norm\hw_13\Task_01_Mutex_is_used\bin\Debug\Task_01_Mutex_is_used.pdb
+G:\HW_Norm\hw_13\Task_01_Mutex_is_used\obj\Debug\Task_01_Mutex_is_used.csprojAssemblyReference.cache
+G:\HW_Norm\hw_13\Task_01_Mutex_is_used\obj\Debug\Task_01_Mutex_is_used.csproj.CoreCompileInputs.cache
+G:\HW_Norm\hw_13\Task_01_Mutex_is_used\obj\Debug\Task_01_Mutex_is_used.exe
+G:\HW_Norm\hw_13\Task_01_Mutex_is_used\obj\Debug\Task_01_Mutex_is_used.pdb

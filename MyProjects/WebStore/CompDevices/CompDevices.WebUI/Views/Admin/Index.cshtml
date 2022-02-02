@@ -1,0 +1,46 @@
+﻿@model CompDevices.WebUI.Models.ProductsAdminListModel
+
+@{
+    ViewBag.Title = "Admin: All Products";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Список товаров</h1>
+
+<table class="Grid">
+    <tr>
+        <th>ID</th>
+        <th>Бренд</th>
+        <th>Категория</th>
+        <th>Модель</th>
+        <th class="NumericCol">Цена</th>
+        <th>Действие</th>
+    </tr>
+    @foreach (var item in @Model.Products)
+    {
+        <tr>
+            <td>@item.ProductID</td>
+            <td>@Html.ActionLink(item.Brand, "Edit", new { item.ProductID, item.Category })</td>
+            <td>@Html.ActionLink(item.Category, "Edit", new { item.ProductID, item.Category })</td>
+            <td>@Html.ActionLink(item.Model, "Edit", new { item.ProductID, item.Category })</td>
+            <td class="NumericCol">@item.Price грн</td>
+            <td>
+                @using (Html.BeginForm("Delete", "Admin"))
+                {
+                    @Html.Hidden("ProductID", item.ProductID)
+                    <input type="submit" value="Удалить" />
+                }
+            </td>
+        </tr>
+    }
+</table>
+
+@using (Html.BeginForm("Create", "Admin"))
+{
+    <p>Для создание нового товара выберите категорию из списка: </p>
+    @Html.DropDownListFor(p => p.SelectedCategory, new SelectList(Model.Categories))
+
+    <input type="submit" value="Создать новый товар" />
+}
+
+

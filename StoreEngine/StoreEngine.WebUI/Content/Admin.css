@@ -1,0 +1,340 @@
+﻿body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: snow;
+}
+
+div.header {
+    background-color: teal;
+    color: white;
+    border-bottom: 2px solid black;
+}
+
+    div.header p {
+        margin: 0;
+        font-size: 140%;
+        padding: 2%;
+    }
+
+div.container {
+    display: flex;
+}
+
+div.menu {
+    width: 15%;
+    font-size: 120%;
+    background-color: cadetblue;
+}
+
+    div.menu p {
+        margin: 0;
+        padding: 10%;
+        border-bottom: 1px dotted black;
+        border-right: 2px solid black;
+    }
+
+        div.menu p a {
+            text-decoration: none;
+            color: white;
+        }
+
+        div.menu p:hover {
+            background-color: darkturquoise;
+        }
+
+/* CategorieList */
+
+div.content {
+    width: 85%;
+    padding: 1%;
+    font-size: 120%;
+}
+
+    div.content h2 {
+        margin: 0;
+        font-size: 140%;
+    }
+
+    div.content button {
+        background-color: orange;
+        margin: 1% 0 1% 0;
+    }
+
+        div.content button a {
+            font-size: 130%;
+            text-decoration: none;
+            color: white;
+        }
+
+table.grid {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+    table.grid td, table.grid th {
+        border-bottom: 1px dotted gray;
+        text-align: left;
+    }
+
+        table.grid td:last-child, table.grid th:last-child {
+            text-align: right;
+        }
+
+/* CreateCategory */
+
+form {
+    margin: 1% 1% 0 1%;
+}
+
+#add-attribute {
+    margin-top: 1.5%;
+    background-color: orange;
+    color: white;
+    font-size: 90%;
+    cursor: pointer;
+}
+
+div.content button.delete-btn {
+    background-color: grey;
+    margin: 0;
+}
+
+input.submit-btn {
+    margin: 0 0 0 1%;
+    background-color: orange;
+    color: white;
+    font-size: 90%;
+    cursor: pointer;
+}
+
+/* EditCategory */
+
+button#close-window {
+    float: right;
+    margin: 0;
+    background-color: grey;
+}
+
+div.warning-edit {
+    border: 1px dashed grey;
+    margin: 1% 1% 0 1%;
+    display: inline-block;
+}
+
+    div.warning-edit p {
+        margin: 0.5%;
+        padding: 1%;
+    }
+
+form#saveForm p:first-child {
+    margin: 0;
+}
+
+form#saveForm button {
+    margin: 0;
+}
+
+form#saveForm input.attribute-value {
+    width: 15%;
+}
+
+form#saveForm #add-attribute {
+    margin: 0;
+}
+
+form#saveForm input.delete-btn {
+    background-color: grey;
+}
+
+/* EditAttributesPosition */
+
+form input.submit-btn {
+    margin: 0;
+}
+
+/* Create/Edit Products */
+
+p#prodCategory {
+    margin-left: 25%;
+    margin-right: 25%;
+    text-align: center;
+}
+
+    p#prodCategory label {
+        font-weight: bold;
+    }
+
+div.editContainer {
+    width: 25%;
+}
+
+div#desc-prop {
+    height: 150px;
+}
+
+    div#desc-prop p {
+        margin: 0;
+    }
+
+        div#desc-prop p:first-child {
+            text-align: right;
+            font-style: italic;
+            font-size: 90%;
+            margin-bottom: 0.5%;
+        }
+
+div.editContainer input.text-box, textarea {
+    float: right;
+    width: 50%;
+}
+
+div.editContainer textarea {
+    width: 70%;
+    height: 120px;
+    resize: none;
+    font-size: 100%;
+}
+
+div.editor-img-field {
+    margin: 2% 0 2% 0;
+    border-top: 3px double black;
+    border-bottom: 3px double black;
+}
+
+div.exist-db-img {
+    border: 1px dashed grey;
+    padding: 1%;
+    margin: 1%;
+}
+
+p#exist-img-text {
+    margin: 0;
+}
+
+div.existing-img {
+    display: inline-block;
+    margin-right: 25px;
+}
+
+    div.existing-img p {
+        text-align: center;
+    }
+
+        div.existing-img p:last-child {
+            margin: 0;
+        }
+
+    div.existing-img div.rev-btn {
+        text-align: center;
+    }
+
+input.delete-img {
+    background-color: grey;
+}
+
+div.editor-img-field label {
+    border: 2px outset grey;
+    background-color: orange;
+    color: white;
+    margin-left: 1%;
+    padding: 0 0.5% 0 0.5%;
+    cursor: pointer;
+}
+
+div.preview {
+    margin: 2%;
+}
+
+    div.preview div p {
+        margin: 0;
+        text-align: center;
+    }
+
+    div.preview div img {
+        margin-top: 15px;
+    }
+
+input#remove-btn {
+    height: 27px;
+    border: 2px outset grey;
+    background-color: grey;
+    color: white;
+    font-size: 80%;
+    margin: 0 0 1% 1%;
+}
+
+form#editForm input.saveProd {
+    background-color: orange;
+    color: white;
+    font-size: 90%;
+    cursor: pointer;
+}
+
+/* Another */
+
+div.message {
+    background: grey;
+    color: white;
+    margin-bottom: 1%;
+    padding: 0.5%;
+    font-size: 100%;
+}
+
+/* ================ !!!!! TEMP !!!!!! ================= */
+
+div.preview div {
+    display: inline-block;
+    margin-right: 50px;
+}
+
+/* ===================================================== */
+
+/*table.grid th.NumericCol, table.grid td.NumericCol {
+        text-align: right;
+        padding-right: 1em;
+    }
+
+
+
+.field-validation-error {
+    color: red;
+    display: block;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid red;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: red;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.editor-field {
+    margin-bottom: .8em;
+}
+
+.editor-label {
+    font-weight: bold;
+}
+
+    .editor-label:after {
+        content: ":";
+    }
+
+.text-box {
+    width: 25em;
+}
+
+.multi-line {
+    height: 5em;
+    font-family: Segoe UI, Verdana;
+}*/

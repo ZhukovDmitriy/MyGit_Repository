@@ -1,0 +1,41 @@
+﻿@model Portfolio.Domain.Models.ProjectEditModel
+
+@{
+    ViewBag.Title = "Редактировать: " + Model.Project.Name;
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Редактировать: @Model.Project.Name</h1>
+
+@using (Html.BeginForm("Edit", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.HiddenFor(m => Model.Project.ProjectID)
+
+    <p>@Html.EditorFor(m => Model.Project.Name)</p>
+    <p>@Html.EditorFor(m => Model.Project.Description)</p>
+
+    @Html.HiddenFor(m => Model.Image.IdProject)
+    @Html.HiddenFor(m => Model.Image.ImageID)
+    @Html.HiddenFor(m => Model.Image.Name)
+    @Html.HiddenFor(m => Model.Image.ImageMimeType)
+
+    <div class="editor-label">Изображение</div>
+    <div class="editor-field">
+        @if (Model.Images == null)
+        {
+            @:Отсутствует
+        }
+        else
+        {
+            foreach (var c in Model.Images)
+            {
+                <a href="@Url.Action("DeleteImg", new { c.ImageID })">&times;</a>
+                <img width="150" src="@Url.Action("GetImage","Project", new { c.ImageID })" />
+                <p>@c.Name</p>
+            }
+        }
+        <div>Загрузить изображение: <input type="file" name="Img" /></div>
+    </div>
+    <input type="submit" value="Сохранить" />
+    @Html.ActionLink("Отменить изменения и вернуться к списку", "Index")
+}

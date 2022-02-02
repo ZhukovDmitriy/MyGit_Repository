@@ -1,0 +1,26 @@
+﻿@* Деректива @model была изменена для сообщения Razor о том, *@
+@* что теперь работа выполняется с другим типом данных *@
+@*@model IEnumerable<CompAccessory.Domain.Entites.Accessory> *@
+
+@model CompAccessory.WedUI.Models.AccessoriesListViewModel
+
+@{
+    ViewBag.Title = "Accessories";
+}
+
+@* Источником данных теперь служит свойство Accessories*@
+@foreach (var p in Model.Accessories)
+{
+    Html.RenderPartial("AccessorySummary", p);@* RenderPartial() выполняет визуализацию заданного частичного представления *@
+}
+<div class="pager">
+    @* URL-хелпер Action: создает путь URL и возвращает его в виде строки*@
+    @* Url.Action("someaction", "somecontroller", new { id = "123" }) генерирует: /somecontroller/someaction/123*@
+    @* Выражение создает "Якорь" - закладку с уникальным именем на определенном месте веб-страницы, предназначенную для создания перехода к ней по ссылке" *@
+    @Html.PageLinks(Model.PageInfo, x => Url.Action("List", new { page = x, category = Model.CurrentCategory }))
+    @* Передаем методу Url.Action информацию о текущей категории для генерации сылки вида http://<сервер>:<порт>/Категория/Страница*@
+    @* В нашем случае формирует полный URL-адрес метода действие,*@
+    @* используя указанное имя действия и значение маршрута*@
+    @* Вызывает метод действия List из контроллера. Результат: http://localhost:49903/?page=2*@
+</div>
+

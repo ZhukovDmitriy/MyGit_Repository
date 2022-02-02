@@ -1,0 +1,36 @@
+﻿@model IEnumerable<CompAccessory.Domain.Entites.Accessory>
+
+@{
+    ViewBag.Title = "Admin: All Products";
+    @* Используем компановку или мастер-страницу _AdminLayout для данного представления Index *@
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Все товары</h1>
+
+<table class="grid">
+    <tr>
+        <th>ID</th>
+        <th>Название</th>
+        <th class="numericCol">Цена</th>
+        <th>Действие</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.AccessoryID</td>
+            <td>@Html.ActionLink(item.Name, "Edit", new { item.AccessoryID })</td>
+            <td class="numericCol">@item.Price.ToString("c")</td>
+            <td>
+                @* Метод Html.BeginForm генерирует элементы HTML-формы. *@
+                @* Данный хелпер создает как открывающий тег <form>, так и закрывающий тег </form> *@
+                @using (Html.BeginForm("Delete", "Admin"))
+                {
+                    @Html.Hidden("AccessoryID", item.AccessoryID)
+                    <input type="submit" value="Удалить" />
+                }
+            </td>
+        </tr>
+    }
+</table>
+<p>@Html.ActionLink("Добавить новый товар", "Create")</p>

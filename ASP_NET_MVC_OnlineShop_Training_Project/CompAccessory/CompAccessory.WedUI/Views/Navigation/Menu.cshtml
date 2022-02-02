@@ -1,0 +1,24 @@
+﻿@model IEnumerable<string>
+
+@* Возвращает элемент привязки (элемента a) для указанного: текста ссылки, метода действия и контроллера *@
+@Html.ActionLink("Главная страница", "List", "Accessory")   @* Создаем ссылку на главную страницу *@
+
+@* Получаем свойство Model. IEnumerable<string>.Model{get;} *@
+@* Перечисляем имена категорий и создаем ссылки для них*@
+@foreach (var link in Model)
+{
+    @* Метод RouteLink похож на ActionLink но, передает набор пар "имя/значение" *@
+    @Html.RouteLink(link, new
+{
+    controller = "Accessory",
+    action = "List",
+    category = link,
+    page = 1
+},
+        @* Перегружаем метод RouteLink предоставляя объект, свойства которого будут добавленны к HTML-элементу a в виде атрибутов *@
+        @* В этом случае ссылке, предоставляющей выбранную категорию, назначется CSS-класс selected *@
+        new
+        {
+            @class = link == ViewBag.SelectedCategory ? "selected" : null
+        })
+}

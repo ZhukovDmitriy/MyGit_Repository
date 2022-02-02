@@ -1,0 +1,14 @@
+D:\HomeWork_Norm\hw_01\task_01_Calculator\bin\Debug\task_01_Calculator.exe.config
+D:\HomeWork_Norm\hw_01\task_01_Calculator\bin\Debug\task_01_Calculator.exe
+D:\HomeWork_Norm\hw_01\task_01_Calculator\bin\Debug\task_01_Calculator.pdb
+D:\HomeWork_Norm\hw_01\task_01_Calculator\obj\Debug\task_01_Calculator.csprojAssemblyReference.cache
+D:\HomeWork_Norm\hw_01\task_01_Calculator\obj\Debug\task_01_Calculator.csproj.CoreCompileInputs.cache
+D:\HomeWork_Norm\hw_01\task_01_Calculator\obj\Debug\task_01_Calculator.exe
+D:\HomeWork_Norm\hw_01\task_01_Calculator\obj\Debug\task_01_Calculator.pdb
+D:\HW_Norm\hw_01\task_01_Calculator\bin\Debug\task_01_Calculator.exe.config
+D:\HW_Norm\hw_01\task_01_Calculator\bin\Debug\task_01_Calculator.exe
+D:\HW_Norm\hw_01\task_01_Calculator\bin\Debug\task_01_Calculator.pdb
+D:\HW_Norm\hw_01\task_01_Calculator\obj\Debug\task_01_Calculator.csprojAssemblyReference.cache
+D:\HW_Norm\hw_01\task_01_Calculator\obj\Debug\task_01_Calculator.csproj.CoreCompileInputs.cache
+D:\HW_Norm\hw_01\task_01_Calculator\obj\Debug\task_01_Calculator.exe
+D:\HW_Norm\hw_01\task_01_Calculator\obj\Debug\task_01_Calculator.pdb

@@ -1,0 +1,7 @@
+D:\Hillel - Introduction C#\HomeWork\HW_08\HomeWork_08\HW_08\bin\Debug\HW_08.exe.config
+D:\Hillel - Introduction C#\HomeWork\HW_08\HomeWork_08\HW_08\bin\Debug\HW_08.exe
+D:\Hillel - Introduction C#\HomeWork\HW_08\HomeWork_08\HW_08\bin\Debug\HW_08.pdb
+D:\Hillel - Introduction C#\HomeWork\HW_08\HomeWork_08\HW_08\obj\Debug\HW_08.csprojAssemblyReference.cache
+D:\Hillel - Introduction C#\HomeWork\HW_08\HomeWork_08\HW_08\obj\Debug\HW_08.csproj.CoreCompileInputs.cache
+D:\Hillel - Introduction C#\HomeWork\HW_08\HomeWork_08\HW_08\obj\Debug\HW_08.exe
+D:\Hillel - Introduction C#\HomeWork\HW_08\HomeWork_08\HW_08\obj\Debug\HW_08.pdb

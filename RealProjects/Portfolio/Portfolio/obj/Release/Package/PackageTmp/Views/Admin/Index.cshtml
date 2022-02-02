@@ -1,0 +1,33 @@
+﻿@model Portfolio.Models.ProjectViewModel
+
+@{
+    ViewBag.Title = "Admin: All Projects";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Мои проекты</h1>
+
+<table class="Grid">
+    <tr>
+        <th>ID</th>
+        <th>Название проекта</th>
+        <th>Описание</th>
+        <th>Действие</th>
+    </tr>
+    @foreach (var item in Model.Projects)
+    {
+        <tr>
+            <td>@item.ProjectID</td>
+            <td>@Html.ActionLink(item.Name, "Edit", new { item.ProjectID })</td>
+            <td>@item.Description</td>
+            <td>
+                @using (Html.BeginForm("Delete", "Admin"))
+                {
+                    @Html.Hidden("ProjectID", item.ProjectID)
+                    <input type="submit" value="Удалить" />
+                }
+            </td>
+        </tr>
+    }
+</table>
+<p>@Html.ActionLink("Добавить новый проект", "Create")</p>

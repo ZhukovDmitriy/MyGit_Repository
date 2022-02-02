@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/Admin.css" rel="stylesheet" type="text/css" />
+    @*<script src="~/Scripts/jquery-3.3.1.js"></script>
+        <script src="~/Scripts/jquery.validate.min.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>*@
+    <title></title>
+</head>
+<body>
+    <div class="header">
+        <p>STORE ENGINE: Administrative Area</p>
+    </div>
+    <div class="container">
+        <div class="menu">
+            <p>@Html.ActionLink("Home", "Home")</p>
+            <p>@Html.ActionLink("Edit Products", "ProductsList")</p>
+            <p>@Html.ActionLink("Edit Categories", "CategoriesList")</p>
+        </div>
+        <div class="content">
+            @if (TempData["message"] != null)
+            {
+                <div class="message">@TempData["message"]</div>
+            }
+            @RenderBody()
+        </div>
+    </div>
+</body>
+</html>

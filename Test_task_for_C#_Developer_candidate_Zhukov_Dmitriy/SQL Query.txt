@@ -1,0 +1,51 @@
+CREATE DATABASE ApplicationForCash;
+
+USE ApplicationForCash;
+
+CREATE TABLE [dbo].[Roles] (
+    [RoleID]   INT            IDENTITY (1, 1) NOT NULL,
+    [RoleName] NVARCHAR (MAX) NULL,
+    CONSTRAINT [PK_Roles] PRIMARY KEY CLUSTERED ([RoleID] ASC)
+);
+
+INSERT INTO Roles (RoleName) VALUES ('User')
+
+CREATE TABLE [dbo].[Users] (
+    [UserID]    INT            IDENTITY (1, 1) NOT NULL,
+    [LastName]  NVARCHAR (MAX) NULL,
+    [FirstName] NVARCHAR (MAX) NULL,
+    [Login]     NVARCHAR (MAX) NOT NULL,
+    [Password]  NVARCHAR (MAX) NOT NULL,
+    [RoleID]    INT            NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED ([UserID] ASC),
+    CONSTRAINT [FK_Users_Roles_RoleID] FOREIGN KEY ([RoleID]) REFERENCES [dbo].[Roles] ([RoleID])
+);
+
+GO
+CREATE NONCLUSTERED INDEX [IX_Users_RoleID]
+    ON [dbo].[Users]([RoleID] ASC);
+
+INSERT INTO Users (LastName, FirstName, Login, Password, RoleID) 
+VALUES ('Жуков', 'Дмитрий', 'Zhukov', 'Zhukov123', '1')
+
+CREATE TABLE [dbo].[Departments] (
+    [DepartmentID] INT            IDENTITY (1, 1) NOT NULL,
+    [Address]      NVARCHAR (MAX) NULL,
+    CONSTRAINT [PK_Departments] PRIMARY KEY CLUSTERED ([DepartmentID] ASC)
+);
+
+INSERT INTO Departments (Address) VALUES 
+('Отделение № 1 - Ул. Яворницкого, 57'),
+('Отделение № 2 - Ул. Гагарина, 44'),
+('Отделение № 3 - Ул. Европейска, 7')
+
+CREATE TABLE [dbo].[CashRequests] (
+    [RequestID]         INT            IDENTITY (1, 1) NOT NULL,
+    [ClientID]          INT            NOT NULL,
+    [DepartmentAddress] NVARCHAR (MAX) NOT NULL,
+    [Currency]          NVARCHAR (MAX) NOT NULL,
+    [Amount]            INT            NOT NULL,
+    [RequestStatus]     BIT            DEFAULT ((1)) NOT NULL,
+    [StatusComment]     NVARCHAR (MAX) NOT NULL,
+    CONSTRAINT [PK_CashRequests] PRIMARY KEY CLUSTERED ([RequestID] ASC)
+);

@@ -1,0 +1,207 @@
+﻿@model StoreEngine.WebUI.Models.CreateCategoryViewModel
+
+@{
+    ViewBag.Title = "Admin: Edit Category";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Edit Category</h2>
+
+<div class="warning-edit">
+    <button id="close-window" onclick="this.parentNode.style.display = 'none';">x</button>
+    <p>
+        Be careful when editing attributes fields, do not violate the semantic load of the attribute,
+        <br /> since this category may have already existing products and specified attributes values in the database!
+    </p>
+</div>
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "saveForm" }))
+{
+    <label>Category Name</label>
+    <br />
+    @Html.EditorFor(p => Model.Category.CategoryID)
+    @Html.EditorFor(p => Model.Category.Name)
+
+    <p><button onclick="return ConfirmAction()">@Html.ActionLink("Edit attributes position", "EditAttributesPosition", new { Model.Category.CategoryID })</button></p>
+
+    for (int i = 0; i < Model.Attributes.Count(); i++)
+    {
+        <div>
+            <p>@Html.EditorFor(m => Model.Attributes[i].AttributeID)</p>
+            <p>@Html.EditorFor(m => Model.Attributes[i].CategoryID)</p>
+            <p>@Html.EditorFor(m => Model.Attributes[i].Name, new { htmlAttributes = new { @class = "attribute-value" } })<input class="delete-btn" type="button" value="x" onclick="RemoveAttribute(this.parentNode);" /></p>
+        </div>
+    }
+
+    <input type="button" id="add-attribute" value="Add Attribute" onclick="addAttribute(); " />
+}
+<br /><input class="submit-btn" type="submit" form="saveForm" value="Save" onclick="return ValidateForm();" />
+
+<script type="text/javascript">
+
+    // Глобальная переменная, является свойством глобального объекта window
+    var allAttribute = document.getElementsByClassName('attribute-value');
+
+    var arrayValue = new Array(allAttribute.length);
+
+    // При вызове функции значение из текущего input записывается в массив 
+    // помечая этот input атрибутом disabled = true
+    // при отправке формы, значение этого input будет содержать null
+    // По нажатию на button cancel значение из массива снова возвращается в изначально соответствующий ему input
+    function RemoveAttribute(parentElm) {
+
+        //var removeInput = parentElm.children[0];
+        var removeInput = parentElm.firstChild;
+
+        if (removeInput.value == 'The attribute will be removed') {
+
+            removeInput.removeAttribute('disabled');
+
+            var positionAttribute = GetPosition(removeInput);
+
+            removeInput.value = arrayValue[positionAttribute];
+            parentElm.lastChild.value = 'x';
+
+            return;
+        }
+
+        var attributeValue = document.getElementById(removeInput.id).value;
+
+        WriteToArray(attributeValue);
+
+        removeInput.setAttribute('disabled', 'true');
+        removeInput.value = 'The attribute will be removed';
+        parentElm.lastChild.value = 'cancel';
+    }
+
+    function WriteToArray(val) {
+
+        for (var i = 0; i < allAttribute.length; i++) {
+
+            if (allAttribute[i].value == val) {
+                arrayValue[i] = val;
+            }
+        }
+    }
+
+    function GetPosition(elm) {
+
+        for (var i = 0; i < allAttribute.length; i++) {
+
+            if (allAttribute[i] == elm) {
+                return i;
+            }
+        }
+    }
+
+    function addAttribute() {
+
+        var attribute = document.getElementsByClassName('reserveAttribute')[0].cloneNode(true);
+        attribute.style.display = 'block';
+        attribute.className = "newAttribute";
+
+        var attributeChild = attribute.getElementsByTagName('input')[2];
+        attributeChild.className = "inputField";
+
+        var form = document.getElementsByTagName("form")[0];
+        form.appendChild(attribute);
+    }
+
+    function Reverse(el, param) {
+
+        var all = document.getElementsByClassName('newAttribute');
+
+        for (var i = 0; i < all.length; i++) {
+
+            if (all[i] == el) {
+
+                //alert("index " + i);
+                //break;
+
+                var currentField = document.getElementsByClassName('inputField')[i];
+
+                if (param == 1) {
+                    if (i == 0) {
+                        break;
+                    }
+                    var moveTo = document.getElementsByClassName('inputField')[i - 1];
+                }
+                if (param == 2) {
+                    if (i == all.length - 1) {
+                        break;
+                    }
+                    var moveTo = document.getElementsByClassName('inputField')[i + 1];
+                }
+
+                var temp = currentField.value;
+                currentField.value = moveTo.value;
+                moveTo.value = temp;
+            }
+        }
+    }
+
+    function ValidateForm() {
+
+        var allCheckedElm = document.getElementsByClassName('text-box');
+        var allAddedAttribute = document.getElementsByClassName('inputField');
+
+        if (allCheckedElm[0].value == '') {
+
+            alert('Enter the category name!');
+
+            var invalidForm = true;
+        }
+
+        for (var i = 1; i < allCheckedElm.length; i++) {
+
+            if (allCheckedElm[i].value == '') {
+
+                alert('Enter all empties attributes!');
+
+                var invalidForm = true;
+
+                break;
+            }
+        }
+
+        for (var i = 0; i < allAddedAttribute.length; i++) {
+
+            if (allAddedAttribute[i].value == '') {
+
+                alert('Enter the values of all added attributes!');
+
+                var invalidForm = true;
+
+                break;
+            }
+        }
+
+        if (invalidForm) {
+            return false;
+        }
+    }
+
+    function ConfirmAction() {
+
+        var areYouSure = 'All unsaved changes will be lost! Save any changes you made before editing attributes positions! '
+            + 'Are you sure you want to continue?';
+
+        const result = confirm(areYouSure);
+
+        if (result) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+</script>
+
+<div class="reserveAttribute" style="display: none;">
+    <br />
+    <input type="button" value="&and;" onclick="Reverse(this.parentNode, 1);" />
+    <input type="button" value="&or;" onclick="Reverse(this.parentNode, 2);" />
+    <input name="attribute" />
+    <button class="delete-btn" onclick="this.parentNode.parentNode.removeChild(this.parentNode);">x</button>
+</div>

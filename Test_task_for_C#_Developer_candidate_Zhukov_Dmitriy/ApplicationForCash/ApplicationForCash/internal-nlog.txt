@@ -1,0 +1,141 @@
+2022-02-01 20:46:25.3160 Info Message Template Auto Format enabled
+2022-02-01 20:46:25.3316 Info Loading assembly: NLog.Web.AspNetCore
+2022-02-01 20:46:25.3573 Info Adding target FileTarget(Name=allfile)
+2022-02-01 20:46:25.3573 Info Adding target FileTarget(Name=ownFile-web)
+2022-02-01 20:46:25.3729 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\MyProjects\Projects_Test_Employers_PrivatBank\ApplicationForCash\ApplicationForCash\bin\Debug\netcoreapp3.1\NLog.config
+2022-02-01 20:46:25.3820 Info Configuration initialized.
+2022-02-01 20:46:25.3820 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-02-01 20:46:29.6152 Info Configuring from an XML element in D:\MyProjects\Projects_Test_Employers_PrivatBank\ApplicationForCash\ApplicationForCash\bin\Debug\netcoreapp3.1\nlog.config...
+2022-02-01 20:46:29.6159 Info Message Template Auto Format enabled
+2022-02-01 20:46:29.6159 Info Loading assembly: NLog.Web.AspNetCore
+2022-02-01 20:46:29.6159 Info Adding target FileTarget(Name=allfile)
+2022-02-01 20:46:29.6159 Info Adding target FileTarget(Name=ownFile-web)
+2022-02-01 20:46:29.6159 Info Closing old configuration.
+2022-02-01 20:46:29.6315 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\MyProjects\Projects_Test_Employers_PrivatBank\ApplicationForCash\ApplicationForCash\bin\Debug\netcoreapp3.1\nlog.config
+2022-02-01 20:47:46.0346 Info Message Template Auto Format enabled
+2022-02-01 20:47:46.0465 Info Loading assembly: NLog.Web.AspNetCore
+2022-02-01 20:47:46.0729 Info Adding target FileTarget(Name=allfile)
+2022-02-01 20:47:46.0729 Info Adding target FileTarget(Name=ownFile-web)
+2022-02-01 20:47:46.0884 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\MyProjects\Projects_Test_Employers_PrivatBank\ApplicationForCash\ApplicationForCash\bin\Debug\netcoreapp3.1\NLog.config
+2022-02-01 20:47:46.0884 Info Configuration initialized.
+2022-02-01 20:47:46.0884 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-02-01 20:47:49.0557 Info Configuring from an XML element in D:\MyProjects\Projects_Test_Employers_PrivatBank\ApplicationForCash\ApplicationForCash\bin\Debug\netcoreapp3.1\nlog.config...
+2022-02-01 20:47:49.0557 Info Message Template Auto Format enabled
+2022-02-01 20:47:49.0557 Info Loading assembly: NLog.Web.AspNetCore
+2022-02-01 20:47:49.0557 Info Adding target FileTarget(Name=allfile)
+2022-02-01 20:47:49.0557 Info Adding target FileTarget(Name=ownFile-web)
+2022-02-01 20:47:49.0557 Info Closing old configuration.
+2022-02-01 20:47:49.0557 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\MyProjects\Projects_Test_Employers_PrivatBank\ApplicationForCash\ApplicationForCash\bin\Debug\netcoreapp3.1\nlog.config
+2022-02-01 20:50:19.9831 Info Message Template Auto Format enabled
+2022-02-01 20:50:19.9999 Info Loading assembly: NLog.Web.AspNetCore
+2022-02-01 20:50:20.0265 Info Adding target FileTarget(Name=allfile)
+2022-02-01 20:50:20.0265 Info Adding target FileTarget(Name=ownFile-web)
+2022-02-01 20:50:20.0433 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\MyProjects\Projects_Test_Employers_PrivatBank\ApplicationForCash\ApplicationForCash\bin\Debug\netcoreapp3.1\NLog.config
+2022-02-01 20:50:20.0537 Info Configuration initialized.
+2022-02-01 20:50:20.0537 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-02-01 20:50:23.0423 Info Configuring from an XML element in D:\MyProjects\Projects_Test_Employers_PrivatBank\ApplicationForCash\ApplicationForCash\bin\Debug\netcoreapp3.1\nlog.config...
+2022-02-01 20:50:23.0423 Info Message Template Auto Format enabled
+2022-02-01 20:50:23.0423 Info Loading assembly: NLog.Web.AspNetCore
+2022-02-01 20:50:23.0580 Info Adding target FileTarget(Name=allfile)
+2022-02-01 20:50:23.0580 Info Adding target FileTarget(Name=ownFile-web)
+2022-02-01 20:50:23.0580 Info Closing old configuration.
+2022-02-01 20:50:23.0769 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\MyProjects\Projects_Test_Employers_PrivatBank\ApplicationForCash\ApplicationForCash\bin\Debug\netcoreapp3.1\nlog.config
+2022-02-01 20:52:49.2709 Info Message Template Auto Format enabled
+2022-02-01 20:52:49.2827 Info Loading assembly: NLog.Web.AspNetCore
+2022-02-01 20:52:49.3084 Info Adding target FileTarget(Name=allfile)
+2022-02-01 20:52:49.3084 Info Adding target FileTarget(Name=ownFile-web)
+2022-02-01 20:52:49.3265 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\MyProjects\Projects_Test_Employers_PrivatBank\ApplicationForCash\ApplicationForCash\bin\Debug\netcoreapp3.1\NLog.config
+2022-02-01 20:52:49.3357 Info Configuration initialized.
+2022-02-01 20:52:49.3357 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.11.13229. Product version: 4.7.11+33ed3a9f86277651e93ddf39cda64a046a06778b. GlobalAssemblyCache: False
+2022-02-01 20:52:52.4216 Info Configuring from an XML element in D:\MyProjects\Projects_Test_Employers_PrivatBank\ApplicationForCash\ApplicationForCash\bin\Debug\netcoreapp3.1\nlog.config...
+2022-02-01 20:52:52.4216 Info Message Template Auto Format enabled
+2022-02-01 20:52:52.4216 Info Loading assembly: NLog.Web.AspNetCore
+2022-02-01 20:52:52.4216 Info Adding target FileTarget(Name=allfile)
+2022-02-01 20:52:52.4216 Info Adding target FileTarget(Name=ownFile-web)
+2022-02-01 20:52:52.4216 Info Closing old configuration.
+2022-02-01 20:52:52.4323 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\MyProjects\Projects_Test_Employers_PrivatBank\ApplicationForCash\ApplicationForCash\bin\Debug\netcoreapp3.1\nlog.config
+2022-02-01 21:01:33.2980 Info Message Template Auto Format enabled
+2022-02-01 21:01:33.3106 Info Loading assembly: NLog.Web.AspNetCore
+2022-02-01 21:01:33.3509 Info Adding target FileTarget(Name=allfile)
+2022-02-01 21:01:33.3509 Info Adding target FileTarget(Name=ownFile-web)
+2022-02-01 21:01:33.3868 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\MyProjects\Projects_Test_Employers_PrivatBank\ApplicationForCash\ApplicationForCash\bin\Debug\netcoreapp3.1\nlog.config
+2022-02-01 21:06:17.7346 Info Message Template Auto Format enabled
+2022-02-01 21:06:17.7465 Info Loading assembly: NLog.Web.AspNetCore
+2022-02-01 21:06:17.7864 Info Adding target FileTarget(Name=allfile)
+2022-02-01 21:06:17.7924 Info Adding target FileTarget(Name=ownFile-web)
+2022-02-01 21:06:17.8327 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\MyProjects\Projects_Test_Employers_PrivatBank\ApplicationForCash\ApplicationForCash\bin\Debug\netcoreapp3.1\nlog.config
+2022-02-01 21:08:29.9814 Info Message Template Auto Format enabled
+2022-02-01 21:08:29.9925 Info Loading assembly: NLog.Web.AspNetCore
+2022-02-01 21:08:30.0275 Info Adding target FileTarget(Name=allfile)
+2022-02-01 21:08:30.0275 Info Adding target FileTarget(Name=ownFile-web)
+2022-02-01 21:08:30.0605 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\MyProjects\Projects_Test_Employers_PrivatBank\ApplicationForCash\ApplicationForCash\bin\Debug\netcoreapp3.1\nlog.config
+2022-02-01 22:43:28.1643 Info Message Template Auto Format enabled
+2022-02-01 22:43:28.1643 Info Loading assembly: NLog.Web.AspNetCore
+2022-02-01 22:43:28.2248 Info Adding target FileTarget(Name=allfile)
+2022-02-01 22:43:28.2248 Info Adding target FileTarget(Name=ownFile-web)
+2022-02-01 22:43:28.2698 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\MyProjects\Projects_Test_Employers_PrivatBank\ApplicationForCash\ApplicationForCash\bin\Debug\netcoreapp3.1\nlog.config
+2022-02-01 22:46:46.8873 Info Message Template Auto Format enabled
+2022-02-01 22:46:46.8987 Info Loading assembly: NLog.Web.AspNetCore
+2022-02-01 22:46:46.9379 Info Adding target FileTarget(Name=allfile)
+2022-02-01 22:46:46.9447 Info Adding target FileTarget(Name=ownFile-web)
+2022-02-01 22:46:46.9762 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\MyProjects\Projects_Test_Employers_PrivatBank\ApplicationForCash\ApplicationForCash\bin\Debug\netcoreapp3.1\nlog.config
+2022-02-01 22:48:59.4199 Info Message Template Auto Format enabled
+2022-02-01 22:48:59.4341 Info Loading assembly: NLog.Web.AspNetCore
+2022-02-01 22:48:59.4784 Info Adding target FileTarget(Name=allfile)
+2022-02-01 22:48:59.4784 Info Adding target FileTarget(Name=ownFile-web)
+2022-02-01 22:48:59.5185 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\MyProjects\Projects_Test_Employers_PrivatBank\ApplicationForCash\ApplicationForCash\bin\Debug\netcoreapp3.1\nlog.config
+2022-02-01 22:51:02.5486 Info Message Template Auto Format enabled
+2022-02-01 22:51:02.5760 Info Loading assembly: NLog.Web.AspNetCore
+2022-02-01 22:51:02.6512 Info Adding target FileTarget(Name=allfile)
+2022-02-01 22:51:02.6626 Info Adding target FileTarget(Name=ownFile-web)
+2022-02-01 22:51:02.7153 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\MyProjects\Projects_Test_Employers_PrivatBank\ApplicationForCash\ApplicationForCash\bin\Debug\netcoreapp3.1\nlog.config
+2022-02-01 22:55:21.9367 Info Message Template Auto Format enabled
+2022-02-01 22:55:21.9367 Info Loading assembly: NLog.Web.AspNetCore
+2022-02-01 22:55:21.9851 Info Adding target FileTarget(Name=allfile)
+2022-02-01 22:55:21.9851 Info Adding target FileTarget(Name=ownFile-web)
+2022-02-01 22:55:22.0176 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\MyProjects\Projects_Test_Employers_PrivatBank\ApplicationForCash\ApplicationForCash\bin\Debug\netcoreapp3.1\nlog.config
+2022-02-01 22:56:13.2647 Info Message Template Auto Format enabled
+2022-02-01 22:56:13.2781 Info Loading assembly: NLog.Web.AspNetCore
+2022-02-01 22:56:13.3179 Info Adding target FileTarget(Name=allfile)
+2022-02-01 22:56:13.3251 Info Adding target FileTarget(Name=ownFile-web)
+2022-02-01 22:56:13.3525 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\MyProjects\Projects_Test_Employers_PrivatBank\ApplicationForCash\ApplicationForCash\bin\Debug\netcoreapp3.1\nlog.config
+2022-02-01 22:59:02.7873 Info Message Template Auto Format enabled
+2022-02-01 22:59:02.7998 Info Loading assembly: NLog.Web.AspNetCore
+2022-02-01 22:59:02.8500 Info Adding target FileTarget(Name=allfile)
+2022-02-01 22:59:02.8803 Info Adding target FileTarget(Name=ownFile-web)
+2022-02-01 22:59:02.9523 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\MyProjects\Projects_Test_Employers_PrivatBank\ApplicationForCash\ApplicationForCash\bin\Debug\netcoreapp3.1\nlog.config
+2022-02-01 23:00:39.8929 Info Message Template Auto Format enabled
+2022-02-01 23:00:39.9043 Info Loading assembly: NLog.Web.AspNetCore
+2022-02-01 23:00:39.9415 Info Adding target FileTarget(Name=allfile)
+2022-02-01 23:00:39.9415 Info Adding target FileTarget(Name=ownFile-web)
+2022-02-01 23:00:39.9752 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\MyProjects\Projects_Test_Employers_PrivatBank\ApplicationForCash\ApplicationForCash\bin\Debug\netcoreapp3.1\nlog.config
+2022-02-01 23:01:58.4161 Info Message Template Auto Format enabled
+2022-02-01 23:01:58.4161 Info Loading assembly: NLog.Web.AspNetCore
+2022-02-01 23:01:58.4718 Info Adding target FileTarget(Name=allfile)
+2022-02-01 23:01:58.4791 Info Adding target FileTarget(Name=ownFile-web)
+2022-02-01 23:01:58.5086 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\MyProjects\Projects_Test_Employers_PrivatBank\ApplicationForCash\ApplicationForCash\bin\Debug\netcoreapp3.1\nlog.config
+2022-02-01 23:26:04.1314 Info Message Template Auto Format enabled
+2022-02-01 23:26:04.1711 Info Loading assembly: NLog.Web.AspNetCore
+2022-02-01 23:26:04.2267 Info Adding target FileTarget(Name=allfile)
+2022-02-01 23:26:04.2267 Info Adding target FileTarget(Name=ownFile-web)
+2022-02-01 23:26:04.2628 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\MyProjects\Projects_Test_Employers_PrivatBank\ApplicationForCash\ApplicationForCash\bin\Debug\netcoreapp3.1\nlog.config
+2022-02-01 23:37:06.1519 Info Message Template Auto Format enabled
+2022-02-01 23:37:06.1955 Info Loading assembly: NLog.Web.AspNetCore
+2022-02-01 23:37:06.2651 Info Adding target FileTarget(Name=allfile)
+2022-02-01 23:37:06.3535 Info Adding target FileTarget(Name=ownFile-web)
+2022-02-01 23:37:06.4227 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\MyProjects\Projects_Test_Employers_PrivatBank\ApplicationForCash\ApplicationForCash\bin\Debug\netcoreapp3.1\nlog.config
+2022-02-01 23:47:30.3163 Info Message Template Auto Format enabled
+2022-02-01 23:47:30.3281 Info Loading assembly: NLog.Web.AspNetCore
+2022-02-01 23:47:30.3696 Info Adding target FileTarget(Name=allfile)
+2022-02-01 23:47:30.3696 Info Adding target FileTarget(Name=ownFile-web)
+2022-02-01 23:47:30.4031 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\MyProjects\Projects_Test_Employers_PrivatBank\ApplicationForCash\ApplicationForCash\bin\Debug\netcoreapp3.1\nlog.config
+2022-02-02 10:42:14.8818 Info Message Template Auto Format enabled
+2022-02-02 10:42:14.8997 Info Loading assembly: NLog.Web.AspNetCore
+2022-02-02 10:42:14.9557 Info Adding target FileTarget(Name=allfile)
+2022-02-02 10:42:14.9656 Info Adding target FileTarget(Name=ownFile-web)
+2022-02-02 10:42:14.9985 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\MyProjects\Projects_Test_Employers_PrivatBank\ApplicationForCash\ApplicationForCash\bin\Debug\netcoreapp3.1\nlog.config
+2022-02-02 17:35:28.3789 Info Message Template Auto Format enabled
+2022-02-02 17:35:28.4178 Info Loading assembly: NLog.Web.AspNetCore
+2022-02-02 17:35:28.4620 Info Adding target FileTarget(Name=allfile)
+2022-02-02 17:35:28.4711 Info Adding target FileTarget(Name=ownFile-web)
+2022-02-02 17:35:28.5079 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\MyProjects\Projects_Test_Employers_PrivatBank\ApplicationForCash\ApplicationForCash\bin\Debug\netcoreapp3.1\nlog.config

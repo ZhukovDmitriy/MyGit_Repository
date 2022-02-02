@@ -1,0 +1,17 @@
+﻿@model Portfolio.Models.LoginViewModel
+
+@{
+    ViewBag.Title = "Admin: Log In";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Вход в систему</h1>
+
+<p>Пожалуйста войдите в систему чтобы получить доступ к админ-панели</p>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    @Html.EditorForModel()
+    <p><input type="submit" value="Войти" /></p>
+}
+

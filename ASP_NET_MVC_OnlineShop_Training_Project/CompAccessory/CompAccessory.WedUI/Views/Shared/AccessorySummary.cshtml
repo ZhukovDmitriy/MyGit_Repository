@@ -1,0 +1,31 @@
+﻿@* Частичное представление для многократного использования другими представлениями, *@
+@* способстувет уменьшнию дублирования *@
+@model CompAccessory.Domain.Entites.Accessory
+
+<div class="item">
+
+    @if (Model.ImageData != null)
+    {
+        <div style="float:left; margin-right:20px">
+            <img width="150" height="150" src="@Url.Action("GetImage", "Accessory", new { Model.AccessoryID})" />
+        </div>
+    }
+
+    <h3>@Model.Name</h3>
+    @Model.Description
+
+    @* Добавляем блок Razor, создающий HTML-форму для каждого товара в списке *@
+    @* Метод Html.BeginForm генерирует элементы HTML-формы. *@
+    @* Данный хелпер создает как открывающий тег <form>, так и закрывающий тег </form> *@
+    @* Отправка этой формы приводит к вызову метода действия AddToCart в контроллере Cart *@
+    @using (Html.BeginForm("AddToCart", "Cart"))
+    {
+        @* Html.HiddenFor определяет скрытый HTML-элемент input для каждого свойства объекта *@
+        @Html.HiddenFor(x => x.AccessoryID)
+        @* Возвращает скрытый элемент input используя заданный вспомогательный метод HTML (имя поля формы и значение)*@
+        @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+        <input type="submit" value="+ Добавить в корзину" />
+    }
+    <h4>@Model.Price.ToString("c")</h4>
+</div>
+

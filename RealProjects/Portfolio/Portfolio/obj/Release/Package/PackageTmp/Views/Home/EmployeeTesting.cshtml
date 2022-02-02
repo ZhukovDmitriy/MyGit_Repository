@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/AdminDemo.css" type="text/css" rel="stylesheet" />
+    <title>EmployeeTesting</title>
+</head>
+<body>
+    <div>
+        <p class="descr-for-img">Авторизация пользователя</p>
+        <img class="myScreens" src="~/Content/Images/EmplTest/1.png" />
+
+        <p class="descr-for-img">Список всех пользователей, создание, редактирование</p>
+        <img class="myScreens" src="~/Content/Images/EmplTest/2.png" />
+
+        <p class="descr-for-img">Редактирование пользователя</p>
+        <img class="myScreens" src="~/Content/Images/EmplTest/3.png" />
+
+        <p class="descr-for-img">Список тем тестирования, административная зона - главная</p>
+        <img class="myScreens" src="~/Content/Images/EmplTest/4.png" />
+
+        <p class="descr-for-img">Редактирование темы</p>
+        <img class="myScreens" src="~/Content/Images/EmplTest/5.png" />
+
+        <p class="descr-for-img">Список вопросов в теме, добавление, редактирование</p>
+        <img class="myScreens" src="~/Content/Images/EmplTest/6.png" />
+
+        <p class="descr-for-img">Редактирование вопроса</p>
+        <img class="myScreens" src="~/Content/Images/EmplTest/7.png" />
+
+        <p class="descr-for-img">Редактирование вопроса</p>
+        <img class="myScreens" src="~/Content/Images/EmplTest/8.png" />
+
+        <p class="descr-for-img">Главная страница пользователя - выбор темы тестирования</p>
+        <img class="myScreens" src="~/Content/Images/EmplTest/9.png" />
+
+        <p class="descr-for-img">Тестирование</p>
+        <img class="myScreens" src="~/Content/Images/EmplTest/10.png" />
+
+        <p class="descr-for-img">Список результатов всех пользователей</p>
+        <img class="myScreens" src="~/Content/Images/EmplTest/11.png" />
+
+        <p class="descr-for-img">Список всех пользователей, переход к результатам конретного пользователя</p>
+        <img class="myScreens" src="~/Content/Images/EmplTest/12.png" />
+
+        <p class="descr-for-img">Отчет по результатам тестирования конкретного пользователя</p>
+        <img class="myScreens" src="~/Content/Images/EmplTest/13.png" />
+
+        <p class="descr-for-img">Детальный отчет прохождения теста</p>
+        <img class="myScreens" src="~/Content/Images/EmplTest/14.png" />
+
+        <p class="descr-for-img">Детальный отчет прохождения теста</p>
+        <img class="myScreens" src="~/Content/Images/EmplTest/15.png" />
+
+        <p class="descr-for-img">Статистика прохождения тестирования по выбранной теме</p>
+        <img class="myScreens" src="~/Content/Images/EmplTest/16.png" />
+
+        <p class="descr-for-img">Обучение сотрудников - создание, редактирования раздела обученея</p>
+        <img class="myScreens" src="~/Content/Images/EmplTest/17.png" />
+
+        <p class="descr-for-img">Обучение сотрудников - список учебных материалов в разделе</p>
+        <img class="myScreens" src="~/Content/Images/EmplTest/18.png" />
+
+        <p class="descr-for-img">Редактирование учебного материала</p>
+        <img class="myScreens" src="~/Content/Images/EmplTest/19.png" />
+
+        <p class="descr-for-img">Редактирование учебного материала</p>
+        <img class="myScreens" src="~/Content/Images/EmplTest/20.png" />
+
+        <p class="descr-for-img">Обучение сорудников - кабинет обучения пользователя</p>
+        <img class="myScreens" src="~/Content/Images/EmplTest/21.png" />
+
+        <p class="descr-for-img">Учебный материал</p>
+        <img class="myScreens" src="~/Content/Images/EmplTest/22.png" />
+
+        <p class="descr-for-img">Учебный материал, подтверждение о прочтении</p>
+        <img class="myScreens" src="~/Content/Images/EmplTest/23.png" />
+
+        <p class="descr-for-img">Статистика подтверждений о прочтении учебного материала</p>
+        <img class="myScreens" src="~/Content/Images/EmplTest/24.png" />
+
+        <p class="descr-for-img">Добавлена: ссылка на страницу жалоб</p>
+        <img class="myScreens" src="~/Content/Images/EmplTest/25.png" />
+
+        <p class="descr-for-img">Форма заполнения и варианты подания жалобы</p>
+        <img class="myScreens" src="~/Content/Images/EmplTest/26.png" />
+
+        <p class="descr-for-img">Добавлена: информация о наличии новых не прочитанных жалобах</p>
+        <img class="myScreens" src="~/Content/Images/EmplTest/27.png" />
+
+        <p class="descr-for-img">Список и статус сообщений</p>
+        <img class="myScreens" src="~/Content/Images/EmplTest/28.png" />
+
+        <p class="descr-for-img">Контакты лица подавшего публичную жалобу</p>
+        <img class="myScreens" src="~/Content/Images/EmplTest/29.png" />
+
+        <a class="prev" onclick="plusScreen(-1)">&#10094</a>
+        <a class="next" onclick="plusScreen(1)">&#10095</a>
+
+        <div class="dots-container">
+            @for (int i = 1; i <= 29; i++)
+            {
+                <span class="dot" onclick="currentScreen(@i)"></span>
+            }
+        </div>
+    </div>
+
+    <script type="text/javascript">
+
+        document.body.style.overflow = 'hidden';
+
+        var screenIndex = 1;
+        ShowScreens(screenIndex);
+
+        function plusScreen(n) {
+            ShowScreens(screenIndex += n);
+        }
+
+        function currentScreen(n) {
+            ShowScreens(screenIndex = n);
+        }
+
+        function ShowScreens(n) {
+
+            var descr = document.getElementsByClassName('descr-for-img');
+            var screens = document.getElementsByClassName('myScreens');
+            var dots = document.getElementsByClassName('dot');
+
+            if (n > screens.length) {
+                screenIndex = 1
+            }
+
+            if (n < 1) {
+                screenIndex = screens.length
+            }
+
+            for (var i = 0; i < screens.length; i++) {
+                screens[i].style.display = "none";
+                descr[i].style.display = "none";
+            }
+
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace("active", "");
+            }
+
+            screens[screenIndex - 1].style.display = "block";
+            descr[screenIndex - 1].style.display = "block";
+            dots[screenIndex - 1].className += " active";
+        }
+
+    </script>
+
+</body>
+</html>

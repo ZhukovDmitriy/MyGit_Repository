@@ -1,0 +1,20 @@
+﻿@model CompDevices.Domain.Entities.Product
+
+<p>@Model.Description @Model.Brand</p>
+<p>@Model.Model</p>
+
+@if (Model.ImageData != null)
+{
+    <a href="@Url.Action("DetailProductView", "Product", new { prodID = Model.ProductID })">
+        <img class="prodImage" src="@Url.Action("GetImage", "Product", new { Model.ProductID })" />
+    </a>
+}
+
+@using (Html.BeginForm("AddToCart", "Cart"))
+{
+    @Html.HiddenFor(x => x.ProductID)
+    @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+    <p class="priceLine"><span class="price">@Model.Price</span> грн <input type="image" src="~/Content/Images/Cart.png" alt="Submit" /></p> 
+}
+
+
