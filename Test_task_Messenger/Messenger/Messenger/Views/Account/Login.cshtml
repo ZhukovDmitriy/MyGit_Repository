@@ -1,0 +1,25 @@
+﻿@model Messenger.Models.ViewModels.LoginModel
+
+@{
+    ViewBag.Title = "Авторизация";
+    Layout = "_Layout";
+}
+
+<h1 class="page-theme">Авторизация</h1>
+
+<p class="page-description">Пожалуйста авторизируйтесь, чтобы получить доступ к сайту.</p>
+
+@Html.ValidationSummary(true)
+@using (Html.BeginForm())
+{
+    <div id="login-form">
+        <label>Логин: </label>
+        <p>@Html.EditorFor(m => m.Login)</p>
+        <label>Пароль: </label>
+        <p>@Html.EditorFor(m => m.Password)</p>
+
+        @Html.HiddenFor(m => m.ReturnUrl)
+
+        <p><input id="login-btn" type="submit" value="Войти" /></p>
+    </div>
+}

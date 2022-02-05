@@ -1,0 +1,44 @@
+﻿@model Messenger.Models.ViewModels.UserMessagesViewModel
+
+@{
+    ViewBag.Title = "Сообщения пользователя";
+    Layout = "_Layout";
+}
+
+<input class="nav-btn" type="button" value="Вернуться назад"
+       onclick="location.href='@Url.Action("Index", "Admin")'" />
+
+<h1 class="page-theme">Сообщения пользователя</h1>
+
+<p class="page-description">Все сообщения пользователя <label>@Model.User.FirstName @Model.User.LastName</label></p>
+
+@{
+    int i = 1;
+}
+
+<table class="grid">
+    <tr>
+        <th>№:</th>
+        <th>Сообщение:</th>
+        <th>Дата:</th>
+        <th>Действие:</th>
+    </tr>
+
+    @foreach (var item in Model.Messages)
+    {
+        <tr>
+            <td>@i</td>
+            <td>@item.Content</td>
+            <td>@item.Date</td>
+            <td>
+                @using (Html.BeginForm("RemoveMessage", "Admin"))
+                {
+                    @Html.Hidden("MessageID", item.MessageID)
+                    <input type="submit" value="Удалить" />
+                }
+            </td>
+        </tr>
+
+        { i++; }
+    }
+</table>

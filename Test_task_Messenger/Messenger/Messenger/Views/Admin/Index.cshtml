@@ -1,0 +1,64 @@
+﻿@model Messenger.Models.ViewModels.UserMessagesViewModel
+
+@{
+    ViewBag.Title = "Административная область";
+    Layout = "_Layout";
+}
+
+<input class="nav-btn" type="button" value="Перейти в чат"
+       onclick="location.href='@Url.Action("Index", "Message")'" />
+<input class="nav-btn" type="button" value="Данные пользователей"
+       onclick="location.href='@Url.Action("UserData", "Admin")'" />
+<input class="nav-btn" type="button" value="Сообщения по пользователям"
+       onclick="location.href='@Url.Action("UserList", "Admin")'" />
+<input class="nav-btn logout-btn" type="button" value="Покинуть аккаунт"
+       onclick="location.href='@Url.Action("Logout", "Account")'" />
+
+<h1 class="page-theme">Область администрирования</h1>
+
+<p class="page-description">Все сообщения пользователей</p>
+
+<div id="sort-options">
+    <select id="option" onchange="location = this.value;">
+        <option value="">Сортировать по...</option>
+        <option value="@Url.Action("Index", "Admin", new { sortType = 1 })">Дате сообщения</option>
+        <option value="@Url.Action("Index", "Admin", new { sortType = 2 })">Фамилии</option>
+        <option value="@Url.Action("Index", "Admin", new { sortType = 3 })">Имени</option>
+
+    </select>
+</div>
+
+@{
+    int i = 1;
+}
+
+<table class="grid">
+    <tr>
+        <th>№:</th>
+        <th>Фамилия:</th>
+        <th>Имя:</th>
+        <th>Сообщение:</th>
+        <th>Дата:</th>
+        <th>Действие:</th>
+    </tr>
+
+    @foreach (var item in Model.Messages)
+    {
+        <tr>
+            <td>@i</td>
+            <td>@item.User.FirstName</td>
+            <td>@item.User.LastName</td>
+            <td>@item.Content</td>
+            <td>@item.Date</td>
+            <td>
+                @using (Html.BeginForm("RemoveMessage", "Admin"))
+                {
+                    @Html.Hidden("MessageID", item.MessageID)
+                    <input type="submit" value="Удалить" />
+                }
+            </td>
+        </tr>
+
+        { i++; }
+    }
+</table>

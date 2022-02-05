@@ -1,0 +1,50 @@
+﻿@model IEnumerable<User>
+
+@{
+    ViewBag.Title = "Данные всех пользователей";
+    Layout = "_Layout";
+}
+
+<input class="nav-btn" type="button" value="Вернуться назад"
+       onclick="location.href='@Url.Action("Index", "Admin")'" />
+
+<h1 class="page-theme">Данные пользователей</h1>
+
+<p class="page-description">Учетные данные всех пользователей</p>
+
+@{
+    int i = 1;
+}
+
+@if (Model.Count() == 0)
+{
+    <p>Отсутствуют пользователи в списке</p>
+}
+else
+{
+    <table class="grid">
+        <tr>
+            <th>№:</th>
+            <th>Фамилия:</th>
+            <th>Имя:</th>
+            <th>Логин:</th>
+            <th>Пароль:</th>
+            <th>Доступ:</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@i</td>
+                <td>@item.FirstName</td>
+                <td>@item.LastName</td>
+                <td>@item.Login</td>
+                <td>@item.Password</td>
+                <td>@item.Role.RoleName</td>
+            </tr>
+
+            {
+                i++;
+            }
+        }
+    </table>
+}

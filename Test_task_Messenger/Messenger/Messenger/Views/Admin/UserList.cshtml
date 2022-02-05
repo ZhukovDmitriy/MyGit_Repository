@@ -1,0 +1,44 @@
+﻿@model IEnumerable<User>
+
+@{
+    ViewBag.Title = "Список пользователей";
+    Layout = "_Layout";
+}
+
+<input class="nav-btn" type="button" value="Вернуться назад"
+       onclick="location.href='@Url.Action("Index", "Admin")'" />
+
+<h1 class="page-theme">Список пользователей</h1>
+
+<p class="page-description">Выберите пользователя из списка для просмотра сообщений</p>
+
+@{
+    int i = 1;
+}
+
+@if (Model.Count() == 0)
+{
+    <p>Отсутствуют пользователи в списке</p>
+}
+else
+{
+    <table class="grid">
+        <tr>
+            <th>№:</th>
+            <th>Фамилия:</th>
+            <th>Имя:</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@i</td>
+                <td>@Html.ActionLink(item.FirstName, "UserMessage", new { item.UserID })</td>
+                <td>@Html.ActionLink(item.LastName, "UserMessage", new { item.UserID })</td>
+            </tr>
+
+            {
+                i++;
+            }
+        }
+    </table>
+}

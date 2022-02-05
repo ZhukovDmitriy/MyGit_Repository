@@ -1,0 +1,79 @@
+﻿@model Messenger.Models.ViewModels.UserMessagesViewModel
+
+@{
+    ViewBag.Title = "Чат";
+    Layout = "_Layout";
+}
+
+@if (Model.User.RoleID == 1)
+{
+    <input class="nav-btn" type="button" value="Административная зона"
+           onclick="location.href='@Url.Action("Index", "Admin")'" />
+}
+
+<input class="nav-btn logout-btn" type="button" value="Покинуть аккаунт"
+       onclick="location.href='@Url.Action("Logout", "Account")'" />
+
+<h1 class="page-theme">Чат</h1>
+
+<p class="page-description">
+    Здраствуйте <label>@Model.User.LastName</label>
+    <br />Рады приветствовать вас в общем чате!
+</p>
+
+<div id="general-chat">
+    @if (Model.Messages.Count() != 0)
+    {
+        foreach (var item in Model.Messages)
+        {
+            if (item.UserID == Model.User.UserID)
+            {
+                <div class="user-message">
+                    <p class="user-name">@item.User.LastName</p>
+                    <p class="message-content">@item.Content</p>
+                    <p class="message-date">@item.Date.ToString("t")</p>
+                </div>
+                <div id="break-line"></div>
+            }
+            else
+            {
+                <div class="someone-message">
+                    <p class="user-name">@item.User.LastName</p>
+                    <p class="message-content">@item.Content</p>
+                    <p class="message-date">@item.Date.ToString("t")</p>
+                </div>
+                <div id="break-line"></div>
+            }
+        }
+    }
+</div>
+
+@using (Html.BeginForm("Index", "Message", FormMethod.Post))
+{
+    <div id="msg-sending-form">
+        <label>Введите сообщение:</label>
+        <p><textarea id="msg-content-area" name="message"></textarea></p>
+
+        <p><input class="form-btn" type="submit" value="Отправить" onclick="return ValidateMessage(); "/></p>
+    </div>
+}
+
+<script type="text/javascript">
+
+    function ValidateMessage() {
+
+        var message = document.getElementById('msg-content-area');
+
+        if (message.value == '') {
+
+            alert("Вы не ввели сообщение!");
+
+            var invalidForm = true;
+        }
+
+        if (invalidForm) {
+            return false;
+        }
+    }
+
+</script>
