@@ -1,0 +1,13 @@
+D:\MyProjects\Projects_Practice\JSON XML\JsonXml\JsonXml\bin\Debug\netcoreapp3.1\JsonXml.exe
+D:\MyProjects\Projects_Practice\JSON XML\JsonXml\JsonXml\bin\Debug\netcoreapp3.1\JsonXml.deps.json
+D:\MyProjects\Projects_Practice\JSON XML\JsonXml\JsonXml\bin\Debug\netcoreapp3.1\JsonXml.runtimeconfig.json
+D:\MyProjects\Projects_Practice\JSON XML\JsonXml\JsonXml\bin\Debug\netcoreapp3.1\JsonXml.runtimeconfig.dev.json
+D:\MyProjects\Projects_Practice\JSON XML\JsonXml\JsonXml\bin\Debug\netcoreapp3.1\JsonXml.dll
+D:\MyProjects\Projects_Practice\JSON XML\JsonXml\JsonXml\bin\Debug\netcoreapp3.1\JsonXml.pdb
+D:\MyProjects\Projects_Practice\JSON XML\JsonXml\JsonXml\obj\Debug\netcoreapp3.1\JsonXml.csprojAssemblyReference.cache
+D:\MyProjects\Projects_Practice\JSON XML\JsonXml\JsonXml\obj\Debug\netcoreapp3.1\JsonXml.AssemblyInfoInputs.cache
+D:\MyProjects\Projects_Practice\JSON XML\JsonXml\JsonXml\obj\Debug\netcoreapp3.1\JsonXml.AssemblyInfo.cs
+D:\MyProjects\Projects_Practice\JSON XML\JsonXml\JsonXml\obj\Debug\netcoreapp3.1\JsonXml.csproj.CoreCompileInputs.cache
+D:\MyProjects\Projects_Practice\JSON XML\JsonXml\JsonXml\obj\Debug\netcoreapp3.1\JsonXml.dll
+D:\MyProjects\Projects_Practice\JSON XML\JsonXml\JsonXml\obj\Debug\netcoreapp3.1\JsonXml.pdb
+D:\MyProjects\Projects_Practice\JSON XML\JsonXml\JsonXml\obj\Debug\netcoreapp3.1\JsonXml.genruntimeconfig.cache

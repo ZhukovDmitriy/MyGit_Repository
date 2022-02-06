@@ -1,0 +1,13 @@
+D:\MyProjects\Projects_Practice\API\Api\Api\bin\Debug\netcoreapp3.1\Api.exe
+D:\MyProjects\Projects_Practice\API\Api\Api\bin\Debug\netcoreapp3.1\Api.deps.json
+D:\MyProjects\Projects_Practice\API\Api\Api\bin\Debug\netcoreapp3.1\Api.runtimeconfig.json
+D:\MyProjects\Projects_Practice\API\Api\Api\bin\Debug\netcoreapp3.1\Api.runtimeconfig.dev.json
+D:\MyProjects\Projects_Practice\API\Api\Api\bin\Debug\netcoreapp3.1\Api.dll
+D:\MyProjects\Projects_Practice\API\Api\Api\bin\Debug\netcoreapp3.1\Api.pdb
+D:\MyProjects\Projects_Practice\API\Api\Api\obj\Debug\netcoreapp3.1\Api.csprojAssemblyReference.cache
+D:\MyProjects\Projects_Practice\API\Api\Api\obj\Debug\netcoreapp3.1\Api.AssemblyInfoInputs.cache
+D:\MyProjects\Projects_Practice\API\Api\Api\obj\Debug\netcoreapp3.1\Api.AssemblyInfo.cs
+D:\MyProjects\Projects_Practice\API\Api\Api\obj\Debug\netcoreapp3.1\Api.csproj.CoreCompileInputs.cache
+D:\MyProjects\Projects_Practice\API\Api\Api\obj\Debug\netcoreapp3.1\Api.dll
+D:\MyProjects\Projects_Practice\API\Api\Api\obj\Debug\netcoreapp3.1\Api.pdb
+D:\MyProjects\Projects_Practice\API\Api\Api\obj\Debug\netcoreapp3.1\Api.genruntimeconfig.cache
