@@ -1,5 +1,8 @@
 ﻿@model ApplicationForCash.Models.ViewModels.CashRequestViewModel
 
+<input class="UI-location" type="button" value="админ"
+       onclick="location.href='@Url.Action("RequestList", "Admin")'" />
+
 <h1 class="page-theme">Заявка</h1>
 <p class="page-description">Приветствуем вас: <span style="font-weight:bold;">@Model.User.FirstName</span></p>
 

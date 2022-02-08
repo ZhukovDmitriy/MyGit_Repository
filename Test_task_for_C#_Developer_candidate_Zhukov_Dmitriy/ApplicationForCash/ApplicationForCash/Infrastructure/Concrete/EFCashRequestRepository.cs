@@ -24,22 +24,13 @@ namespace ApplicationForCash.Infrastructure.Concrete
         {
             CashRequest newRequest = new CashRequest()
             {
-                ClientID = request.ClientID,
+                UserID = request.ClientID,
                 DepartmentAddress = request.DepartmentAddress,
                 Amount = request.Amount,
                 Currency = request.Currency,
+                RequestStatus = false,
+                StatusComment = "Заявка на обработке"
             };
-
-            if (request.Amount >= 30000)
-            {
-                newRequest.RequestStatus = false;
-                newRequest.StatusComment = "Превышен разрешенный лимит";
-            }
-            else
-            {
-                newRequest.RequestStatus = true;
-                newRequest.StatusComment = "Запрос обработан успешно";
-            }
 
             context.CashRequests.Add(newRequest);
             context.SaveChanges();
@@ -51,6 +42,27 @@ namespace ApplicationForCash.Infrastructure.Concrete
             int orderId = lastSavedRequest.RequestID;
 
             return orderId;
+        }
+
+        public void EditStatus(int requestId, bool confirmStatus)
+        {
+            CashRequest dbEntry = context.CashRequests.FirstOrDefault(r => r.RequestID == requestId);
+
+            if (dbEntry != null)
+            {
+                dbEntry.RequestStatus = confirmStatus;
+
+                if (confirmStatus == true)
+                {
+                    dbEntry.StatusComment = "Запрос одобрен";
+                }
+                else
+                {
+                    dbEntry.StatusComment = "Запрос отклонен";
+                }
+
+                context.SaveChanges();
+            }
         }
 
         public CashRequest GetStatus(int orderNum)

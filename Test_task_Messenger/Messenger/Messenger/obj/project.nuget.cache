@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8hesUgFssoy/6BhpiuqL2rB95g91padZc9tK40zuHM0zLQCe9ebiRWX0Gw1y+N8ZJZ4M5Vp9I08gXlD8HMWbMg==",
+  "dgSpecHash": "iNCLCt+Ok7VG1ax56a7ZanySk/Es/2lRWk9+sscj4grg3BZPf2NKvYnbBTYENMF4aptsipX1h0D8Wpt2zY5ocA==",
   "success": true,
-  "projectFilePath": "D:\\MyProjects\\Projects_Test_Employers\\Messenger\\Messenger\\Messenger.csproj",
+  "projectFilePath": "D:\\MyProjects\\Projects_OldPC_ASP_NET_MVC\\Test_task_Messenger\\Messenger\\Messenger\\Messenger.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dima\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Dima\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

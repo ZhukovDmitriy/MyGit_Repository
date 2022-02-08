@@ -1,0 +1,48 @@
+﻿@model List<CashRequest>
+
+<input class="UI-location" type="button" value="клиент"
+       onclick="location.href='@Url.Action("Index", "RequestCash")'" />
+
+<h1 class="page-theme">Заявки</h1>
+
+<table class="Grid">
+    <tr>
+        <th>Номер запроса:</th>
+        <th>Клиент:</th>
+        <th>Сумма | Валюта:</th>
+        <th>Отделение:</th>
+        <th>Статус:</th>
+        <th>Действие:</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.RequestID</td>
+            <td>
+                @Html.ActionLink(item.User.LastName, "UserInfo", new { item.User.UserID })
+                @Html.ActionLink(item.User.FirstName, "UserInfo", new { item.User.UserID })
+            </td>
+            <td>
+                @item.Amount | @item.Currency
+            </td>
+            <td>@item.DepartmentAddress</td>
+
+            @if (item.RequestStatus == false)
+            {
+                <td style="color:red;">@item.StatusComment</td>
+            }
+            else
+            {
+                <td style="color:green;">@item.StatusComment</td>
+            }
+            <td>
+                <input type="button" value="Одобрить"
+                       onclick="location.href='@Url.Action("EditRequest","Admin",
+                                              new { requestId = item.RequestID, confirmStatus = true })'" />
+                <input type="button" value="Отклонить"
+                       onclick="location.href='@Url.Action("EditRequest","Admin",
+                                              new { requestId = item.RequestID, confirmStatus = false })'" />
+            </td>
+        </tr>
+    }
+</table>

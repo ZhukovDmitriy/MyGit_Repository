@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MyProjects\\Projects_Test_Employers\\Messenger\\Messenger\\Messenger.csproj": {}
+    "D:\\MyProjects\\Projects_OldPC_ASP_NET_MVC\\Test_task_Messenger\\Messenger\\Messenger\\Messenger.csproj": {}
   },
   "projects": {
-    "D:\\MyProjects\\Projects_Test_Employers\\Messenger\\Messenger\\Messenger.csproj": {
+    "D:\\MyProjects\\Projects_OldPC_ASP_NET_MVC\\Test_task_Messenger\\Messenger\\Messenger\\Messenger.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MyProjects\\Projects_Test_Employers\\Messenger\\Messenger\\Messenger.csproj",
+        "projectUniqueName": "D:\\MyProjects\\Projects_OldPC_ASP_NET_MVC\\Test_task_Messenger\\Messenger\\Messenger\\Messenger.csproj",
         "projectName": "Messenger",
-        "projectPath": "D:\\MyProjects\\Projects_Test_Employers\\Messenger\\Messenger\\Messenger.csproj",
+        "projectPath": "D:\\MyProjects\\Projects_OldPC_ASP_NET_MVC\\Test_task_Messenger\\Messenger\\Messenger\\Messenger.csproj",
         "packagesPath": "C:\\Users\\Dima\\.nuget\\packages\\",
-        "outputPath": "D:\\MyProjects\\Projects_Test_Employers\\Messenger\\Messenger\\obj\\",
+        "outputPath": "D:\\MyProjects\\Projects_OldPC_ASP_NET_MVC\\Test_task_Messenger\\Messenger\\Messenger\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Dima\\AppData\\Roaming\\NuGet\\NuGet.Config",

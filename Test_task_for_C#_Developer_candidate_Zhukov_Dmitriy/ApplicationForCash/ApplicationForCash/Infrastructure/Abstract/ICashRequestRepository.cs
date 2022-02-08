@@ -14,5 +14,6 @@ namespace ApplicationForCash.Infrastructure.Abstract
 
         int SaveRequest(JsonSaveRequest request);
         CashRequest GetStatus(int orderNum);
+        void EditStatus(int requestId, bool confirmStatus);
     }
 }

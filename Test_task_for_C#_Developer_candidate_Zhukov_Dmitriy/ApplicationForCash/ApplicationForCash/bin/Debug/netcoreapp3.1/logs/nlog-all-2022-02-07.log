@@ -1,0 +1,12 @@
+2022-02-07 16:04:27.9400||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-07 16:05:08.4360||DEBUG|ApplicationForCash.Program|Получение запроса от клиента 
+2022-02-07 16:05:08.4764||DEBUG|ApplicationForCash.Program|Попытка сериализации 
+2022-02-07 16:05:08.5394||DEBUG|ApplicationForCash.Program|Сохранение в базе данных 
+2022-02-07 16:05:08.8298||DEBUG|ApplicationForCash.Program|Формирование ответа от сервера и отправка 
+2022-02-07 16:05:19.1732||INFO|ApplicationForCash.Program|Получение запроса на статус заявки 
+2022-02-07 16:05:19.1732||DEBUG|ApplicationForCash.Program|Извлекаем данные из базы 
+2022-02-07 16:05:19.1912||INFO|ApplicationForCash.Program|Объект не найден в базе 
+2022-02-07 16:05:26.2694||INFO|ApplicationForCash.Program|Получение запроса на статус заявки 
+2022-02-07 16:05:26.2694||DEBUG|ApplicationForCash.Program|Извлекаем данные из базы 
+2022-02-07 16:05:26.2831||DEBUG|ApplicationForCash.Program|Отправка ответа клиенту 
+2022-02-07 17:14:58.0321||DEBUG|ApplicationForCash.Program|Запуск приложения 

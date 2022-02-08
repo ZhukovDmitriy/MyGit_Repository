@@ -1,0 +1,243 @@
+2022-02-08 09:08:32.9581||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 10:15:26.5224||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 10:15:59.6935|20102|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[RequestID], [c].[Amount], [c].[ClientID], [c].[Currency], [c].[DepartmentAddress], [c].[RequestStatus], [c].[StatusComment], [c].[UserID], [u].[UserID], [u].[FirstName], [u].[LastName], [u].[Login], [u].[Password], [u].[RoleID]
+FROM [CashRequests] AS [c]
+LEFT JOIN [Users] AS [u] ON [c].[UserID] = [u].[UserID] 
+2022-02-08 10:15:59.7574|10100|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'ApplicationForCash.Infrastructure.Concrete.ApplicationDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'UserID'.
+Invalid column name 'UserID'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:bb51e4be-2745-4d05-b0a0-e20b8a408fc6
+Error Number:207,State:1,Class:16 Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'UserID'.
+Invalid column name 'UserID'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:bb51e4be-2745-4d05-b0a0-e20b8a408fc6
+Error Number:207,State:1,Class:16
+2022-02-08 10:16:38.2984||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 10:16:54.2189||DEBUG|ApplicationForCash.Program|Получение запроса от клиента 
+2022-02-08 10:16:54.2450||DEBUG|ApplicationForCash.Program|Попытка сериализации 
+2022-02-08 10:16:54.2836||DEBUG|ApplicationForCash.Program|Сохранение в базе данных 
+2022-02-08 10:16:54.4032|20102|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (4ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000), @p6='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [CashRequests] ([Amount], [ClientID], [Currency], [DepartmentAddress], [RequestStatus], [StatusComment], [UserID])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT [RequestID]
+FROM [CashRequests]
+WHERE @@ROWCOUNT = 1 AND [RequestID] = scope_identity(); 
+2022-02-08 10:16:54.4446|10000|ERROR|Microsoft.EntityFrameworkCore.Update|An exception occurred in the database while saving changes for context type 'ApplicationForCash.Infrastructure.Concrete.ApplicationDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'UserID'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:0b0fb8a5-e918-463a-86a2-e17b451c5bad
+Error Number:207,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess) Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'UserID'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:0b0fb8a5-e918-463a-86a2-e17b451c5bad
+Error Number:207,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2022-02-08 10:33:45.7747||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 10:34:36.1214||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 10:34:48.9349||DEBUG|ApplicationForCash.Program|Получение запроса от клиента 
+2022-02-08 10:34:48.9582||DEBUG|ApplicationForCash.Program|Попытка сериализации 
+2022-02-08 10:34:48.9897||DEBUG|ApplicationForCash.Program|Сохранение в базе данных 
+2022-02-08 10:34:49.1720||DEBUG|ApplicationForCash.Program|Формирование ответа от сервера и отправка 
+2022-02-08 10:34:54.4788||INFO|ApplicationForCash.Program|Получение запроса на статус заявки 
+2022-02-08 10:34:54.4788||DEBUG|ApplicationForCash.Program|Извлекаем данные из базы 
+2022-02-08 10:34:54.4788||DEBUG|ApplicationForCash.Program|Отправка ответа клиенту 
+2022-02-08 10:35:01.5552||INFO|ApplicationForCash.Program|Получение запроса на статус заявки 
+2022-02-08 10:35:01.5552||DEBUG|ApplicationForCash.Program|Извлекаем данные из базы 
+2022-02-08 10:35:01.5552||INFO|ApplicationForCash.Program|Объект не найден в базе 
+2022-02-08 10:44:10.6416||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 10:58:23.1570||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 11:16:53.9701||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 11:18:08.1981||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 11:32:23.5013||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 11:32:37.6555||INFO|ApplicationForCash.Program|Получение запроса на статус заявки 
+2022-02-08 11:32:37.6555||DEBUG|ApplicationForCash.Program|Извлекаем данные из базы 
+2022-02-08 11:32:37.9864||DEBUG|ApplicationForCash.Program|Отправка ответа клиенту 
+2022-02-08 11:33:05.8317|3|ERROR|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|The view 'EditRequest' was not found. Searched locations: /Views/Admin/EditRequest.cshtml, /Views/Shared/EditRequest.cshtml, /Pages/Shared/EditRequest.cshtml 
+2022-02-08 11:33:05.8701|1|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.InvalidOperationException: The view 'EditRequest' was not found. The following locations were searched:
+/Views/Admin/EditRequest.cshtml
+/Views/Shared/EditRequest.cshtml
+/Pages/Shared/EditRequest.cshtml
+   at Microsoft.AspNetCore.Mvc.ViewEngines.ViewEngineResult.EnsureSuccessful(IEnumerable`1 originalLocations)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|29_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-02-08 11:33:16.9084||INFO|ApplicationForCash.Program|Получение запроса на статус заявки 
+2022-02-08 11:33:16.9084||DEBUG|ApplicationForCash.Program|Извлекаем данные из базы 
+2022-02-08 11:33:16.9152||DEBUG|ApplicationForCash.Program|Отправка ответа клиенту 
+2022-02-08 11:37:16.9708||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 11:37:49.9255||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 11:38:56.5828||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 11:42:34.5991||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 11:43:24.5388||INFO|ApplicationForCash.Program|Получение запроса на статус заявки 
+2022-02-08 11:43:24.5388||DEBUG|ApplicationForCash.Program|Извлекаем данные из базы 
+2022-02-08 11:43:24.8119||DEBUG|ApplicationForCash.Program|Отправка ответа клиенту 
+2022-02-08 11:44:28.8325||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 11:45:25.2340||DEBUG|ApplicationForCash.Program|Получение запроса от клиента 
+2022-02-08 11:45:25.2757||DEBUG|ApplicationForCash.Program|Попытка сериализации 
+2022-02-08 11:45:25.3456||DEBUG|ApplicationForCash.Program|Сохранение в базе данных 
+2022-02-08 11:45:25.6490||DEBUG|ApplicationForCash.Program|Формирование ответа от сервера и отправка 
+2022-02-08 11:45:32.3147||INFO|ApplicationForCash.Program|Получение запроса на статус заявки 
+2022-02-08 11:45:32.3147||DEBUG|ApplicationForCash.Program|Извлекаем данные из базы 
+2022-02-08 11:45:32.3329||DEBUG|ApplicationForCash.Program|Отправка ответа клиенту 
+2022-02-08 11:45:36.2617||INFO|ApplicationForCash.Program|Получение запроса на статус заявки 
+2022-02-08 11:45:36.2617||DEBUG|ApplicationForCash.Program|Извлекаем данные из базы 
+2022-02-08 11:45:36.2617||INFO|ApplicationForCash.Program|Объект не найден в базе 
+2022-02-08 11:45:55.7820||INFO|ApplicationForCash.Program|Получение запроса на статус заявки 
+2022-02-08 11:45:55.7913||DEBUG|ApplicationForCash.Program|Извлекаем данные из базы 
+2022-02-08 11:45:55.8440||DEBUG|ApplicationForCash.Program|Отправка ответа клиенту 
+2022-02-08 11:50:41.1192||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 11:56:41.6564||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 11:58:25.5216||INFO|ApplicationForCash.Program|Получение запроса на статус заявки 
+2022-02-08 11:58:25.5216||DEBUG|ApplicationForCash.Program|Извлекаем данные из базы 
+2022-02-08 11:58:25.8268||DEBUG|ApplicationForCash.Program|Отправка ответа клиенту 
+2022-02-08 12:02:35.2881||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 12:27:36.1880||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 12:40:47.7945||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 12:45:52.1185||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 12:48:47.7010||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 12:58:46.2411||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 12:59:18.1471||DEBUG|ApplicationForCash.Program|Получение запроса от клиента 
+2022-02-08 12:59:18.2174||DEBUG|ApplicationForCash.Program|Попытка сериализации 
+2022-02-08 12:59:18.3014||DEBUG|ApplicationForCash.Program|Сохранение в базе данных 
+2022-02-08 12:59:18.6239||DEBUG|ApplicationForCash.Program|Формирование ответа от сервера и отправка 
+2022-02-08 12:59:24.2441||INFO|ApplicationForCash.Program|Получение запроса на статус заявки 
+2022-02-08 12:59:24.2441||DEBUG|ApplicationForCash.Program|Извлекаем данные из базы 
+2022-02-08 12:59:24.2716||DEBUG|ApplicationForCash.Program|Отправка ответа клиенту 
+2022-02-08 13:00:51.2554||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 13:02:18.4998||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 13:06:10.8083||INFO|ApplicationForCash.Program|Получение запроса на статус заявки 
+2022-02-08 13:06:10.8083||DEBUG|ApplicationForCash.Program|Извлекаем данные из базы 
+2022-02-08 13:06:11.1095||DEBUG|ApplicationForCash.Program|Отправка ответа клиенту 
+2022-02-08 13:29:29.3311||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 14:10:08.4895||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 14:15:32.0477||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 14:16:30.7631||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 14:17:10.5152||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 14:18:45.2354||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 14:46:18.3784||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 14:47:00.9098||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 14:53:16.0362||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 14:53:53.6871||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 14:55:11.9146||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 14:58:09.8418||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 15:08:39.8141||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 15:10:10.8661||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 15:17:42.0344||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 15:24:16.7709||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 15:25:17.7385||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 15:26:12.8399||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 15:26:48.9874||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 15:27:30.6500||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 15:39:53.2300||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 15:40:28.7424||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 15:41:38.3346||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 15:43:22.6252||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 15:44:21.4098||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 15:45:57.7209||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 15:49:11.5775||DEBUG|ApplicationForCash.Program|Запуск приложения 
+2022-02-08 15:59:33.7020||INFO|ApplicationForCash.Program|Получение запроса на статус заявки 
+2022-02-08 15:59:33.7020||DEBUG|ApplicationForCash.Program|Извлекаем данные из базы 
+2022-02-08 15:59:33.8450||DEBUG|ApplicationForCash.Program|Отправка ответа клиенту 
+2022-02-08 15:59:40.8551||INFO|ApplicationForCash.Program|Получение запроса на статус заявки 
+2022-02-08 15:59:40.8551||DEBUG|ApplicationForCash.Program|Извлекаем данные из базы 
+2022-02-08 15:59:40.8551||DEBUG|ApplicationForCash.Program|Отправка ответа клиенту 
+2022-02-08 15:59:44.8063||INFO|ApplicationForCash.Program|Получение запроса на статус заявки 
+2022-02-08 15:59:44.8063||DEBUG|ApplicationForCash.Program|Извлекаем данные из базы 
+2022-02-08 15:59:44.8063||INFO|ApplicationForCash.Program|Объект не найден в базе 

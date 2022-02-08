@@ -80,3 +80,5 @@ D:\MyProjects\Projects_Test_Employers_PrivatBank\ApplicationForCash\ApplicationF
 D:\MyProjects\Projects_Test_Employers_PrivatBank\ApplicationForCash\ApplicationForCash\bin\Debug\netcoreapp3.1\NLog.config
 D:\MyProjects\Projects_Test_Employers_PrivatBank\ApplicationForCash\ApplicationForCash\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
 D:\MyProjects\Projects_Test_Employers_PrivatBank\ApplicationForCash\ApplicationForCash\bin\Debug\netcoreapp3.1\NLog.Web.AspNetCore.dll
+D:\MyProjects\Projects_Test_Employers_PrivatBank\ApplicationForCash\ApplicationForCash\obj\Debug\netcoreapp3.1\Razor\Views\Admin\RequestList.cshtml.g.cs
+D:\MyProjects\Projects_Test_Employers_PrivatBank\ApplicationForCash\ApplicationForCash\obj\Debug\netcoreapp3.1\Razor\Views\Admin\UserInfo.cshtml.g.cs

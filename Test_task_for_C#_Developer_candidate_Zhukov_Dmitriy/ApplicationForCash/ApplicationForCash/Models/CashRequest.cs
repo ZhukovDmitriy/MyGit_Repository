@@ -14,7 +14,10 @@ namespace ApplicationForCash.Models
         public int RequestID { get; set; }
 
         [JsonProperty(PropertyName = "client_id")]
-        public int ClientID { get; set; }
+        public int UserID { get; set; }
+
+        [JsonIgnore]
+        public User User { get; set; }
 
         [JsonProperty(PropertyName = "departemnt_address")]
         public string DepartmentAddress { get; set; }

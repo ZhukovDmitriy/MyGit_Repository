@@ -41,11 +41,16 @@ INSERT INTO Departments (Address) VALUES
 
 CREATE TABLE [dbo].[CashRequests] (
     [RequestID]         INT            IDENTITY (1, 1) NOT NULL,
-    [ClientID]          INT            NOT NULL,
+    [UserID]            INT            NOT NULL,
     [DepartmentAddress] NVARCHAR (MAX) NOT NULL,
     [Currency]          NVARCHAR (MAX) NOT NULL,
     [Amount]            INT            NOT NULL,
     [RequestStatus]     BIT            DEFAULT ((1)) NOT NULL,
     [StatusComment]     NVARCHAR (MAX) NOT NULL,
-    CONSTRAINT [PK_CashRequests] PRIMARY KEY CLUSTERED ([RequestID] ASC)
+    CONSTRAINT [PK_CashRequests] PRIMARY KEY CLUSTERED ([RequestID] ASC),
+    CONSTRAINT [FK_CashRequests_Users_UserID] FOREIGN KEY ([UserID]) REFERENCES [dbo].[Users] ([UserID])
 );
+
+GO
+CREATE NONCLUSTERED INDEX [IX_CashRequests_UserID]
+    ON [dbo].[CashRequests]([UserID] ASC);
