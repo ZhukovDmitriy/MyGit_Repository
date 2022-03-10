@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MyProjects\\Projects_Test_Employers_PrivatBank\\ApplicationForCash\\ApplicationForCash\\ApplicationForCash.csproj": {}
+    "D:\\MyProjects\\Projects_OldPC_ASP_NET_MVC\\Test_task_for_C#_Developer_candidate_Zhukov_Dmitriy\\ApplicationForCash\\ApplicationForCash\\ApplicationForCash.csproj": {}
   },
   "projects": {
-    "D:\\MyProjects\\Projects_Test_Employers_PrivatBank\\ApplicationForCash\\ApplicationForCash\\ApplicationForCash.csproj": {
+    "D:\\MyProjects\\Projects_OldPC_ASP_NET_MVC\\Test_task_for_C#_Developer_candidate_Zhukov_Dmitriy\\ApplicationForCash\\ApplicationForCash\\ApplicationForCash.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MyProjects\\Projects_Test_Employers_PrivatBank\\ApplicationForCash\\ApplicationForCash\\ApplicationForCash.csproj",
+        "projectUniqueName": "D:\\MyProjects\\Projects_OldPC_ASP_NET_MVC\\Test_task_for_C#_Developer_candidate_Zhukov_Dmitriy\\ApplicationForCash\\ApplicationForCash\\ApplicationForCash.csproj",
         "projectName": "ApplicationForCash",
-        "projectPath": "D:\\MyProjects\\Projects_Test_Employers_PrivatBank\\ApplicationForCash\\ApplicationForCash\\ApplicationForCash.csproj",
+        "projectPath": "D:\\MyProjects\\Projects_OldPC_ASP_NET_MVC\\Test_task_for_C#_Developer_candidate_Zhukov_Dmitriy\\ApplicationForCash\\ApplicationForCash\\ApplicationForCash.csproj",
         "packagesPath": "C:\\Users\\Dima\\.nuget\\packages\\",
-        "outputPath": "D:\\MyProjects\\Projects_Test_Employers_PrivatBank\\ApplicationForCash\\ApplicationForCash\\obj\\",
+        "outputPath": "D:\\MyProjects\\Projects_OldPC_ASP_NET_MVC\\Test_task_for_C#_Developer_candidate_Zhukov_Dmitriy\\ApplicationForCash\\ApplicationForCash\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Dima\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -55,6 +55,10 @@
             "NLog.Web.AspNetCore": {
               "target": "Package",
               "version": "[4.14.0, )"
+            },
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[6.2.4, )"
             }
           },
           "imports": [

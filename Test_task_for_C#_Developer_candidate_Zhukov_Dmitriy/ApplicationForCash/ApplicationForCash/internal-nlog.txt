@@ -419,3 +419,13 @@
 2022-02-08 15:49:11.5235 Info Adding target FileTarget(Name=allfile)
 2022-02-08 15:49:11.5291 Info Adding target FileTarget(Name=ownFile-web)
 2022-02-08 15:49:11.5543 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\MyProjects\Projects_Test_Employers_PrivatBank\ApplicationForCash\ApplicationForCash\bin\Debug\netcoreapp3.1\nlog.config
+2022-03-03 21:43:29.6905 Info Message Template Auto Format enabled
+2022-03-03 21:43:29.7208 Info Loading assembly: NLog.Web.AspNetCore
+2022-03-03 21:43:29.8073 Info Adding target FileTarget(Name=allfile)
+2022-03-03 21:43:29.8073 Info Adding target FileTarget(Name=ownFile-web)
+2022-03-03 21:43:29.8674 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\MyProjects\Projects_OldPC_ASP_NET_MVC\Test_task_for_C#_Developer_candidate_Zhukov_Dmitriy\ApplicationForCash\ApplicationForCash\bin\Debug\netcoreapp3.1\nlog.config
+2022-03-10 14:19:18.8319 Info Message Template Auto Format enabled
+2022-03-10 14:19:18.8675 Info Loading assembly: NLog.Web.AspNetCore
+2022-03-10 14:19:18.9364 Info Adding target FileTarget(Name=allfile)
+2022-03-10 14:19:18.9364 Info Adding target FileTarget(Name=ownFile-web)
+2022-03-10 14:19:18.9816 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=D:\MyProjects\Projects_OldPC_ASP_NET_MVC\Test_task_for_C#_Developer_candidate_Zhukov_Dmitriy\ApplicationForCash\ApplicationForCash\bin\Debug\netcoreapp3.1\nlog.config

@@ -1,0 +1,16 @@
+D:\MyProjects\Projects_OldPC_ASP_NET_MVC\Projects_Practice\RabbitMQ\RabbitMQ\Publisher\bin\Debug\netcoreapp3.1\Publisher.exe
+D:\MyProjects\Projects_OldPC_ASP_NET_MVC\Projects_Practice\RabbitMQ\RabbitMQ\Publisher\bin\Debug\netcoreapp3.1\Publisher.deps.json
+D:\MyProjects\Projects_OldPC_ASP_NET_MVC\Projects_Practice\RabbitMQ\RabbitMQ\Publisher\bin\Debug\netcoreapp3.1\Publisher.runtimeconfig.json
+D:\MyProjects\Projects_OldPC_ASP_NET_MVC\Projects_Practice\RabbitMQ\RabbitMQ\Publisher\bin\Debug\netcoreapp3.1\Publisher.runtimeconfig.dev.json
+D:\MyProjects\Projects_OldPC_ASP_NET_MVC\Projects_Practice\RabbitMQ\RabbitMQ\Publisher\bin\Debug\netcoreapp3.1\Publisher.dll
+D:\MyProjects\Projects_OldPC_ASP_NET_MVC\Projects_Practice\RabbitMQ\RabbitMQ\Publisher\bin\Debug\netcoreapp3.1\Publisher.pdb
+D:\MyProjects\Projects_OldPC_ASP_NET_MVC\Projects_Practice\RabbitMQ\RabbitMQ\Publisher\bin\Debug\netcoreapp3.1\RabbitMQ.Client.dll
+D:\MyProjects\Projects_OldPC_ASP_NET_MVC\Projects_Practice\RabbitMQ\RabbitMQ\Publisher\bin\Debug\netcoreapp3.1\System.Threading.Channels.dll
+D:\MyProjects\Projects_OldPC_ASP_NET_MVC\Projects_Practice\RabbitMQ\RabbitMQ\Publisher\obj\Debug\netcoreapp3.1\Publisher.csprojAssemblyReference.cache
+D:\MyProjects\Projects_OldPC_ASP_NET_MVC\Projects_Practice\RabbitMQ\RabbitMQ\Publisher\obj\Debug\netcoreapp3.1\Publisher.AssemblyInfoInputs.cache
+D:\MyProjects\Projects_OldPC_ASP_NET_MVC\Projects_Practice\RabbitMQ\RabbitMQ\Publisher\obj\Debug\netcoreapp3.1\Publisher.AssemblyInfo.cs
+D:\MyProjects\Projects_OldPC_ASP_NET_MVC\Projects_Practice\RabbitMQ\RabbitMQ\Publisher\obj\Debug\netcoreapp3.1\Publisher.csproj.CoreCompileInputs.cache
+D:\MyProjects\Projects_OldPC_ASP_NET_MVC\Projects_Practice\RabbitMQ\RabbitMQ\Publisher\obj\Debug\netcoreapp3.1\Publisher.csproj.CopyComplete
+D:\MyProjects\Projects_OldPC_ASP_NET_MVC\Projects_Practice\RabbitMQ\RabbitMQ\Publisher\obj\Debug\netcoreapp3.1\Publisher.dll
+D:\MyProjects\Projects_OldPC_ASP_NET_MVC\Projects_Practice\RabbitMQ\RabbitMQ\Publisher\obj\Debug\netcoreapp3.1\Publisher.pdb
+D:\MyProjects\Projects_OldPC_ASP_NET_MVC\Projects_Practice\RabbitMQ\RabbitMQ\Publisher\obj\Debug\netcoreapp3.1\Publisher.genruntimeconfig.cache
