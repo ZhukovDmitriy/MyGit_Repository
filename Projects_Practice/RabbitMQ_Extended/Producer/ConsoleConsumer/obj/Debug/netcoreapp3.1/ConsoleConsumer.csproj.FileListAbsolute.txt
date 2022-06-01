@@ -1,0 +1,15 @@
+D:\MyProjects\Projects_OldPC_ASP_NET_MVC\Projects_Practice\RabbitMQ_Extended\Producer\ConsoleConsumer\bin\Debug\netcoreapp3.1\ConsoleConsumer.exe
+D:\MyProjects\Projects_OldPC_ASP_NET_MVC\Projects_Practice\RabbitMQ_Extended\Producer\ConsoleConsumer\bin\Debug\netcoreapp3.1\ConsoleConsumer.deps.json
+D:\MyProjects\Projects_OldPC_ASP_NET_MVC\Projects_Practice\RabbitMQ_Extended\Producer\ConsoleConsumer\bin\Debug\netcoreapp3.1\ConsoleConsumer.runtimeconfig.json
+D:\MyProjects\Projects_OldPC_ASP_NET_MVC\Projects_Practice\RabbitMQ_Extended\Producer\ConsoleConsumer\bin\Debug\netcoreapp3.1\ConsoleConsumer.runtimeconfig.dev.json
+D:\MyProjects\Projects_OldPC_ASP_NET_MVC\Projects_Practice\RabbitMQ_Extended\Producer\ConsoleConsumer\bin\Debug\netcoreapp3.1\ConsoleConsumer.dll
+D:\MyProjects\Projects_OldPC_ASP_NET_MVC\Projects_Practice\RabbitMQ_Extended\Producer\ConsoleConsumer\bin\Debug\netcoreapp3.1\ConsoleConsumer.pdb
+D:\MyProjects\Projects_OldPC_ASP_NET_MVC\Projects_Practice\RabbitMQ_Extended\Producer\ConsoleConsumer\bin\Debug\netcoreapp3.1\RabbitMQ.Client.dll
+D:\MyProjects\Projects_OldPC_ASP_NET_MVC\Projects_Practice\RabbitMQ_Extended\Producer\ConsoleConsumer\bin\Debug\netcoreapp3.1\System.Threading.Channels.dll
+D:\MyProjects\Projects_OldPC_ASP_NET_MVC\Projects_Practice\RabbitMQ_Extended\Producer\ConsoleConsumer\obj\Debug\netcoreapp3.1\ConsoleConsumer.AssemblyInfoInputs.cache
+D:\MyProjects\Projects_OldPC_ASP_NET_MVC\Projects_Practice\RabbitMQ_Extended\Producer\ConsoleConsumer\obj\Debug\netcoreapp3.1\ConsoleConsumer.AssemblyInfo.cs
+D:\MyProjects\Projects_OldPC_ASP_NET_MVC\Projects_Practice\RabbitMQ_Extended\Producer\ConsoleConsumer\obj\Debug\netcoreapp3.1\ConsoleConsumer.csproj.CoreCompileInputs.cache
+D:\MyProjects\Projects_OldPC_ASP_NET_MVC\Projects_Practice\RabbitMQ_Extended\Producer\ConsoleConsumer\obj\Debug\netcoreapp3.1\ConsoleConsumer.csproj.CopyComplete
+D:\MyProjects\Projects_OldPC_ASP_NET_MVC\Projects_Practice\RabbitMQ_Extended\Producer\ConsoleConsumer\obj\Debug\netcoreapp3.1\ConsoleConsumer.dll
+D:\MyProjects\Projects_OldPC_ASP_NET_MVC\Projects_Practice\RabbitMQ_Extended\Producer\ConsoleConsumer\obj\Debug\netcoreapp3.1\ConsoleConsumer.pdb
+D:\MyProjects\Projects_OldPC_ASP_NET_MVC\Projects_Practice\RabbitMQ_Extended\Producer\ConsoleConsumer\obj\Debug\netcoreapp3.1\ConsoleConsumer.genruntimeconfig.cache

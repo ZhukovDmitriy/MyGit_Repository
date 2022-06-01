@@ -17,11 +17,11 @@ namespace DependencyInjection
         {
             services.AddRazorPages();
 
-            services.AddTransient<SmallRepository>();
-            services.AddTransient<MediumRepository>();
+            //services.AddTransient<SmallRepository>();
+            //services.AddTransient<MediumRepository>();
 
-            //services.AddTransient<IEntranceRepository, SmallRepository>();
-            //services.AddTransient<IEntranceRepository, MediumRepository>();
+            services.AddTransient<IEntranceRepository, SmallRepository>();
+            services.AddTransient<IEntranceRepository, MediumRepository>();
 
             //services.AddTransient<ISmallRepository, SmallRepository>();
             //services.AddTransient<IMediumRepository, MediumRepository>();

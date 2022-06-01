@@ -88,25 +88,25 @@ namespace DependencyInjection.Controllers
         //}
 
         // Вариант 6
-        //private IEntranceRepository repository;
+        private IEntranceRepository repository;
 
-        //public HomeController(IEntranceRepository repo)
-        //{
-        //    repository = repo;
-        //}
+        public HomeController(IEntranceRepository repo)
+        {
+            repository = repo;
+        }
 
-        //public ViewResult Index()
-        //{
-        //    IEnumerable<Product> products = repository.Products;
+        public ViewResult Index()
+        {
+            IEnumerable<Product> products = repository.Products;
 
-        //    return View(products);
-        //}
+            return View(products);
+        }
 
-        //public void CreateController()
-        //{
-        //    SmallRepository repository = new SmallRepository();
-        //    HomeController controller = new HomeController(repository);
-        //}
+        public void CreateController()
+        {
+            SmallRepository repository = new SmallRepository();
+            HomeController controller = new HomeController(repository);
+        }
 
         // Вариант 7 
         //private ISmallRepository smallRepository;

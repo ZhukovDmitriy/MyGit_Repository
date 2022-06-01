@@ -533,11 +533,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\MyProjects\\Projects_Practice\\DependencyInjection\\DependencyInjection\\DependencyInjection.csproj",
+      "projectUniqueName": "D:\\MyProjects\\Projects_OldPC_ASP_NET_MVC\\Projects_Practice\\DependencyInjection\\DependencyInjection\\DependencyInjection.csproj",
       "projectName": "DependencyInjection",
-      "projectPath": "D:\\MyProjects\\Projects_Practice\\DependencyInjection\\DependencyInjection\\DependencyInjection.csproj",
+      "projectPath": "D:\\MyProjects\\Projects_OldPC_ASP_NET_MVC\\Projects_Practice\\DependencyInjection\\DependencyInjection\\DependencyInjection.csproj",
       "packagesPath": "C:\\Users\\Dima\\.nuget\\packages\\",
-      "outputPath": "D:\\MyProjects\\Projects_Practice\\DependencyInjection\\DependencyInjection\\obj\\",
+      "outputPath": "D:\\MyProjects\\Projects_OldPC_ASP_NET_MVC\\Projects_Practice\\DependencyInjection\\DependencyInjection\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Dima\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZnQqDczVVdPT6oLuBbyRm3bl2cyyz46t61EGAEJyesBdmoCbXPxfEWjDS9JZewcWLmETzKklYW0y9wkrX0CxfQ==",
+  "dgSpecHash": "47OH5bJv4vYiez7X9PdjMWDD2faTcLdx4zmMpHTk4qQ9IwrPZ6KiQEynkxHz6ELVZsnFSj03OwdJoCGAKXFghg==",
   "success": true,
-  "projectFilePath": "D:\\MyProjects\\Projects_Practice\\DependencyInjection\\DependencyInjection\\DependencyInjection.csproj",
+  "projectFilePath": "D:\\MyProjects\\Projects_OldPC_ASP_NET_MVC\\Projects_Practice\\DependencyInjection\\DependencyInjection\\DependencyInjection.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dima\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.10\\microsoft.entityframeworkcore.5.0.10.nupkg.sha512",
     "C:\\Users\\Dima\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.10\\microsoft.entityframeworkcore.abstractions.5.0.10.nupkg.sha512",
