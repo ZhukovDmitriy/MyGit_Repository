@@ -1,0 +1,13 @@
+D:\MyProjects\Projects_Practice\Monads\Monads\Monads\bin\Debug\netcoreapp3.1\Monads.exe
+D:\MyProjects\Projects_Practice\Monads\Monads\Monads\bin\Debug\netcoreapp3.1\Monads.deps.json
+D:\MyProjects\Projects_Practice\Monads\Monads\Monads\bin\Debug\netcoreapp3.1\Monads.runtimeconfig.json
+D:\MyProjects\Projects_Practice\Monads\Monads\Monads\bin\Debug\netcoreapp3.1\Monads.runtimeconfig.dev.json
+D:\MyProjects\Projects_Practice\Monads\Monads\Monads\bin\Debug\netcoreapp3.1\Monads.dll
+D:\MyProjects\Projects_Practice\Monads\Monads\Monads\bin\Debug\netcoreapp3.1\Monads.pdb
+D:\MyProjects\Projects_Practice\Monads\Monads\Monads\obj\Debug\netcoreapp3.1\Monads.csprojAssemblyReference.cache
+D:\MyProjects\Projects_Practice\Monads\Monads\Monads\obj\Debug\netcoreapp3.1\Monads.AssemblyInfoInputs.cache
+D:\MyProjects\Projects_Practice\Monads\Monads\Monads\obj\Debug\netcoreapp3.1\Monads.AssemblyInfo.cs
+D:\MyProjects\Projects_Practice\Monads\Monads\Monads\obj\Debug\netcoreapp3.1\Monads.csproj.CoreCompileInputs.cache
+D:\MyProjects\Projects_Practice\Monads\Monads\Monads\obj\Debug\netcoreapp3.1\Monads.dll
+D:\MyProjects\Projects_Practice\Monads\Monads\Monads\obj\Debug\netcoreapp3.1\Monads.pdb
+D:\MyProjects\Projects_Practice\Monads\Monads\Monads\obj\Debug\netcoreapp3.1\Monads.genruntimeconfig.cache
