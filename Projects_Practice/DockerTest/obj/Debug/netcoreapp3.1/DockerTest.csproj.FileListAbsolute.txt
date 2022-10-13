@@ -1,0 +1,17 @@
+C:\Users\Dima\Desktop\Test_Docker_Project\DockerTest\bin\Debug\netcoreapp3.1\DockerTest.exe
+C:\Users\Dima\Desktop\Test_Docker_Project\DockerTest\bin\Debug\netcoreapp3.1\DockerTest.deps.json
+C:\Users\Dima\Desktop\Test_Docker_Project\DockerTest\bin\Debug\netcoreapp3.1\DockerTest.runtimeconfig.json
+C:\Users\Dima\Desktop\Test_Docker_Project\DockerTest\bin\Debug\netcoreapp3.1\DockerTest.runtimeconfig.dev.json
+C:\Users\Dima\Desktop\Test_Docker_Project\DockerTest\bin\Debug\netcoreapp3.1\DockerTest.dll
+C:\Users\Dima\Desktop\Test_Docker_Project\DockerTest\bin\Debug\netcoreapp3.1\DockerTest.pdb
+C:\Users\Dima\Desktop\Test_Docker_Project\DockerTest\bin\Debug\netcoreapp3.1\RabbitMQ.Client.dll
+C:\Users\Dima\Desktop\Test_Docker_Project\DockerTest\bin\Debug\netcoreapp3.1\System.Threading.Channels.dll
+C:\Users\Dima\Desktop\Test_Docker_Project\DockerTest\obj\Debug\netcoreapp3.1\DockerTest.csproj.AssemblyReference.cache
+C:\Users\Dima\Desktop\Test_Docker_Project\DockerTest\obj\Debug\netcoreapp3.1\DockerTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dima\Desktop\Test_Docker_Project\DockerTest\obj\Debug\netcoreapp3.1\DockerTest.AssemblyInfoInputs.cache
+C:\Users\Dima\Desktop\Test_Docker_Project\DockerTest\obj\Debug\netcoreapp3.1\DockerTest.AssemblyInfo.cs
+C:\Users\Dima\Desktop\Test_Docker_Project\DockerTest\obj\Debug\netcoreapp3.1\DockerTest.csproj.CoreCompileInputs.cache
+C:\Users\Dima\Desktop\Test_Docker_Project\DockerTest\obj\Debug\netcoreapp3.1\DockerTest.csproj.CopyComplete
+C:\Users\Dima\Desktop\Test_Docker_Project\DockerTest\obj\Debug\netcoreapp3.1\DockerTest.dll
+C:\Users\Dima\Desktop\Test_Docker_Project\DockerTest\obj\Debug\netcoreapp3.1\DockerTest.pdb
+C:\Users\Dima\Desktop\Test_Docker_Project\DockerTest\obj\Debug\netcoreapp3.1\DockerTest.genruntimeconfig.cache

@@ -5,3 +5,10 @@ D:\Hillel - Introduction C#\HomeWork\05_HW\HomeWork5\obj\Debug\HomeWork5.csprojA
 D:\Hillel - Introduction C#\HomeWork\05_HW\HomeWork5\obj\Debug\HomeWork5.csproj.CoreCompileInputs.cache
 D:\Hillel - Introduction C#\HomeWork\05_HW\HomeWork5\obj\Debug\HomeWork5.exe
 D:\Hillel - Introduction C#\HomeWork\05_HW\HomeWork5\obj\Debug\HomeWork5.pdb
+D:\MyProjects\Projects_OldPC_ASP_NET_MVC\C#_HomeTasks_Solutions_Hillel_IT_School\C# Introduction\05_HW\HomeWork5\bin\Debug\HomeWork5.exe.config
+D:\MyProjects\Projects_OldPC_ASP_NET_MVC\C#_HomeTasks_Solutions_Hillel_IT_School\C# Introduction\05_HW\HomeWork5\bin\Debug\HomeWork5.exe
+D:\MyProjects\Projects_OldPC_ASP_NET_MVC\C#_HomeTasks_Solutions_Hillel_IT_School\C# Introduction\05_HW\HomeWork5\bin\Debug\HomeWork5.pdb
+D:\MyProjects\Projects_OldPC_ASP_NET_MVC\C#_HomeTasks_Solutions_Hillel_IT_School\C# Introduction\05_HW\HomeWork5\obj\Debug\HomeWork5.csprojAssemblyReference.cache
+D:\MyProjects\Projects_OldPC_ASP_NET_MVC\C#_HomeTasks_Solutions_Hillel_IT_School\C# Introduction\05_HW\HomeWork5\obj\Debug\HomeWork5.csproj.CoreCompileInputs.cache
+D:\MyProjects\Projects_OldPC_ASP_NET_MVC\C#_HomeTasks_Solutions_Hillel_IT_School\C# Introduction\05_HW\HomeWork5\obj\Debug\HomeWork5.exe
+D:\MyProjects\Projects_OldPC_ASP_NET_MVC\C#_HomeTasks_Solutions_Hillel_IT_School\C# Introduction\05_HW\HomeWork5\obj\Debug\HomeWork5.pdb
