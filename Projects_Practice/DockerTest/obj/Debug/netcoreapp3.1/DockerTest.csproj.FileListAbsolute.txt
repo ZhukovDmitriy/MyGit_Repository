@@ -15,3 +15,6 @@ C:\Users\Dima\Desktop\Test_Docker_Project\DockerTest\obj\Debug\netcoreapp3.1\Doc
 C:\Users\Dima\Desktop\Test_Docker_Project\DockerTest\obj\Debug\netcoreapp3.1\DockerTest.dll
 C:\Users\Dima\Desktop\Test_Docker_Project\DockerTest\obj\Debug\netcoreapp3.1\DockerTest.pdb
 C:\Users\Dima\Desktop\Test_Docker_Project\DockerTest\obj\Debug\netcoreapp3.1\DockerTest.genruntimeconfig.cache
+C:\Users\Dima\Desktop\Test_Docker_Project\DockerTest\bin\Debug\netcoreapp3.1\Npgsql.dll
+C:\Users\Dima\Desktop\Test_Docker_Project\DockerTest\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Dima\Desktop\Test_Docker_Project\DockerTest\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll

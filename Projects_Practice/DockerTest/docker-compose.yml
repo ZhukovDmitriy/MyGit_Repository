@@ -10,9 +10,22 @@ services:
       - "15672"
       - "5672"
 
+    postgres:
+      image: postgres:13.3
+      hostname: postgres
+      environment:
+       POSTGRES_DB: "postgredb"
+       POSTGRES_USER: "guest"
+       POSTGRES_PASSWORD: "guest"
+      volumes:
+       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      ports:
+      - "5432:5432"
+
     app:
       build: .
       ports:
-       - "8080:8080"
+      - "8080:8080"
       depends_on:
       - "rabbit"
+      - "postgres"

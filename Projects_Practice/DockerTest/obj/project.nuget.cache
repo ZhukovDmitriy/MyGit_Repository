@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "iyIICzXM+yeFCO2/yqykBaITeBTicx4GjLLzHMmI60P84uLN2n7K+0+cEVziRHlY/WQqK0Uq2T2hj5yVGLZsMw==",
+  "dgSpecHash": "nv15pybrwLjHUgtisGC/hH70sxiRyYrl+WuKuuDijbLu1At3HpbhMS77ziTBpPU2BeEzVABUgAXtka0FsDBKBA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Dima\\Desktop\\Test_Docker_Project\\DockerTest\\DockerTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dima\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.11.1\\microsoft.visualstudio.azure.containers.tools.targets.1.11.1.nupkg.sha512",
+    "C:\\Users\\Dima\\.nuget\\packages\\npgsql\\6.0.7\\npgsql.6.0.7.nupkg.sha512",
     "C:\\Users\\Dima\\.nuget\\packages\\rabbitmq.client\\6.4.0\\rabbitmq.client.6.4.0.nupkg.sha512",
+    "C:\\Users\\Dima\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
     "C:\\Users\\Dima\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\Dima\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\Dima\\.nuget\\packages\\system.threading.channels\\4.7.1\\system.threading.channels.4.7.1.nupkg.sha512"
   ],
   "logs": []
