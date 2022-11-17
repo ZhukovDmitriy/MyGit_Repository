@@ -1,0 +1,14 @@
+C:\Users\Dima\source\repos\ApiRequestDictionaryDemo\bin\Debug\netcoreapp3.1\ApiRequestDictionaryDemo.exe
+C:\Users\Dima\source\repos\ApiRequestDictionaryDemo\bin\Debug\netcoreapp3.1\ApiRequestDictionaryDemo.deps.json
+C:\Users\Dima\source\repos\ApiRequestDictionaryDemo\bin\Debug\netcoreapp3.1\ApiRequestDictionaryDemo.runtimeconfig.json
+C:\Users\Dima\source\repos\ApiRequestDictionaryDemo\bin\Debug\netcoreapp3.1\ApiRequestDictionaryDemo.runtimeconfig.dev.json
+C:\Users\Dima\source\repos\ApiRequestDictionaryDemo\bin\Debug\netcoreapp3.1\ApiRequestDictionaryDemo.dll
+C:\Users\Dima\source\repos\ApiRequestDictionaryDemo\bin\Debug\netcoreapp3.1\ApiRequestDictionaryDemo.pdb
+C:\Users\Dima\source\repos\ApiRequestDictionaryDemo\obj\Debug\netcoreapp3.1\ApiRequestDictionaryDemo.csproj.AssemblyReference.cache
+C:\Users\Dima\source\repos\ApiRequestDictionaryDemo\obj\Debug\netcoreapp3.1\ApiRequestDictionaryDemo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dima\source\repos\ApiRequestDictionaryDemo\obj\Debug\netcoreapp3.1\ApiRequestDictionaryDemo.AssemblyInfoInputs.cache
+C:\Users\Dima\source\repos\ApiRequestDictionaryDemo\obj\Debug\netcoreapp3.1\ApiRequestDictionaryDemo.AssemblyInfo.cs
+C:\Users\Dima\source\repos\ApiRequestDictionaryDemo\obj\Debug\netcoreapp3.1\ApiRequestDictionaryDemo.csproj.CoreCompileInputs.cache
+C:\Users\Dima\source\repos\ApiRequestDictionaryDemo\obj\Debug\netcoreapp3.1\ApiRequestDictionaryDemo.dll
+C:\Users\Dima\source\repos\ApiRequestDictionaryDemo\obj\Debug\netcoreapp3.1\ApiRequestDictionaryDemo.pdb
+C:\Users\Dima\source\repos\ApiRequestDictionaryDemo\obj\Debug\netcoreapp3.1\ApiRequestDictionaryDemo.genruntimeconfig.cache
